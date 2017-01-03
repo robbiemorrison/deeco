@@ -1,0 +1,58 @@
+
+INSTALLATION
+------------
+
+ [1] The compressed tar archive has been packed using GNU tar
+     (1.12) and gzip (1.2.4):
+
+       deeco-000.tgz     where 000 is the release number
+
+
+ [2] Place this file in a new subdirectory.  This will help to
+     keep the installation tidy.
+
+
+ [3] Unpack the original archive:
+
+       $ tar -xzvf deeco-000.tgz
+
+
+ [4] Intall the binary, message file, and tutorial, using make:
+
+       $ make install
+
+
+ [5] Run the tutorial using make:
+
+       $ make tutorial
+
+
+ [6] Then verify the output, byte-for-byte, using make:
+
+       $ make verify
+
+
+ [7] To run the same tutorial from the command-line:
+
+       $ ./deeco000 -dtestfile -nModel
+
+
+ [8] To reinstate the original install:
+
+       $ make uninstall
+       $ make install
+
+
+ [9] To remove all related files and sub-directories and leave
+     only the original archive from [1]:
+
+       $ make clean
+
+
+[10] More information can be obtained from the following websites:
+
+       http://www.iet.tu-berlin.de/deeco
+       http://www.iet.tu-berlin.de/helgoland
+
+
+===

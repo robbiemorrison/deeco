@@ -1,0 +1,113 @@
+Bruckner, Thomas, Robbie Morrison, and Tobias Wittmann.
+    2005.  Public policy modeling of distributed energy
+    technologies: strategies, attributes, and
+    challenges.  Ecological Economics, v54 no2-3
+    p328-245.  ISSN 0921-8009.
+    doi:10.1016/j.ecolecon.2004.12.032
+
+Lindenberger, Dietmar, Thomas Bruckner, Robbie Morrison,
+    Helmuth-M Groscurth, and Reiner Kümmel.  2004.
+    Modernization of local energy systems.  Energy, v29
+    no2 p245-256.  ISSN 0360-5442.
+    doi:10.1016/S0360-5442(03)00063-X
+
+Bruckner, Thomas, Robbie Morrison, Chris Handley, and
+    Murray Patterson.  2003.  High-resolution modeling
+    of energy-services supply systems using 'deeco':
+    overview and application to policy development.
+    Annals of Operations Research, v121 no1-4 p151-180.
+    doi:10.1023/A:1023359303704
+
+Morrison, Robbie and Thomas Bruckner.  2002.
+    High-resolution modeling of distributed energy
+    resources using 'deeco': adverse interactions and
+    potential policy conflicts.  In: Ulgiati, Sergio,
+    Mark T Brown, Mario Giampietro, Robert A Herendeen,
+    and Kozo Mayumi (editors).  3rd International
+    Workshop: Advances in Energy Studies:
+    Reconsidering the Importance of Energy.  Servizi
+    Grafici Editoriali, Padova, Italy.  p97-107.
+
+Lindenberger, Dietmar, Thomas Bruckner, Helmuth-M
+    Groscurth, and Reiner Kümmel.  2001.  Heat,
+    electricity, sun, and fossil fuels: dynamic energy,
+    emission, and cost optimization.  High Temperatures
+    – High Pressures, v33 p463–468.
+
+Bruckner, Thomas.  2001.  Benutzerhandbuch 'deeco' --
+    Version 1.0.  Institut für Energietechnik,
+    Technische Universität Berlin, Germany.
+
+Morrison, Robbie.  2000.  Optimizing exergy-services
+    supply networks for sustainability -- MSc thesis.
+    Physics Department, Otago University, Dunedin, New
+    Zealand.
+
+Lindenberger, Dietmar, Thomas Bruckner, Helmuth-M
+    Groscurth, and Reiner Kümmel.  2000.  Optimization
+    of solar district heating systems: seasonal
+    storage, heat pumps, and cogeneration.  Energy --
+    The International Journal, v25 no7 p591-608.
+    doi:10.1016/S0360-5442(99)00082-1
+
+Groscurth, Helmuth-M and K-P Kress.  1998.  Fuzzy data
+    compression for energy optimization models.  Energy,
+    v23 no1 p1–9.  ISSN 0360-5442.
+    doi:10.1016/S0360-5442(97)00060-1
+
+Bruckner, Thomas, Reiner Kümmel, and Helmuth-M
+    Groscurth.  1997.  Optimierung emissionsmindernder
+    Energietechnologien: Konkurrenz und Synergie in
+    kommunalen Energiesystemen.  Energiewirtschaftliche
+    Tagesfragen, v47 no3 p139–146.
+
+Bruckner, Thomas, Helmuth-M Groscurth, and Reiner
+    Kümmel.  1997.  Competition and synergy between
+    energy technologies in municipal energy systems.
+    Energy, v22 no10 p1005-1014.  ISSN 0360-5442.
+    doi:10.1016/S0360-5442(97)00037-6
+
+Bruckner, Thomas.  1997.  Dynamische Energie- und
+    Emissionsoptimierung regionaler Energiesysteme --
+    PhD thesis.  Institut für Theoretische Physik,
+    Universität Würzburg.
+
+Bruckner, Thomas.  1997.  'deeco' -- Programmer's
+    manual.  Institut für Theoretische Physik der
+    Universität Würzburg.
+
+Bruckner, Thomas.  1997.  'deeco' -- Benutzerhandbuch.
+    Institut für Theoretische Physik der Universität
+    Würzburg.
+
+Groscurth, Helmuth-M, Thomas Bruckner, and Reiner
+    Kümmel.  1995.  Modeling of energy-services supply
+    systems.  Energy -- The International Journal, v20
+    no9 p941-958.
+
+Groscurth, Helmuth-M and Alf Schweiker.  1995.
+    Contribution of computer models to solving the
+    energy problem.  Energy Sources, v17 no2 p161–177.
+    ISSN 0090-8312.  doi:10.1080/00908319508946076
+
+Groscurth, Helmuth-M.  1995.  Design and management of
+    energy databases.  Energy Sources, v17 no4 p445–457.
+    ISSN 0090-8312.  doi:10.1080/00908319508946093
+
+Christian, M and Helmuth-M Groscurth.  1995.  Modeling
+    dynamic substitution processes in energy supply
+    systems.  Energy Sources, v17 no3 p295–311.  ISSN
+    0090-8312.  doi:10.1080/00908319508946084
+
+Bruckner, Thomas, A Blavdzevitch, Helmuth-M Groscurth,
+    and Reiner Kümmel.  1994.  Rational use of energy in
+    the Ukraine: a pilot study for DESNA.  Energy, v19
+    no4 p489–497.  ISSN 0360-5442.
+    doi:10.1016/0360-5442(94)90127-9
+
+Groscurth, Helmuth-M, Thomas Bruckner, and Reiner
+    Kümmel.  1993.  Energy, cost, and carbon dioxide
+    optimization of disaggregated, regional
+    energy-supply systems.  Energy, v18 no12
+    p1187–1205.  ISSN 0360-5442.
+    doi:10.1016/0360-5442(93)90009-3

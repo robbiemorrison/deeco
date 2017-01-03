@@ -1,0 +1,152 @@
+
+THIS SOFTWARE IS DISTRIBUTED UNDER THE FOLLOWING TERMS
+------------------------------------------------------
+
+=============================================
+ Issue    Date           Comment
+ A        24-Feb-2003    original issue
+ B        02-Aug-2005    undated copyright notice
+=============================================
+
+
+'deeco'
+-------
+'deeco' is an acronym for: dynamic energy, emissions, and cost
+optimization.  'deeco' is an energy-services supply systems
+modeling environment.
+
+
+Who should read this notice
+---------------------------
+Any person who intends to USE and/or MODIFY 'deeco' should read
+this legal notice and the accompanying README.gpl file.
+
+
+Rationale
+---------
+These terms are provided so that 'deeco' can be made available to
+the energy modeling research community such that:
+
+ * individual research contributions can be more easily
+   reintegrated into the principal development lineage
+   (see: Request for program modifications)
+
+ * individual research contributions are guaranteed to
+   remain available to the research community at large
+   (see: GNU General Public License)
+
+ * software developers offer no warranty regarding quality
+   (see: GNU General Public License)
+
+ * software developers are asked not to post core code
+   on unrestricted websites (see: Request that core code
+   not be published on the Internet)
+
+
+Address for notices
+-------------------
+Thomas Bruckner
+Institute for Energy Engineering
+Technical University of Berlin
+Marchstrasse 18
+D-10587 Berlin
+GERMANY
+
+Phone : ++49.30.314 24763
+Fax   : ++49.30.314 21683
+Email : bruckner@iet.tu-berlin.de
+
+
+Definitions
+-----------
+"'deeco'" refers to the main program and any ancillary programs.
+
+"main program" refers to the C++ source-code and/or binary files
+    which form the main software component of 'deeco'.
+
+"core code" refers to the C++ source-code which makes up the main
+    program but excludes source-code relating to technology
+    modules.
+
+"ancillary program" refers to any program or script which controls
+    the main program and/or the processing, analysis, and
+    visualization of input and/or output data directly related to
+    the main program.
+
+"principal development lineage" refers to the 'deeco' source-code
+    repository, overseen by Thomas Bruckner.
+
+
+Request for program modifications
+---------------------------------
+[1]  'deeco' is distributed with the REQUEST that developers SUBMIT ANY
+PROGRAMMING MODIFICATIONS they may make to Thomas Bruckner for
+archiving purposes and for possible inclusion into the principal
+development lineage.  Thomas Bruckner can be contacted by email at the
+email address given above.
+
+
+Request that core code not be published on the Internet
+-------------------------------------------------------
+[2]  'deeco' is distributed with the REQUEST that developers DO NOT
+PUBLISH CORE CODE on the Internet, and thereby allow unrestricted
+access.  Alternatively, refer all inquiries for core code to Thomas
+Bruckner.
+
+
+GNU General Public License
+--------------------------
+[3]  'deeco' is distributed under the GNU GENERAL PUBLIC LICENSE (GPL).
+Developers may distribute this software and/or modify the code under
+the terms of the GPL and the additional requests given in this legal
+notice.  A full copy of the GNU GPL is included in the README.gpl file.
+
+
+[4]   Each core source file contains the following statement:
+
+//    -----------------
+//     LEGAL NOTICE
+//    -----------------
+//
+//    'deeco' : dynamic energy, emissions, and cost optimization.
+//    An energy-services supply systems modeling environment.
+//    Copyright (C) 1995-2005.  Thomas Bruckner, Robbie Morrison,
+//    Dietmar Lindenberger, Johannes Bruhn, Kathrin Ramsel, Jan
+//    Heise, Susanna Medel.
+//
+//    This file is part of 'deeco'.
+//
+//    'deeco' is free software; you can redistribute it and/or
+//    modify it under the terms of the GNU General Public License as
+//    published by the Free Software Foundation; either version 2 of
+//    the License, or (at your option) any later version.
+//
+//    'deeco' is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public
+//    License along with 'deeco'; if not, write to the Free Software
+//    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+//    MA 02110-1301, USA.
+//
+//    Address for notices: Thomas Bruckner, Institute for Energy
+//    Engineering, Technical University of Berlin, Marchstrasse 18,
+//    D-10587 Berlin, GERMANY.
+//
+//    More information can be found in README.legal and README.gpl.
+//
+//    -----------------
+
+
+Additional information
+----------------------
+The 'deeco' project maintains an email address and a public website.
+At the time of writing, these are located at:
+
+    mailto:deeco@iet.tu-berlin.de
+    http://www.iet.tu-berlin.de/deeco
+
+
+===

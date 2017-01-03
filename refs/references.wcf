@@ -1,0 +1,291 @@
+<!-- 'deeco' references in WCF (Wikipedia citation format) -->
+<!-- data integrity confirmed -->
+
+<ref name="bruckner-etal-2005-306ec1">
+{{cite journal
+ | first1 = Thomas | last1 = Bruckner
+ | first2 = Robbie | last2 = Morrison
+ | first3 = Tobias | last3 = Wittmann
+ | date = 2005
+ | title = Public policy modeling of distributed energy technologies: strategies, attributes, and challenges
+ | journal = Ecological Economics
+ | volume = 54
+ | number = 2–3
+ | pages = 328–245
+ | doi = 10.1016/j.ecolecon.2004.12.032
+ | issn = 0921-8009
+}}
+</ref>
+
+<ref name="lindenberger-etal-2004-0a4ce0">
+{{cite journal
+ | first1 = Dietmar | last1 = Lindenberger
+ | first2 = Thomas | last2 = Bruckner
+ | first3 = Robbie | last3 = Morrison
+ | first4 = Helmuth-M | last4 = Groscurth
+ | first5 = Reiner | last5 = Kümmel
+ | date = 2004
+ | title = Modernization of local energy systems
+ | journal = Energy
+ | volume = 29
+ | number = 2
+ | pages = 245–256
+ | doi = 10.1016/S0360-5442(03)00063-X
+ | issn = 0360-5442
+}}
+</ref>
+
+<ref name="bruckner-etal-2003-6a442e">
+{{cite journal
+ | first1 = Thomas | last1 = Bruckner
+ | first2 = Robbie | last2 = Morrison
+ | first3 = Chris | last3 = Handley
+ | first4 = Murray | last4 = Patterson
+ | date = 2003
+ | title = High-resolution modeling of energy-services supply systems using ''deeco'': overview and application to policy development
+ | journal = Annals of Operations Research
+ | volume = 121
+ | number = 1–4
+ | pages = 151–180
+ | doi = 10.1023/A:1023359303704
+ | url = http://www.wifa.uni-leipzig.de/fileadmin/user_upload/iirm-tm/energiemanagement/publikationen/reviewed_journals/2003_HighResolModelingEnergySystemsDeeco.pdf.
+}}
+</ref>
+
+<ref name="morrison-and-bruckner-2002-689976">
+{{cite book
+ | first1 = Robbie | last1 = Morrison
+ | first2 = Thomas | last2 = Bruckner
+ | date = 2002
+ | title = Chapter 0: High-resolution modeling of distributed energy resources using ''deeco'': adverse interactions and potential policy conflicts
+ | editor-first1 = Sergio | editor-last1 = Ulgiati
+ | editor-first2 = Mark T | editor-last2 = Brown
+ | editor-first3 = Mario | editor-last3 = Giampietro
+ | editor-first4 = Robert A | editor-last4 = Herendeen
+ | editor-first5 = Kozo | editor-last5 = Mayumi
+ | publisher = Servizi Grafici Editoriali
+ | location = Padova, Italy
+ | pages = 97–107
+ | url = http://www.iet.tu-berlin.de/deeco/downloads/morrison_etal_2002.pdf
+}}
+</ref>
+
+<ref name="lindenberger-etal-2001-f1aa34">
+{{cite journal
+ | first1 = Dietmar | last1 = Lindenberger
+ | first2 = Thomas | last2 = Bruckner
+ | first3 = Helmuth-M | last3 = Groscurth
+ | first4 = Reiner | last4 = Kümmel
+ | date = 2001
+ | title = Heat, electricity, sun, and fossil fuels: dynamic energy, emission, and cost optimization
+ | journal = High Temperatures – High Pressures
+ | volume = 33
+ | pages = 463–468
+}}
+</ref>
+
+<ref name="bruckner-2001-eed3f0">
+{{cite book
+ | first1 = Thomas | last1 = Bruckner
+ | date = 2001
+ | title = Benutzerhandbuch ''deeco'' — Version 1.0
+ | publisher = Institut für Energietechnik
+ | location = Technische Universität Berlin, Germany
+ | url = http://www.iet.tu-berlin.de/deeco/downloads/deeco_handbuch_10.ps
+}}
+</ref>
+
+<ref name="morrison-2000-a71522">
+{{cite book
+ | first1 = Robbie | last1 = Morrison
+ | date = 2000
+ | title = Optimizing exergy-services supply networks for sustainability — MSc thesis
+ | publisher = Physics Department
+ | location = Otago University, Dunedin, New Zealand
+}}
+</ref>
+
+<ref name="lindenberger-etal-2000-a2a3bd">
+{{cite journal
+ | first1 = Dietmar | last1 = Lindenberger
+ | first2 = Thomas | last2 = Bruckner
+ | first3 = Helmuth-M | last3 = Groscurth
+ | first4 = Reiner | last4 = Kümmel
+ | date = 2000
+ | title = Optimization of solar district heating systems: seasonal storage, heat pumps, and cogeneration
+ | journal = Energy -- The International Journal
+ | volume = 25
+ | number = 7
+ | pages = 591–608
+ | doi = 10.1016/S0360-5442(99)00082-1
+ | url = http://www.iet.tu-berlin.de/deeco/downloads/lindenberger_etal_2000.pdf
+}}
+</ref>
+
+<ref name="groscurth-and-kress-1998-705701">
+{{cite journal
+ | first1 = Helmuth-M | last1 = Groscurth
+ | first2 = K-P | last2 = Kress
+ | date = 1998
+ | title = Fuzzy data compression for energy optimization models
+ | journal = Energy
+ | volume = 23
+ | number = 1
+ | pages = 1–9
+ | doi = 10.1016/S0360-5442(97)00060-1
+ | issn = 0360-5442
+}}
+</ref>
+
+<ref name="bruckner-etal-1997-a57800">
+{{cite journal
+ | first1 = Thomas | last1 = Bruckner
+ | first2 = Reiner | last2 = Kümmel
+ | first3 = Helmuth-M | last3 = Groscurth
+ | date = 1997
+ | title = Optimierung emissionsmindernder Energietechnologien: Konkurrenz und Synergie in kommunalen Energiesystemen
+ | journal = Energiewirtschaftliche Tagesfragen
+ | volume = 47
+ | number = 3
+ | pages = 139–146
+}}
+</ref>
+
+<ref name="bruckner-etal-1997-887055">
+{{cite journal
+ | first1 = Thomas | last1 = Bruckner
+ | first2 = Helmuth-M | last2 = Groscurth
+ | first3 = Reiner | last3 = Kümmel
+ | date = 1997
+ | title = Competition and synergy between energy technologies in municipal energy systems
+ | journal = Energy
+ | volume = 22
+ | number = 10
+ | pages = 1005–1014
+ | doi = 10.1016/S0360-5442(97)00037-6
+ | issn = 0360-5442
+ | url = http://www.iet.tu-berlin.de/deeco/downloads/bruckner_etal_1997.pdf
+}}
+</ref>
+
+<ref name="bruckner-1997-9f4d19">
+{{cite book
+ | first1 = Thomas | last1 = Bruckner
+ | date = 1997
+ | title = Dynamische Energie- und Emissionsoptimierung regionaler Energiesysteme — PhD thesis
+ | publisher = Institut für Theoretische Physik
+ | location = Universität Würzburg
+}}
+</ref>
+
+<ref name="bruckner-1997-1c0aa0">
+{{cite book
+ | first1 = Thomas | last1 = Bruckner
+ | date = 1997
+ | title = ''deeco'' — Programmer's manual
+ | publisher = Institut für Theoretische Physik der Universität Würzburg
+}}
+</ref>
+
+<ref name="bruckner-1997-0bbf79">
+{{cite book
+ | first1 = Thomas | last1 = Bruckner
+ | date = 1997
+ | title = ''deeco'' — Benutzerhandbuch
+ | publisher = Institut für Theoretische Physik der Universität Würzburg
+}}
+</ref>
+
+<ref name="groscurth-etal-1995-ce2c15">
+{{cite journal
+ | first1 = Helmuth-M | last1 = Groscurth
+ | first2 = Thomas | last2 = Bruckner
+ | first3 = Reiner | last3 = Kümmel
+ | date = 1995
+ | title = Modeling of energy-services supply systems
+ | journal = Energy -- The International Journal
+ | volume = 20
+ | number = 9
+ | pages = 941–958
+ | url = http://www.iet.tu-berlin.de/deeco/downloads/groscurth_etal_1995.pdf
+}}
+</ref>
+
+<ref name="groscurth-and-schweiker-1995-5ae93c">
+{{cite journal
+ | first1 = Helmuth-M | last1 = Groscurth
+ | first2 = Alf | last2 = Schweiker
+ | date = 1995
+ | title = Contribution of computer models to solving the energy problem
+ | journal = Energy Sources
+ | volume = 17
+ | number = 2
+ | pages = 161–177
+ | doi = 10.1080/00908319508946076
+ | issn = 0090-8312
+}}
+</ref>
+
+<ref name="groscurth-1995-075bf0">
+{{cite journal
+ | first1 = Helmuth-M | last1 = Groscurth
+ | date = 1995
+ | title = Design and management of energy databases
+ | journal = Energy Sources
+ | volume = 17
+ | number = 4
+ | pages = 445–457
+ | doi = 10.1080/00908319508946093
+ | issn = 0090-8312
+}}
+</ref>
+
+<ref name="christian-and-groscurth-1995-aa69e5">
+{{cite journal
+ | first1 = M | last1 = Christian
+ | first2 = Helmuth-M | last2 = Groscurth
+ | date = 1995
+ | title = Modeling dynamic substitution processes in energy supply systems
+ | journal = Energy Sources
+ | volume = 17
+ | number = 3
+ | pages = 295–311
+ | doi = 10.1080/00908319508946084
+ | issn = 0090-8312
+}}
+</ref>
+
+<ref name="bruckner-etal-1994-83515a">
+{{cite journal
+ | first1 = Thomas | last1 = Bruckner
+ | first2 = A | last2 = Blavdzevitch
+ | first3 = Helmuth-M | last3 = Groscurth
+ | first4 = Reiner | last4 = Kümmel
+ | date = 1994
+ | title = Rational use of energy in the Ukraine: a pilot study for DESNA
+ | journal = Energy
+ | volume = 19
+ | number = 4
+ | pages = 489–497
+ | doi = 10.1016/0360-5442(94)90127-9
+ | issn = 0360-5442
+}}
+</ref>
+
+<ref name="groscurth-etal-1993-2f8b86">
+{{cite journal
+ | first1 = Helmuth-M | last1 = Groscurth
+ | first2 = Thomas | last2 = Bruckner
+ | first3 = Reiner | last3 = Kümmel
+ | date = 1993
+ | title = Energy, cost, and carbon dioxide optimization of disaggregated, regional energy-supply systems
+ | journal = Energy
+ | volume = 18
+ | number = 12
+ | pages = 1187–1205
+ | doi = 10.1016/0360-5442(93)90009-3
+ | issn = 0360-5442
+}}
+</ref>
+
+<!-- end of file -->

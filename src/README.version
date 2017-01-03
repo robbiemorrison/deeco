@@ -1,0 +1,72 @@
+
+deeco VERSION INFORMATION
+-------------------------
+
+This file is generated automatically
+following compilation.
+
+
+Details
+-------
+Release    = 006
+Builder    = Robbie Morrison <morrison@iet.tu-berlin.de>
+Target     = deeco006
+Makefile   = udk
+This file  = Fri Sep 30 21:15:10 MET DST 2005
+
+
+Time-of-compile testing (splash screen)
+---------------------------------------
+
+COMPILE-TIME INFORMATION
+
+ Build date                 : Sep 30 2005
+ Build time                 : 21:14:39
+ Development environment    : UDK
+ SCO version                : 3.02
+ EDG C++ front end version  : 2.43
+ Language specification     : ISO C++ (1998)
+ Test flag status           : inactive
+ Version string (arbitrary) : 006
+
+RUN-TIME INFORMATION
+
+ Program start date         : Sep 30 2005
+ Program start time         : 19:15:10 (UTC)
+ Command-line name          : deeco006
+ Working directory          : /home/deeco/source/deeco006/
+ Hostname                   : helgoland.fb10.tu-berlin.de
+ Login name                 : deeco
+ Operating system version   : SCO UnixWare 7.1.1 
+ Operating system type      : UNIX System V Release 5 (SVR5)
+ Processor                  : Pentium III
+
+LEGAL INFORMATION
+
+ Copyright (C) 1995-2005.  Thomas Bruckner, Robbie
+ Morrison, Dietmar Lindenberger, Johannes Bruhn,
+ Kathrin Ramsel, Jan Heise, Susanna Medel.
+
+ 'deeco' comes with ABSOLUTELY NO WARRANTY.  See
+ source code notices for further legal information.
+
+ADDITIONAL INFORMATION
+
+
+Binary comment section
+----------------------
+
+ Date    = Fri Sep 30 21:15:05 MET DST 2005
+ Host    = helgoland
+ User    = deeco
+ RELEASE = 006
+ TARGET  = deeco006
+ CC      = CC
+ PLFLAGS = -DNAMESPACED_SC
+ CCFLAGS = -dn -O
+ INCL    = 
+ LIBS    = -lm -l++
+
+
+===
+

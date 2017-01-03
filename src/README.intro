@@ -1,0 +1,54 @@
+
+INTRODUCTION
+------------
+
+'deeco'
+-------
+'deeco' is an acronym for: dynamic energy, emissions, and cost
+optimization.  'deeco' is an energy-services supply systems
+modeling environment.
+
+
+Program type
+------------
+'deeco' is a non-interactive command-line program.  Data-sets are
+structured using comma-separated (csv) ASCII and can be pre- and
+post-processed using Perl scripts.
+
+
+Tested platforms
+----------------
+'deeco' runs on x86 UNIX and Linux systems.  'deeco' has been tested
+on the following platforms:
+
+   * SCO UnixWare 2.1.2          / AMD K6
+   * SCO UnixWare 7.1.1          / Pentium III
+   * SuSE Linux 7.3 (2.4 kernel) / Pentium III
+
+'deeco' has no run-time dependencies and it is expected that binaries
+will run on any SCO UnixWare and SCO OpenServer platform and any
+Intel-based iBCS2-compliant (Intel binary compatibility standard 2)
+Linux platform.
+
+
+Tutorial
+--------
+This suite contains a tutorial called modcity.  This problem is fully
+described on the public website:
+
+    http://www.iet.tu-berlin.de/deeco/tutorial.html
+
+
+Websites
+--------
+The 'deeco' project maintains a public website and a semi-public website:
+
+    http://www.iet.tu-berlin.de/deeco
+    http://www.iet.tu-berlin.de/helgoland
+
+
+Users should consult these two websites for further information.
+
+
+===
+

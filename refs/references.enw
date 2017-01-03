@@ -1,0 +1,267 @@
+'deeco' references in EndNote import format
+data integrity not confirmed
+
+%O Journal Article
+%A Bruckner, Thomas
+%A Morrison, Robbie
+%A Wittmann, Tobias
+%D 2005
+%T Public policy modeling of distributed energy technologies: strategies, attributes, and challenges
+%B Ecological Economics
+%V 54
+%N 2-3
+%P 328-245
+%@ ISSN: 0921-8009
+%? 10.1016/j.ecolecon.2004.12.032
+%U
+%X
+
+%O Journal Article
+%A Lindenberger, Dietmar
+%A Bruckner, Thomas
+%A Morrison, Robbie
+%A Groscurth, Helmuth-M
+%A Kümmel, Reiner
+%D 2004
+%T Modernization of local energy systems
+%B Energy
+%V 29
+%N 2
+%P 245-256
+%@ ISSN: 0360-5442
+%? 10.1016/S0360-5442(03)00063-X
+%U
+%X
+
+%O Journal Article
+%A Bruckner, Thomas
+%A Morrison, Robbie
+%A Handley, Chris
+%A Patterson, Murray
+%D 2003
+%T High-resolution modeling of energy-services supply systems using deeco: overview and application to policy development
+%B Annals of Operations Research
+%V 121
+%N 1-4
+%P 151-180
+%@
+%? 10.1023/A:1023359303704
+%U
+%X
+
+%O Book Section
+%A Morrison, Robbie
+%A Bruckner, Thomas
+%D 2002
+%T High-resolution modeling of distributed energy resources using deeco: adverse interactions and potential policy conflicts
+%E Ulgiati, Sergio
+%E Brown, Mark T
+%E Giampietro, Mario
+%E Herendeen, Robert A
+%E Mayumi, Kozo
+%B 3rd International Workshop: Advances in Energy Studies: Reconsidering the Importance of Energy
+%I Servizi Grafici Editoriali
+%C Padova, Italy
+%P 97-107
+%@
+%U
+
+%O Journal Article
+%A Lindenberger, Dietmar
+%A Bruckner, Thomas
+%A Groscurth, Helmuth-M
+%A Kümmel, Reiner
+%D 2001
+%T Heat, electricity, sun, and fossil fuels: dynamic energy, emission, and cost optimization
+%B High Temperatures – High Pressures
+%V 33
+%N
+%P 463–468
+%@
+%U
+%X
+
+%O Book | Report
+%A Bruckner, Thomas
+%D 2001
+%T Benutzerhandbuch deeco -- Version 1.0
+%I Institut für Energietechnik
+%C Technische Universität Berlin, Germany
+%@
+
+%O Book | Report
+%A Morrison, Robbie
+%D 2000
+%T Optimizing exergy-services supply networks for sustainability -- MSc thesis
+%I Physics Department
+%C Otago University, Dunedin, New Zealand
+%@
+
+%O Journal Article
+%A Lindenberger, Dietmar
+%A Bruckner, Thomas
+%A Groscurth, Helmuth-M
+%A Kümmel, Reiner
+%D 2000
+%T Optimization of solar district heating systems: seasonal storage, heat pumps, and cogeneration
+%B Energy -- The International Journal
+%V 25
+%N 7
+%P 591-608
+%@
+%? 10.1016/S0360-5442(99)00082-1
+%U
+%X
+
+%O Journal Article
+%A Groscurth, Helmuth-M
+%A Kress, K-P
+%D 1998
+%T Fuzzy data compression for energy optimization models
+%B Energy
+%V 23
+%N 1
+%P 1–9
+%@ ISSN: 0360-5442
+%? 10.1016/S0360-5442(97)00060-1
+%U
+%X
+
+%O Journal Article
+%A Bruckner, Thomas
+%A Kümmel, Reiner
+%A Groscurth, Helmuth-M
+%D 1997
+%T Optimierung emissionsmindernder Energietechnologien: Konkurrenz und Synergie in kommunalen Energiesystemen
+%B Energiewirtschaftliche Tagesfragen
+%V 47
+%N 3
+%P 139–146
+%@
+%U
+%X
+
+%O Journal Article
+%A Bruckner, Thomas
+%A Groscurth, Helmuth-M
+%A Kümmel, Reiner
+%D 1997
+%T Competition and synergy between energy technologies in municipal energy systems
+%B Energy
+%V 22
+%N 10
+%P 1005-1014
+%@ ISSN: 0360-5442
+%? 10.1016/S0360-5442(97)00037-6
+%U
+%X
+
+%O Book | Report
+%A Bruckner, Thomas
+%D 1997
+%T Dynamische Energie- und Emissionsoptimierung regionaler Energiesysteme -- PhD thesis
+%I Institut für Theoretische Physik
+%C Universität Würzburg
+%@
+
+%O Book | Report
+%A Bruckner, Thomas
+%D 1997
+%T deeco -- Programmer's manual
+%I Institut für Theoretische Physik der Universität Würzburg
+%C
+%@
+
+%O Book | Report
+%A Bruckner, Thomas
+%D 1997
+%T deeco -- Benutzerhandbuch
+%I Institut für Theoretische Physik der Universität Würzburg
+%C
+%@
+
+%O Journal Article
+%A Groscurth, Helmuth-M
+%A Bruckner, Thomas
+%A Kümmel, Reiner
+%D 1995
+%T Modeling of energy-services supply systems
+%B Energy -- The International Journal
+%V 20
+%N 9
+%P 941-958
+%@
+%U
+%X
+
+%O Journal Article
+%A Groscurth, Helmuth-M
+%A Schweiker, Alf
+%D 1995
+%T Contribution of computer models to solving the energy problem
+%B Energy Sources
+%V 17
+%N 2
+%P 161–177
+%@ ISSN: 0090-8312
+%? 10.1080/00908319508946076
+%U
+%X
+
+%O Journal Article
+%A Groscurth, Helmuth-M
+%D 1995
+%T Design and management of energy databases
+%B Energy Sources
+%V 17
+%N 4
+%P 445–457
+%@ ISSN: 0090-8312
+%? 10.1080/00908319508946093
+%U
+%X
+
+%O Journal Article
+%A Christian, M
+%A Groscurth, Helmuth-M
+%D 1995
+%T Modeling dynamic substitution processes in energy supply systems
+%B Energy Sources
+%V 17
+%N 3
+%P 295–311
+%@ ISSN: 0090-8312
+%? 10.1080/00908319508946084
+%U
+%X
+
+%O Journal Article
+%A Bruckner, Thomas
+%A Blavdzevitch, A
+%A Groscurth, Helmuth-M
+%A Kümmel, Reiner
+%D 1994
+%T Rational use of energy in the Ukraine: a pilot study for DESNA
+%B Energy
+%V 19
+%N 4
+%P 489–497
+%@ ISSN: 0360-5442
+%? 10.1016/0360-5442(94)90127-9
+%U
+%X
+
+%O Journal Article
+%A Groscurth, Helmuth-M
+%A Bruckner, Thomas
+%A Kümmel, Reiner
+%D 1993
+%T Energy, cost, and carbon dioxide optimization of disaggregated, regional energy-supply systems
+%B Energy
+%V 18
+%N 12
+%P 1187–1205
+%@ ISSN: 0360-5442
+%? 10.1016/0360-5442(93)90009-3
+%U
+%X
