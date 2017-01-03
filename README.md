@@ -25,7 +25,7 @@ The source code and documentation are provided on GitHub because they may be of 
 
 The source code is licensed under GNU&nbsp;GPLv2.
 
-*deeco* is the subject of around 10&nbsp;refereed papers, 10&nbsp;conference presentations, and 10&nbsp;university theses.  A&nbsp;selection of this literature is given below.  Bibliographic information files in BibTeX, EndNote, and Wikipedia (WCF) formats can be found in the `refs` directory.
+*deeco* is the subject of around 10&nbsp;refereed papers, 10&nbsp;conference presentations, and 10&nbsp;university theses.  A&nbsp;selection of this literature is given below.  Bibliographic information files in BibTeX, EndNote, and Wikipedia (WCF) formats can be found in the [refs](refs/) directory.
 
 ### Key resources
 
