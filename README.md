@@ -1,15 +1,13 @@
 <!--
   author  : Robbie Morrison
-  date    : December 2016
+  date    : January 2017
   license : this work is licensed under a Creative Commons
             Attribution-ShareAlike 3.0 International License
 -->
 
-<div style="background: coral; padding: 10px; padding-left: 2em">
-<b>This project is no longer active</b>.<br>
-The source code and documentation are provided for historical reasons.<br>
+**This project is no longer active**  
+The source code and documentation are provided for historical reasons.  
 The software was last compiled on 30&nbsp;September 2005.
-</div>
 
 <img src="img/gecko.png" width="200" style="float: right">
 
