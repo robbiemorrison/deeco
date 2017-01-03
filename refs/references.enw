@@ -84,7 +84,7 @@ data integrity not confirmed
 %O Book | Report
 %A Bruckner, Thomas
 %D 2001
-%T Benutzerhandbuch deeco -- Version 1.0
+%T Benutzerhandbuch deeco — Version 1.0
 %I Institut für Energietechnik
 %C Technische Universität Berlin, Germany
 %@
@@ -92,7 +92,7 @@ data integrity not confirmed
 %O Book | Report
 %A Morrison, Robbie
 %D 2000
-%T Optimizing exergy-services supply networks for sustainability -- MSc thesis
+%T Optimizing exergy-services supply networks for sustainability — MSc thesis
 %I Physics Department
 %C Otago University, Dunedin, New Zealand
 %@
@@ -104,7 +104,7 @@ data integrity not confirmed
 %A Kümmel, Reiner
 %D 2000
 %T Optimization of solar district heating systems: seasonal storage, heat pumps, and cogeneration
-%B Energy -- The International Journal
+%B Energy
 %V 25
 %N 7
 %P 591-608
@@ -159,7 +159,7 @@ data integrity not confirmed
 %O Book | Report
 %A Bruckner, Thomas
 %D 1997
-%T Dynamische Energie- und Emissionsoptimierung regionaler Energiesysteme -- PhD thesis
+%T Dynamische Energie- und Emissionsoptimierung regionaler Energiesysteme — PhD thesis
 %I Institut für Theoretische Physik
 %C Universität Würzburg
 %@
@@ -167,7 +167,7 @@ data integrity not confirmed
 %O Book | Report
 %A Bruckner, Thomas
 %D 1997
-%T deeco -- Programmer's manual
+%T deeco — Programmer's manual
 %I Institut für Theoretische Physik der Universität Würzburg
 %C
 %@
@@ -175,7 +175,7 @@ data integrity not confirmed
 %O Book | Report
 %A Bruckner, Thomas
 %D 1997
-%T deeco -- Benutzerhandbuch
+%T deeco — Benutzerhandbuch
 %I Institut für Theoretische Physik der Universität Würzburg
 %C
 %@
@@ -186,7 +186,7 @@ data integrity not confirmed
 %A Kümmel, Reiner
 %D 1995
 %T Modeling of energy-services supply systems
-%B Energy -- The International Journal
+%B Energy
 %V 20
 %N 9
 %P 941-958

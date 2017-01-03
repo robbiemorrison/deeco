@@ -46,9 +46,8 @@ Morrison, Robbie.  2000.  Optimizing exergy-services
 Lindenberger, Dietmar, Thomas Bruckner, Helmuth-M
     Groscurth, and Reiner Kümmel.  2000.  Optimization
     of solar district heating systems: seasonal
-    storage, heat pumps, and cogeneration.  Energy --
-    The International Journal, v25 no7 p591-608.
-    doi:10.1016/S0360-5442(99)00082-1
+    storage, heat pumps, and cogeneration.  Energy,
+    v25 no7 p591-608.  doi:10.1016/S0360-5442(99)00082-1
 
 Groscurth, Helmuth-M and K-P Kress.  1998.  Fuzzy data
     compression for energy optimization models.  Energy,
@@ -82,8 +81,7 @@ Bruckner, Thomas.  1997.  'deeco' -- Benutzerhandbuch.
 
 Groscurth, Helmuth-M, Thomas Bruckner, and Reiner
     Kümmel.  1995.  Modeling of energy-services supply
-    systems.  Energy -- The International Journal, v20
-    no9 p941-958.
+    systems.  Energy, v20 no9 p941-958.
 
 Groscurth, Helmuth-M and Alf Schweiker.  1995.
     Contribution of computer models to solving the
