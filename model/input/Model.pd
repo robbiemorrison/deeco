@@ -1,0 +1,13 @@
+% Processes of the model city
+% Demand processes
+EB     , DFlucEl        , 1  , aggregate electrical energy demand
+RWB    , DRoom          , 1  , aggregate space-heat demand
+% Network processes
+NWN    , NHTrans        , 1  , medium distance heating grid
+% Import-export processes
+EIM    , PConstElImp    , 1  , import of electrical energy
+GIM    , PConstFuelImp  , 1  , import of natural gas
+% Decentral conversion processes
+GBK    , CBoiCond       , 1  , gas-fired condensing boiler
+% Central conversion processes
+BHKW   , CCogConst      , 1  , medium size cogeneration unit

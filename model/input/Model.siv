@@ -1,0 +1,9 @@
+TS   , testfile/sit-pit/Model.sit    , environment data file to use
+TP   , testfile/sit-pit/Model.pit    , demand data file to use
+PR   , results/                      , results sub-directory
+I    , 3600   , 24                   , 24 x 1h
+E    , 1                             , report time-series results
+A    , 1                             , report all results categories
+G    , CO2AE  , 1                    , CO2-equivalent optimization
+D    , 0                             , no dynamic programming
+

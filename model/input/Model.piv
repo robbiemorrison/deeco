@@ -1,0 +1,81 @@
+%-------------------------------------------------------------------------
+% Demand processes
+%-------------------------------------------------------------------------
+EB     , Count       ,    0.02024      , [1]      [own data]
+%-------------------------------------------------------------------------
+RWB    , Count       ,    0.08096      , [1]      [own data]
+RWB    , DotQRHMax   ,  124.66e6       , [W]      [own data]
+RWB    , f_RH        ,    1.0          , [1]      suitable radiators
+RWB    , T_ID        ,  293.15         , [K]      indoor temp (day)   20 degree C
+RWB    , T_IN        ,  289.15         , [K]      indoor temp (night) 16 degree C
+RWB    , TF_0        ,  363.15         , [K]      flow temperature    90 degree C
+RWB    , TR_0        ,  343.15         , [K]      return temperature  70 degree C
+RWB    , n           ,    1.33         , [1]      radiator according to [Ric82]
+RWB    , h_D         ,    7.0          , [h]
+RWB    , h_N         ,   22.0          , [h]
+%-------------------------------------------------------------------------
+% Network processes
+%-------------------------------------------------------------------------
+NWN    , eta_0       ,    0.95         , [1]      5% loss (average)
+NWN    , TF_0        ,  321.516        , [K]      average flo temp    48.37 degree C
+NWN    , TR_0        ,  314.615        , [K]      average return temp 41.47 degree C
+NWN    , T_Env       ,  288.15         , [K]      environment temp    15 degree C
+NWN    , p_El        ,  288.46         , [Ws/kg]  [Gro91], 1%
+NWN    , c_p         , 4180.0          , [J/kgK]  water
+NWN    , Flag        ,   44            , [1]
+NWN    , sFixM       ,    2.59800e-09  , [EUR/sW] (was DM)
+%-------------------------------------------------------------------------
+% Import-export processes
+%-------------------------------------------------------------------------
+EIM    , sVarM       ,  525.10000e-10  , [EUR/J]  [Sch94] (was DM)
+EIM    , sVarE       ,    3.22         , [1]      [Hes95]
+EIM    , sVarSO2     ,  141.70000e-12  , [kg/J]   [Hes95]
+EIM    , sVarNOX     ,  232.50000e-12  , [kg/J]   [Hes95]
+EIM    , sVarStaub   ,   22.80000e-12  , [kg/J]   [Hes95]
+EIM    , sVarCO2     ,  197.79000e-09  , [kg/J]   [Hes95]
+EIM    , sVarCO2AE   ,  205.21200e-09  , [kg/J]   [Hes95]
+%-------------------------------------------------------------------------
+GIM    , sVarM       ,   16.070000e-09 , [EUR/J]  [Sch94] (was DM)
+GIM    , sVarE       ,    1.08         , [1]      [Hes95]
+GIM    , sVarSO2     ,    2.00000e-12  , [kg/J]   [Hes95]
+GIM    , sVarNOX     ,   12.20000e-12  , [kg/J]   [Hes95]
+GIM    , sVarStaub   ,    0.70000e-12  , [kg/J]   [Hes95]
+GIM    , sVarCO2     ,    3.01200e-09  , [kg/J]   [Hes95]
+GIM    , sVarCO2AE   ,    6.20900e-09  , [kg/J]   [Hes95]
+%-------------------------------------------------------------------------
+% Decentral conversion processes
+%-------------------------------------------------------------------------
+GBK    , Flag        ,    4            , [1]
+GBK    , T_0         ,  273.15         , [K]      [Boc92]
+GBK    , T_Cond      ,  331.6623       , [K]      [Boc92] 58 degree C
+GBK    , A_1         ,    1.0921194    , [1]      [Boc92]
+GBK    , B_1         ,    0.00030329   , [1/K]    [Boc92]
+GBK    , C_1         ,    0.000035584  , [1/K^2]  [Boc92]
+GBK    , A_2         ,    0.9818       , [1]      [Boc92]
+GBK    , B_2         ,    0.0005       , [1/K]    [Boc92]
+GBK    , TR_Max      ,  343.15         , [K]      70 degree C
+GBK    , TR_Min      ,  273.15         , [K]       0 degree C
+GBK    , lambdaEl_H  ,    0.02         , [1]      [Gro91]
+GBK    , sVarSO2     ,    0.40000e-12  , [kg/J]   [Hes95], [VDE93]
+GBK    , sVarNOX     ,   28.80000e-12  , [kg/J]   [Hes95], [VDE93]
+GBK    , sVarStaub   ,    0.10000e-12  , [kg/J]   [Hes95], [VDE93]
+GBK    , sVarCO2     ,   55.15000e-09  , [kg/J]   [Hes95], [VDE93]
+GBK    , sVarCO2AE   ,   55.47500e-09  , [kg/J]   [Hes95], [VDE93]
+GBK    , sFixM       ,    3.15887e-09  , [EUR/sW] (was DM)
+%-------------------------------------------------------------------------
+% Central conversion processes
+%-------------------------------------------------------------------------
+BHKW   , Flag        ,     4           , without emergency cooling
+BHKW   , eta_El      ,     0.33        , [1]      [ASU94] p22 / G 620 V8
+BHKW   , eta_H       ,     0.57        , [1]      [ASU94] p22 / G 620 V8
+BHKW   , TF_Min      ,   273.15        , [K]
+BHKW   , TR_Min      ,   273.15        , [K]
+BHKW   , TF_Max      ,   363.15        , [K]      [ASU94] p22 / G 620 V8
+BHKW   , TR_Max      ,   351.15        , [K]      [ASU94] p22 / G 620 V8
+BHKW   , sVarSO2     ,     0.4e-12     , [kg/J]   [Hes95] catalyst
+BHKW   , sVarNOX     ,    63.0e-12     , [kg/J]   [Hes95]
+BHKW   , sVarStaub   ,     1.6e-12     , [kg/J]   [Hes95]
+BHKW   , sVarCO2     , 55.1500e-09     , [kg/J]   [Hes95]
+BHKW   , sVarCO2AE   , 55.6337e-09     , [kg/J]   [Hes95]
+BHKW   , sFixM       , 9.77010e-09     , [EUR/sW]
+BHKW   , sVarM       , 7.78472e-09     , [EUR/J]  [Hes95]

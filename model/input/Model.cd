@@ -1,0 +1,9 @@
+% Energy connections of the model city
+C1   , RWB   , 0  , B1  , H     , 4  , -1
+C2   , GBK   , 0  , B1  , H     , 4  ,  1
+C3   , NWN   , 0  , B1  , H     , 4  ,  1
+C4   , NWN   , 0  , B2  , H     , 4  , -1
+C5   , BHKW  , 0  , B2  , H     , 4  ,  1
+C6   , BHKW  , 0  , B3  , Fuel  , 0  , -1
+C7   , GBK   , 0  , B3  , Fuel  , 0  , -1
+C8   , GIM   , 0  , B3  , Fuel  , 0  ,  1
