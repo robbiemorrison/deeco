@@ -126,11 +126,9 @@ For background, a good place to start is Groscurth *et&nbsp;al* (1995) which des
 
 ### Contact
 
-Robbie Morrison
+Robbie Morrison / 3&nbsp;January 2017
 
 <img src="img/emad.png" height="14" alt="." style="display: inline-block">
-
-3&nbsp;January 2017
 
 ----
 
