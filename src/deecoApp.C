@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/09/30 18:54:45 $
 //  $Author: deeco $
 //  $RCSfile: deecoApp.C,v $
-
 
 /////////////////////////////////////////////////////////////////
 //
@@ -47,12 +45,10 @@
 //
 /////////////////////////////////////////////////////////////////
 
-
 #include "deecoApp.h"
 #include <stdlib.h>           // for use of exit function
 #include <Path.h>             // path name Management
 #include <math.h>             // for floating point error management
-
 
 //// deecoApp
 // Standard constructor
@@ -72,7 +68,6 @@ deecoApp::deecoApp(void)
   actualAggVal     = NULL;
   actualNet        = NULL;
 }
-
 
 //// deecoApp
 //
@@ -101,7 +96,6 @@ deecoApp::deecoApp(App* cdApp)
   actualNet        = NULL;
 }
 
-
 //// ~deecoApp
 //
 deecoApp::~deecoApp(void)
@@ -114,7 +108,6 @@ deecoApp::~deecoApp(void)
         dApp->message(1002, "deecoApp");
     }
 }
-
 
 //// run
 //
@@ -129,9 +122,7 @@ void deecoApp::run(void)
     runScenarios();                             // help function, see below
 }
 
-
 /////////// help functions /////////////////////////////////////////////
-
 
 //// runScenarios
 // run all scenarios
@@ -167,7 +158,6 @@ void deecoApp::runScenarios(void)
         }
     }
 }
-
 
 //// scan
 // Scanning of one process parameter
@@ -223,7 +213,6 @@ void deecoApp::scan(String scenId)
                       + " " + actualScenVal->scanParaName.the_string());
     }
 }
-
 
 //// prepareDef
 // Prepare the run of all scenarios
@@ -283,7 +272,6 @@ void deecoApp::prepareDef(void)
   actualAggDef->read(aggDefFileName);
 }
 
-
 //// finishDef
 // finish run
 //
@@ -295,7 +283,6 @@ void deecoApp::finishDef(String scenId)
   if (actualProcDef)    delete actualProcDef;
   dApp->message(1006, scenId);
 }
-
 
 //// prepareVal
 // prepare ioValue objects
@@ -465,7 +452,6 @@ void deecoApp::prepareVal(String scenId)
 
 }
 
-
 //// resultVal
 // show result-data of  ioValue objects
 //
@@ -515,7 +501,6 @@ void deecoApp::resultVal(String scenId, int scenScanF, double scenScanV)
                            scenScanV);
   actualScenVal->clearResults();
 }
-
 
 //// calcPercentage
 // calculate percentage of supply or demand
@@ -701,7 +686,6 @@ void deecoApp::calcPercentage(void)
         }
     }
 }
-
 
 //// transferOutValMap
 // transfer mean values from processes to outValMap
@@ -970,7 +954,6 @@ void deecoApp::transferOutValMap(void)
     }
 }
 
-
 //// finishVal
 // finish ioValue objects
 //
@@ -982,7 +965,6 @@ void deecoApp::finishVal(void)
   if (actualProcVal)    delete actualProcVal;
   if (actualScenVal)    delete actualScenVal;
 }
-
 
 //// prepareNet
 // Prepare the energy supply net object
@@ -1000,7 +982,6 @@ void deecoApp::prepareNet(String scenId)
   actualProcVal->inValMap.make_empty();                // save storage
 }
 
-
 //// finishNet
 // finish the net object
 //
@@ -1010,9 +991,7 @@ void deecoApp::finishNet(void)
   if (actualNet) delete actualNet;
 }
 
-
 //////// run a single scenario //////////////////////////////
-
 
 //// runIntervals
 // run scenario with actual input values
@@ -1024,7 +1003,6 @@ void deecoApp::runIntervals(String scenId)
   else
     runIntervalsQuasi(scenId);     // quasi-dynamic optimization
 }
-
 
 //// runIntervalsDyn
 // run scenario with actual input values; dynamic optimization
@@ -1129,7 +1107,6 @@ void deecoApp::runIntervalsQuasi(String scenId)
   if (actualScenTs) delete actualScenTs;
 }
 
-
 //// optimize
 // optimizing in one time interval (including several subintervals of variable
 // length)
@@ -1156,7 +1133,6 @@ deecoApp::optimize(ScenTsPack* ScenTsPack,
   actualNet->transferOutTsPack(oProcTsPack);
 }
 
-
 //  Robbie: 02.09.05: Notes about ISO C++ modifications.
 //
 //  Path calls:
@@ -1174,7 +1150,5 @@ deecoApp::optimize(ScenTsPack* ScenTsPack,
 //       Set_of_p <DEdge> temp01 = procMapIt.curr()->value->in_edges();
 //       Set_of_piter <DEdge> inEdgeIt( temp01 );
 
-
 //  $Source: /home/deeco/source/deeco006/RCS/deecoApp.C,v $
 //  end of file
-

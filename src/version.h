@@ -34,7 +34,6 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // HEADER FILE FOR VERSION INFORMATION
@@ -43,13 +42,10 @@
 
 // Note: this file does not have an associated .C file.
 
-
 #ifndef _VERSION_             // header guard
 #define _VERSION_
 
-
 #include "App.h"
-
 
 // const String DEECO_VERSION_STRING = "006";
    const String DEECO_VERSION_STRING = "006";
@@ -65,6 +61,4 @@
 // Additional compile-time information can be found by
 // running the binary and reading the start-up text.
 
-
 #endif  // _VERSION_
-

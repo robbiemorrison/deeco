@@ -34,7 +34,6 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // SIMPLEX ALGORITHM
@@ -48,16 +47,13 @@
 // It uses: simplx.c, simp1.c, simp2.c, simp3.c, nrutil.c
 // Attention! simplx() searchs for a maximum
 
-
 // /* Driver for routine simplx */
 
 #define NRANSI
 
-
 #include "Simplex.h"
 #include "TestFlag.h"
 #include <iomanip.h>
-
 
 // Robbie: 21.02.05: Compiler upgrade modifications.
 //
@@ -92,18 +88,15 @@
 #include "simp2.c"
 #include "simp3.c"
 
-
 #undef float              // necessary because the simplex routines
                           // of the Numerical Recipes work with float
                           // (see p.22, Numerical Recipes)
-
 
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: Simplex
 //
 ///////////////////////////////////////////////////////////////////
-
 
 //// Simplex
 // Standard Constructor
@@ -124,7 +117,6 @@ Simplex::Simplex(void)
   sApp    = NULL;
   errorFlag = 0;
 }
-
 
 //// Simplex
 // Constructor
@@ -154,7 +146,6 @@ Simplex::Simplex(App* csApp, int cN, int cM, int cM1, int cM2, int cM3)
   iposv = ivector(1, M);                // "nrutil.c", allocates an int
                                         // vector with range [1..M]
 
-
   if (sApp->testFlag)
     {
       sApp->message(1001, "Simplex");
@@ -163,13 +154,11 @@ Simplex::Simplex(App* csApp, int cN, int cM, int cM1, int cM2, int cM3)
 
 }
 
-
 //// ~Simplex
 // Destructor
 //
 Simplex::~Simplex(void)
 {
-
 
   free_matrix(aMatrix, 1, M+2, 1, N+1); // "nrutil.c", frees a matrix allocated
                                         // with matrix(), see above
@@ -183,7 +172,6 @@ if (sApp != 0)
       sApp->message(1002, "Simplex");
   }
 }
-
 
 // optimization with Simplex
 //
@@ -225,7 +213,6 @@ void Simplex::runSimplex(int intCount)
 
 }
 
-
 //// showMatrix
 // show aMatrix
 //
@@ -247,7 +234,6 @@ void Simplex::showMatrix(int energyFlowCount, int constraintCount)
     }
 }
 
-
 //// error
 // error management
 //
@@ -259,10 +245,8 @@ int Simplex::error(void)
     return 0;
 }
 
-
 #undef NRANSI
 
 // /* (C) Copr. 1986-92 Numerical Recipes Software 5.){2ptN75L:"52'. */
 
 // end of file
-

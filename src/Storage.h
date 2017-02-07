@@ -34,13 +34,11 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO STORAGE-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
-
 
 #ifndef _STOR_                // header guard
 #define _STOR_
@@ -52,7 +50,6 @@
 #include <String.h>           // easy string management
 #include <Symbol.h>           // use Symbol instead of String for keys
 #include <Map.h>              // associative array
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -115,7 +112,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: SSupEl
@@ -169,7 +165,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: SSenHn
@@ -197,7 +192,7 @@ public:
   virtual ~SSenHn(void);
 // update procOutTsPack after each optimization
   virtual void updateProcOutTsPack(double  actualIntLength,
-				   double intLength);
+                                   double intLength);
 // actualize attributes of exit side
    virtual void actualExJ(const Map<Symbol,double> & pVecU);
 // actualize attributes of entrance side
@@ -205,12 +200,12 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
   virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				  double actualIntLength);
+                                  double actualIntLength);
 // set initial state variables
   virtual void initState(void);
 // actualize state variables (1 = change is not too large)
   virtual int actualState(double & actualIntLength,
-			  const Map<Symbol,double> & pVecU);
+                          const Map<Symbol,double> & pVecU);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -219,8 +214,8 @@ public:
   virtual Symbol showPower(Symbol & showPowerType, Symbol & showPowerNumber);
 // add process-dependent fix costs to the fix costs vector
   virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 
  protected:
 
@@ -248,7 +243,6 @@ MapSym2d f_F_sum, f_R_sum;
 MapSym2d T_quot_F, T_quot_R;
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -277,7 +271,7 @@ public:
   virtual ~SSenHnHEx(void);
 // update procOutTsPack after each optimization
   virtual void updateProcOutTsPack(double  actualIntLength,
-				   double intLength);
+                                   double intLength);
 // actualize attributes of exit side
    virtual void actualExJ(const Map<Symbol,double> & pVecU);
 // actualize attributes of entrance side
@@ -285,12 +279,12 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
   virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				  double actualIntLength);
+                                  double actualIntLength);
 // set initial state variables
   virtual void initState(void);
 // actualize state variables (1 = change is not too large)
   virtual int actualState(double & actualIntLength,
-			  const Map<Symbol,double> & pVecU);
+                          const Map<Symbol,double> & pVecU);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -299,8 +293,8 @@ public:
   virtual Symbol showPower(Symbol & showPowerType, Symbol & showPowerNumber);
 // add process-dependent fix costs to the fix costs vector
   virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 
  protected:
 
@@ -329,7 +323,5 @@ MapSym2d f_F_sum, f_R_sum;
 MapSym2d T_quot_F, T_quot_R;
 
 };
-
-
 
 #endif  // _STOR_

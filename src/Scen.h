@@ -34,19 +34,16 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 16:55:45 $
 //  $Author: morrison $
 //  $RCSfile: Scen.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
 // DEECO SCENARIO MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
-
 
 #ifndef _SCEN_H_              // header guard
 #define _SCEN_H_
@@ -57,13 +54,11 @@
 #include       <Path.h>       // necessary for right instantiation of <Symbol.h> and <Map.h>
 #include    <fstream.h>       // file I/O
 
-
 #include        "App.h"
 #include       "Data.h"
 #include       "Proc.h"
 #include      "Balan.h"
 #include    "Connect.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -95,7 +90,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ScenTs
@@ -117,7 +111,6 @@ public:
 protected:
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -187,10 +180,7 @@ protected:
 
 };
 
-
 #endif  // _SCEN_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Scen.h,v $
 //  end of file
-

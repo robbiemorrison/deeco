@@ -34,13 +34,11 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO PROCESS TYPE MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
-
 
 #include "ProcType.h"
 #include <stdlib.h>           // for use of exit function
@@ -51,13 +49,11 @@
 #include "Convers.h"          // conversion processes
 #include "Network.h"          // network processes
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: ProcType
 //
 ///////////////////////////////////////////////////////////////////
-
 
 //// ProcType
 // Standard Constructor
@@ -67,7 +63,6 @@ ProcType::ProcType(void)
   pApp      = NULL;
   errorFlag = 0;
 }
-
 
 //// ProcType
 // Constructor
@@ -82,7 +77,6 @@ ProcType::ProcType(App* cpApp)
   errorFlag = 0;
 }
 
-
 //// ~ProcType
 // Destructor
 //
@@ -94,7 +88,6 @@ if (pApp != 0)
       pApp->message(1002, "ProcType");
   }
 }
-
 
 //// prepareProcess
 // search for each process type the corresponding
@@ -116,18 +109,15 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
   // in the following access/allocation; Proc( ) replace, through/by
   // type1( ) include files not forget.
 
-
     if (procType == "0")
       {
         p = new Proc(pApp,procId,procType,nProcVal);
         j++;
       }
 
-
 ///////////////////////////////////////////////////////////////////
 //                    MODULE REGISTRATION                        //
 ///////////////////////////////////////////////////////////////////
-
 
 // Template for each new process type (also called technology module):
 //
@@ -137,9 +127,7 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
 //      j++;
 //    }
 
-
 // Demand processes:
-
 
    if (procType == "DConstEl")
       {
@@ -233,7 +221,6 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
 
 // Conversion processes:
 
-
    if (procType == "CBoiConst")
       {
         p = new CBoiConst(pApp,procId,procType,nProcVal);
@@ -314,7 +301,6 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
 
 // Import-Export processes:
 
-
    if (procType == "PConstElImp")
       {
         p = new PConstElImp(pApp,procId,procType,nProcVal);
@@ -351,9 +337,7 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
         j++;
       }
 
-
 // Collector processes:
-
 
    if (procType == "OSol")
       {
@@ -393,7 +377,6 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
 
 // Storage processes:
 
-
    if (procType == "SSenH")
       {
         p = new SSenH(pApp,procId,procType,nProcVal);
@@ -419,7 +402,6 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
       }
 
 // Network processes
-
 
   if (procType == "NBW")
     {
@@ -517,9 +499,7 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
       j++;
     }
 
-
 // perform some tests:
-
 
   if (j == 0)
         {
@@ -538,8 +518,4 @@ Proc* ProcType::prepareProcess(App* pApp, Symbol procId, Symbol procType,
 
 };
 
-
 // end of file
-
-
-

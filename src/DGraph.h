@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO GRAPH MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _DGRA_                // header guard
 #define _DGRA_
-
 
 #include "Data.h"
 #include <Symbol.h>           // compiler options -l++, -I/usr/include/SC
@@ -55,10 +52,8 @@
 #include <Graph_alg.h>        // Graph algorithms
                               // compiler options -lGA, -I/usr/include/SC
 
-
 // Note from Robbie: the compiler options listed above apply to the
 // HP-UX settings.  Read the current makefile for updated information.
-
 
 // Important: the package <Graph.h> uses parameterized macros to simulate
 // templates!  This places restrictions on the syntax that can be used.
@@ -76,12 +71,10 @@
 // -- MSc thesis". Otago University, New Zealand, appendix C.2 for
 // further details and sample code.
 
-
 // Attention: insertion of spaces in the argument list is not permitted
 // in macro calls, neither is a ";" at the end required.
 
 Graphdeclare1(DGraph,DVertex,DEdge)     // macro invocation <Graph.h>
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -118,7 +111,6 @@ public:
 derivedVertex(DGraph,DVertex,DEdge) // macro invocation <Graph.h>
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -165,7 +157,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: DGraph
@@ -190,11 +181,7 @@ protected:
 
 };
 
-
 Graphdeclare2(DGraph,DVertex,DEdge)       // macro invocation <Graph.h>
 Graph_algdeclare(DGraph,DVertex,DEdge)    // macro invocation <Graph_alg.h>
 
-
 #endif  // _DGRA_
-
-

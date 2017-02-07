@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO IMPORT-EXPORT-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Port.h"
 #include <math.h>
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -54,7 +51,6 @@
 // fabs() -> <math.h>
 
 #define REL_EPS  10e14
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -68,14 +64,12 @@
 // Summary: import of electrical energy from a surrounding
 // energy-supply system, which is time independent
 
-
 //// PConstElImp
 // Standard Constructor
 //
 PConstElImp::PConstElImp(void)
 {
 }
-
 
 //// PConstElImp
 // Constructor
@@ -97,7 +91,6 @@ PConstElImp::PConstElImp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PConstElImp");
 }
 
-
 //// ~PConstElImp
 // Destructor
 //
@@ -109,7 +102,6 @@ PConstElImp::~PConstElImp(void)
         procApp->message(1002, "PConstElImp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -141,7 +133,6 @@ void PConstElImp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PConstElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -150,7 +141,6 @@ Symbol PConstElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -164,14 +154,12 @@ Symbol PConstElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: export of electrical energy to a surrounding
 // energy-supply system, which is time independent
 
-
 //// PConstElExp
 // Standard Constructor
 
 PConstElExp::PConstElExp(void)
 {
 }
-
 
 //// PConstElExp
 // Constructor
@@ -193,7 +181,6 @@ PConstElExp::PConstElExp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PConstElExp");
 }
 
-
 //// ~PConstElExp
 // Destructor
 //
@@ -205,7 +192,6 @@ PConstElExp::~PConstElExp(void)
         procApp->message(1002, "PConstElExp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -237,7 +223,6 @@ void PConstElExp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PConstElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -246,7 +231,6 @@ Symbol PConstElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -260,14 +244,12 @@ Symbol PConstElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: import of chemical energy from a surrounding
 // energy-supply system, which is time independent
 
-
 //// PConstFuelImp
 // Standard Constructor
 //
 PConstFuelImp::PConstFuelImp(void)
 {
 }
-
 
 //// PConstFuelImp
 // Constructor
@@ -289,7 +271,6 @@ PConstFuelImp::PConstFuelImp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PConstFuelImp");
 }
 
-
 //// ~PConstFuelImp
 // Destructor
 //
@@ -301,7 +282,6 @@ PConstFuelImp::~PConstFuelImp(void)
         procApp->message(1002, "PConstFuelImp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -334,7 +314,6 @@ void PConstFuelImp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PConstFuelImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -343,7 +322,6 @@ Symbol PConstFuelImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -357,14 +335,12 @@ Symbol PConstFuelImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: import of electrical energy from a surrounding
 // energy-supply system, which is time dependent
 
-
 //// PFlucElImp
 // Standard Constructor
 //
 PFlucElImp::PFlucElImp(void)
 {
 }
-
 
 //// PFlucElImp
 // Constructor
@@ -381,7 +357,6 @@ PFlucElImp::PFlucElImp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PFlucElImp");
 }
 
-
 //// ~PFlucElImp
 // Destructor
 //
@@ -393,7 +368,6 @@ PFlucElImp::~PFlucElImp(void)
         procApp->message(1002, "PFlucElImp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -430,7 +404,6 @@ void PFlucElImp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PFlucElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -439,7 +412,6 @@ Symbol PFlucElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -453,14 +425,12 @@ Symbol PFlucElImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: export of electrical energy to a surrounding
 // energy-supply system, which is time dependent
 
-
 //// PFlucElExp
 // Standard Constructor
 //
 PFlucElExp::PFlucElExp(void)
 {
 }
-
 
 //// PFlucElExp
 // Constructor
@@ -477,7 +447,6 @@ PFlucElExp::PFlucElExp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PFlucElExp");
 }
 
-
 //// ~PFlucElExp
 // Destructor
 //
@@ -489,7 +458,6 @@ PFlucElExp::~PFlucElExp(void)
         procApp->message(1002, "PFlucElExp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -526,7 +494,6 @@ void PFlucElExp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PFlucElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -535,7 +502,6 @@ Symbol PFlucElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -549,14 +515,12 @@ Symbol PFlucElExp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: import of chemical energy from a surrounding
 // energy-supply system, which is time dependent
 
-
 //// PFlucFuelImp
 // Standard Constructor
 //
 PFlucFuelImp::PFlucFuelImp(void)
 {
 }
-
 
 //// PFlucFuelImp
 // Constructor
@@ -573,7 +537,6 @@ PFlucFuelImp::PFlucFuelImp(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "PFlucFuelImp");
 }
 
-
 //// ~PFlucFuelImp
 // Destructor
 //
@@ -585,7 +548,6 @@ PFlucFuelImp::~PFlucFuelImp(void)
         procApp->message(1002, "PFlucFuelImp");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -623,7 +585,6 @@ void PFlucFuelImp::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol PFlucFuelImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -633,7 +594,4 @@ Symbol PFlucFuelImp::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   return "Ex";
 }
 
-
 // end of file
-
-

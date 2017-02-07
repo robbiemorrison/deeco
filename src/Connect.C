@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 13:31:16 $
 //  $Author: morrison $
 //  $RCSfile: Connect.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,14 +45,11 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include     <stdlib.h>       // exit()
 #include  <strstream.h>       // string streams
 
-
 #include   "TestFlag.h"
 #include    "Connect.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -102,7 +97,6 @@ ConnectDefRec::ConnectDefRec(App* cmApp)
 #endif
 }
 
-
 ////~ConnectDefRec
 // Destructor
 //
@@ -117,7 +111,6 @@ ConnectDefRec::~ConnectDefRec(void)
 #endif
 }
 
-
 //// operator<<
 // write connection definition record
 //
@@ -128,13 +121,11 @@ ostream& operator<<(ostream& os, const  ConnectDefRec& dr)
   return os;
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // Class: ConnectDef
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ConnectDef
 // Standard Constructor
@@ -144,7 +135,6 @@ ConnectDef::ConnectDef(void)
   // no content, call ioDefValue(void)
 }
 
-
 //// ConnectDef
 // Constructor
 //
@@ -153,7 +143,6 @@ ConnectDef::ConnectDef(App * cDefApp, String dTN) : ioDefValue(cDefApp, dTN)
   // no contents
 }
 
-
 //// ~ConnectDef
 // Constructor
 //
@@ -161,7 +150,6 @@ ConnectDef::~ConnectDef(void)
 {
   // no content, call ioDefValue(void)
 }
-
 
 //// writeInput
 // write input data (control)
@@ -186,7 +174,6 @@ void ConnectDef::writeInput(void)
 #endif
 }
 
-
 //// selected
 // selection check
 //
@@ -203,9 +190,7 @@ int ConnectDef::selected(Symbol sId)
     return 0;
 }
 
-
 ///////////////// help function ////////////////////
-
 
 //// readRecord
 // read data record from definition file
@@ -236,7 +221,5 @@ void ConnectDef::readRecord(void)
   ioApp->ignoreRestLine(finData);     //"App.h"
 }
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Connect.C,v $
 //  end of file
-

@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO DEMAND-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _DEMA_                // header guard
 #define _DEMA_
-
 
 #include "App.h"
 #include "Data.h"
@@ -53,7 +50,6 @@
 #include <String.h>           // easy string management
 #include <Symbol.h>           // use Symbol instead of String for keys
 #include <Map.h>              // associative array
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -91,7 +87,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DConstMech
@@ -127,7 +122,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -166,7 +160,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -207,7 +200,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: DConstWH
@@ -245,7 +237,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -285,7 +276,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DFlucEl
@@ -322,7 +312,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DFlucMech
@@ -358,7 +347,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -397,7 +385,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -438,7 +425,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DFlucWH
@@ -476,7 +462,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -516,7 +501,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: DRoom
@@ -555,7 +539,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DNet4Room
@@ -583,7 +566,7 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
     virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				    double actualIntLength);
+                                    double actualIntLength);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -591,7 +574,6 @@ public:
 // of showPowerType and showPowerNumber
   virtual Symbol showPower(Symbol & showPowerType, Symbol & showPowerNumber);
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -619,7 +601,7 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
    virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				   double actualIntLength);
+                                   double actualIntLength);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -627,11 +609,7 @@ public:
 // of showPowerType and showPowerNumber
   virtual Symbol showPower(Symbol & showPowerType, Symbol & showPowerNumber);
 
-
 protected:
 };
 
-
-
 #endif // _DEMA_
-

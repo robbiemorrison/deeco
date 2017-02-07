@@ -34,19 +34,16 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.4 $
 //  $Date: 2005/11/25 12:22:43 $
 //  $Author: morrison $
 //  $RCSfile: App.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
 // GENERAL APPLICATION OBJECTS
 //
 //////////////////////////////////////////////////////////////////
-
 
 #include   <iostream.h>       // input-output management
 #include       <time.h>       // time and date
@@ -60,10 +57,8 @@
 #include     <string>         // std::string
 #include    <sstream>         // string streams of class std::ostringstream
 
-
 #include   "TestFlag.h"       // for _TEST_, but can also be included via CC call
 #include        "App.h"
-
 
 // Robbie: 10.02.03: forward declarations for new non-member helper functions
 //
@@ -74,7 +69,6 @@ static String GetRunTimeInfo();                   // assemble run-time info
 static String GetAdditionalInfo();                // assemble additional info
 static String GetLegalInfo();                     // assemble legal info
 
-
 /////////////////////////////////////////////////////////////////
 //
 //  CLASS: App
@@ -84,7 +78,6 @@ static String GetLegalInfo();                     // assemble legal info
 // Summary: program unspecific parts of an application program
 // including simple message control, error handling and basic
 // functions for data input
-
 
 //// App
 // Standard Constructor
@@ -104,7 +97,6 @@ App::App(void)
   if (testFlag)
     message(1001, "App (Standard)");
 };
-
 
 //// App
 //   Constructor
@@ -196,7 +188,6 @@ App::App(int lF, int eF, int sF, int tF, String aN, String lFN, String mFN,
   // writeMessage(pTime);               // write time and date
 }
 
-
 //// ~App
 //   Destructor
 //
@@ -254,7 +245,6 @@ App::~App(void)
   // Robbie: 24.11.05: HP-UX beeper code removed, see release 006 otherwise.
 }
 
-
 //// message
 // simple message handling
 //
@@ -293,7 +283,6 @@ void App::message(int i, String Msg)
     }
 }
 
-
 //// ignoreRestLine
 // data-Input
 // read a line of a file until line end or file end is reached
@@ -312,7 +301,6 @@ void App::ignoreRestLine(ifstream& fin)           // <fstream.h>
         }
     }
 }
-
 
 //// emptyLine
 // data-input
@@ -340,7 +328,6 @@ int App::emptyLine(ifstream& fin)                 // <fstream.h>
     return 1;
 }
 
-
 //// readComma
 // read only one comma
 //
@@ -362,9 +349,7 @@ int App::readComma(ifstream& fin)
     return 1;
 }
 
-
 /////////////////// help routines (protected) /////////////////////
-
 
 //// writeMessage
 //
@@ -376,25 +361,24 @@ void App::writeMessage(String wMsg)
       if (foutLog.fail())                           // <fstream.h>
         {
           if (!silentFlag)
-            cerr << "Unable to write in log file\n" 
+            cerr << "Unable to write in log file\n"
                  << flush;    // Robbie: 23.09.05: Added flush.
                               // message should not be buffered
         }
       else
         {
-          foutLog << wMsg 
-                  << "\n" 
+          foutLog << wMsg
+                  << "\n"
                   << flush;   // Robbie: 23.09.05: Added flush.
           foutLog.close();
         }
     }
   if (!silentFlag)
-    cerr << wMsg 
-         << "\n" 
+    cerr << wMsg
+         << "\n"
          << flush;            // Robbie: 23.09.05: Added flush.
                               // message should not be buffered
 }
-
 
 //// readMessageFileLine
 // read a message specified by the number i from message file
@@ -452,9 +436,7 @@ String App::readMessageFileLine(int i)
     }
 }
 
-
 ///////////// additional help routines (non-member) ////////////////
-
 
 // Robbie: 1998: revised beeper function using 'bel' char (ASCII 7)
 //
@@ -468,10 +450,9 @@ beepa()
     {
 //    write(1, "\007", 1);       // noisy beepa
       write(1, "BBEEP! ", 7);    // noiseless beepa
-    } 
-    write(1, "\n", 1);           
+    }
+    write(1, "\n", 1);
 }
-
 
 // Robbie: 10.02.03: Create compile-time information.
 //
@@ -592,7 +573,6 @@ GetCompileTimeInfo(String dvs)                    // dvs is deeco version string
     return output;
 }
 
-
 // Robbie: 10.02.03: Create run-time information.
 //
 // This function returns a string containing run-time information.
@@ -686,9 +666,7 @@ GetRunTimeInfo()
     return output;
 }
 
-
 /////////////////// users should modify these messages ////////////
-
 
 // Robbie: 10.02.03: Create additional information.
 //
@@ -711,7 +689,6 @@ GetAdditionalInfo()
 
     return output;
 }
-
 
 // Robbie: 24.02.03: Create legal information.
 //
@@ -737,7 +714,5 @@ GetLegalInfo()
     return output;
 }
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/App.C,v $
 //  end of file
-

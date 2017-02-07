@@ -34,19 +34,16 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO APPLICATION OBJECT
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _DEECOAPP_            // header guard
 #define _DEECOAPP_
 
 #define EPSOPT 10e-6          // for (double == 0) comparisons
-
 
 #include "App.h"
 #include "Data.h"
@@ -55,7 +52,6 @@
 #include "Proc.h"
 #include "Balan.h"
 #include "Connect.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -66,7 +62,6 @@
 // Module author: Thomas Bruckner
 //
 // Summary: 'deeco' application object
-
 
 class deecoApp
 {
@@ -151,6 +146,4 @@ protected:
 
 };
 
-
 #endif  // _DEECOAPP_
-

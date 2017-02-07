@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 13:11:40 $
 //  $Author: morrison $
 //  $RCSfile: Balan.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,14 +45,11 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include     <stdlib.h>       // exit()
 #include  <strstream.h>       // string streams
 
-
 #include      "Balan.h"
 #include   "TestFlag.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -66,7 +61,6 @@
 // Map<class X,class Y>; according to USL C++ Standards Components,
 // Rel. 3.0, p9-3 the constructor of the class Y is not allowed
 // to require arguments
-
 
 //// BalanDefRec
 // Standard Constructor
@@ -97,7 +91,6 @@ BalanDefRec::BalanDefRec(App* cmApp)
 #endif
 }
 
-
 //// ~BalanDefRec
 // Destructor
 //
@@ -112,7 +105,6 @@ BalanDefRec::~BalanDefRec(void)
 #endif
 }
 
-
 //// operator<<
 // write balance definition record
 //
@@ -122,13 +114,11 @@ ostream& operator<<(ostream& os, const BalanDefRec& dr)
   return os;
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // Class: BalanDef
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// BalanDef
 // Standard
@@ -138,7 +128,6 @@ BalanDef::BalanDef(void)
   // no content, call ioDefValue(void)
 }
 
-
 //// BalanDef
 //
 BalanDef::BalanDef(App * cDefApp, String dTN) : ioDefValue(cDefApp, dTN)
@@ -146,14 +135,12 @@ BalanDef::BalanDef(App * cDefApp, String dTN) : ioDefValue(cDefApp, dTN)
   // no contents
 }
 
-
 //// ~BalanDef
 //
 BalanDef::~BalanDef(void)
 {
   // no content, call ~ioDefValue(void)
 }
-
 
 //// writeInput
 // write input data (control)
@@ -164,9 +151,9 @@ void BalanDef::writeInput(void)
   if (ioApp->testFlag)
     {
       ostrstream ssBalanDefVal;                // <strstream.h>
-      ssBalanDefVal << ioDataName 
+      ssBalanDefVal << ioDataName
                     << " : "
-                    << defMap     
+                    << defMap
                     << "\n"
                     << ends;
       char* pBalanDefVal = ssBalanDefVal.str();
@@ -177,7 +164,6 @@ void BalanDef::writeInput(void)
     }
 #endif
 }
-
 
 //// selected
 // selection check
@@ -195,9 +181,7 @@ int BalanDef::selected(Symbol sId)
     return 0;
 }
 
-
 ///////////////// help function ////////////////////
-
 
 //// readRecord
 // read data record from definition file
@@ -222,7 +206,6 @@ void BalanDef::readRecord(void)
   ioApp->ignoreRestLine(finData); //  "App.h"
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: Balan
@@ -230,7 +213,6 @@ void BalanDef::readRecord(void)
 //////////////////////////////////////////////////////////////////
 
 // Summary: object for modelling energy balances
-
 
 //// Balan
 // Standard Constructor
@@ -244,7 +226,6 @@ Balan::Balan(void)
   balanApp = NULL;
   meanDotE = 0;
 }
-
 
 //// Balan
 // Constructor
@@ -261,7 +242,6 @@ Balan::Balan(App* cBalanApp, Symbol balanId, Symbol eFType,
       balanApp->message(1001, "Balan");
 }
 
-
 //// ~Balan
 // Destructor
 //
@@ -274,8 +254,5 @@ Balan::~Balan(void)
     }
 }
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Balan.C,v $
 // end of file
-
-

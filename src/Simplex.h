@@ -34,7 +34,6 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // SIMPLEX ALGORITHM MANAGEMENT OPJECT
@@ -44,10 +43,8 @@
 // see: Press et al., "Numerical Recipes in C", Cambridge
 // University Press, Cambridge (1988)
 
-
 #ifndef _DSIM_                // header guard
 #define _DSIM_
-
 
 #include "App.h"
 
@@ -63,7 +60,6 @@
                               // (see p.22, Numerical Recipes)
 
 #include <stdio.h>
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -100,6 +96,4 @@ protected:
 
 };
 
-
 #endif  // _DSIM_
-

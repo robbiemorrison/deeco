@@ -34,13 +34,11 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO PROCESS TYPE MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
-
 
 #ifndef _DPROCTYP_            // header guard
 #define _DPROCTYP_
@@ -49,7 +47,6 @@
 #include "Data.h"
 #include "Proc.h"
 #include <Symbol.h>           // string key management
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -77,6 +74,4 @@ protected:
 
 };
 
-
 #endif  // _DPROCTYP_
-

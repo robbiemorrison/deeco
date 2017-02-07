@@ -34,7 +34,6 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // HEADER FILE FOR COMPILE-SENSITIVE TESTING
@@ -43,13 +42,10 @@
 
 // Note: this file does not have an associated .C file.
 
-
 #ifndef _TESTING_             // header guard
 #define _TESTING_
 
-
 // #define _TEST_
-
 
 // Users should comment-out the above line as required.
 //
@@ -57,6 +53,4 @@
 // run-time.  It should be commented out (//) if this
 // kind of reporting is not required.
 
-
 #endif  // _TESTING_
-

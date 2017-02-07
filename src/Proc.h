@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/11/25 16:45:08 $
 //  $Author: morrison $
 //  $RCSfile: Proc.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,10 +45,8 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _PROC_H_              // header guard
 #define _PROC_H_
-
 
 #include     <String.h>
 #include     <Symbol.h>       // use Symbol not String for keys
@@ -62,12 +58,9 @@
 //
 // #include <List.h>          // list management
 
-
 #include        "App.h"
 #include       "Data.h"
 #include     "DGraph.h"
-
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -105,7 +98,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ProcDef
@@ -138,7 +130,6 @@ protected:
     virtual void readRecord(void);
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -311,10 +302,7 @@ private:
 
 };
 
-
 #endif  // _PROC_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Proc.h,v $
 //  end of file
-

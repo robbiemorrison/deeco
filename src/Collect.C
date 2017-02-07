@@ -34,18 +34,15 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO COLLECTOR-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Collect.h"
 #include <math.h>
 #include <float.h>              // for use of DBL_MAX
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -59,7 +56,6 @@
 // Summary: solar thermal energy, flate plate collector,
 // no heat exchanger, linear efficiency dependency
 
-
 //// OSol
 // Standard Constructor
 //
@@ -68,7 +64,6 @@ OSol::OSol(void)
   x1 = 0;
   x2 = 0;
 }
-
 
 //// OSol
 // Constructor
@@ -116,7 +111,6 @@ OSol::OSol(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "OSol");
 }
 
-
 //// ~OSol
 // Destructor
 //
@@ -128,7 +122,6 @@ OSol::~OSol(void)
         procApp->message(1002, "OSol");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -183,7 +176,6 @@ void OSol::actualExJ(const Map<Symbol,double>& pVecU)
 
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
 // rhs before optimization
@@ -206,7 +198,6 @@ void OSol::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[2]["En"]["El"]["0"] = 1;
   equalConstraintCoef[2]["Ex"]["H"]["0"] = -x2;
 }
-
 
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
@@ -242,7 +233,6 @@ void OSol::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: OSolHEx
@@ -254,7 +244,6 @@ void OSol::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
 //
 // Summary: Solar Thermal Energy Flate Plate Collector
 // linear efficiency dependency WITH Heat Exchanger
-
 
 //// OSolHEx
 // Standard Constructor
@@ -386,7 +375,6 @@ else
 if (x1 < (procInValMap["Gamma"]*y))
   x1 = 0;
 
-
 y = x1/(procInValMap["DotMOverA_c"]*procInValMap["A_c"]*procInValMap["c_p"]);
 
 vecJ["0"]["Ex"]["Out"]["F"]["T"] = y + T_REx;
@@ -415,12 +403,10 @@ void OSolHEx::actualSimplexInput(const Map<Symbol,double> & pVecU,
   equalConstraintCoef[2]["Ex"]["H"]["0"] = -x2;
 }
 
-
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
 // the specific fix costs of collectors are not based on power
 // but on collector area
-
 
 void OSolHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
@@ -451,7 +437,6 @@ void OSolHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: OPVSol
@@ -462,7 +447,6 @@ void OSolHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 // Development thread: S04
 //
 // Summary: Photovoltaic Electric Energy
-
 
 //// OPVSol
 // Standard Constructor
@@ -513,7 +497,6 @@ OPVSol::OPVSol(App* cProcApp, Symbol procId, Symbol cProcType,
   if (!procInValMap.element("Count"))
     procInValMap["Count"]=1;
 
-
       if (procInValMap["Flag"]          <  0    ||
           procInValMap["Flag"]          >  1    ||
           procInValMap["A_m"]           == 0    ||
@@ -556,7 +539,6 @@ OPVSol::~OPVSol(void)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
@@ -570,7 +552,6 @@ void OPVSol::actualSimplexInput(const Map<Symbol,double> & pVecU,
                                              // nach Duffie und Beckmann [Duf74]
         else
                 procApp->message(62, " W");
-
 
 // Berechnung der Modultemperatur
 
@@ -598,8 +579,6 @@ void OPVSol::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
         else
                 procApp->message(62, " I");
-
-
 
 // Berechnung der Modulleistung
 
@@ -652,7 +631,6 @@ void OPVSol::actualSimplexInput(const Map<Symbol,double> & pVecU,
 // the specific fix costs of collectors are not based on power
 // but on collector area
 
-
 void OPVSol::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
                        Map<Symbol, MapSym1M> & aggOutValMap)
@@ -682,7 +660,6 @@ void OPVSol::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: OWind
@@ -693,7 +670,6 @@ void OPVSol::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 // Development thread: S04
 //
 // Summary: Windpower System, simple model
-
 
 //// OWind
 // Standard Constructor
@@ -710,8 +686,6 @@ OWind::OWind(App* cProcApp, Symbol procId, Symbol cProcType,
 {
   Symbol2 a = Symbol2("El","0");
   Ex.insert(a);
-
-
 
   if (!procInValMap.element("d_r"))
     procApp->message(55, vertexId.the_string()+ " d_r");
@@ -743,7 +717,6 @@ OWind::OWind(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(55, vertexId.the_string()+ " cp_max");
   if (!procInValMap.element("Count"))
     procInValMap["Count"]=1;
-
 
    if (
           procInValMap["d_r"]           <= 0    ||
@@ -779,7 +752,6 @@ OWind::~OWind(void)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
@@ -789,8 +761,6 @@ void OWind::actualSimplexInput(const Map<Symbol,double> & pVecU,
 {
 
 ////Windgeschwindigkeit in Rotorhoehe berechnen////                     (1)
-
-
 
         double ws;
 
@@ -804,8 +774,6 @@ void OWind::actualSimplexInput(const Map<Symbol,double> & pVecU,
         else
                 procApp->message(62, " W");
 
-
-
 //Berechnung des Luftdrucks auf Nabenhoehe//                    (2)
 
         if (!pVecU.element("T"))                     // Temperatur
@@ -814,8 +782,6 @@ void OWind::actualSimplexInput(const Map<Symbol,double> & pVecU,
                 procApp->message(67, " T");
         const double p_0=1013.25;        //Normaldruck in hPa//
         double p=p_0*pow(1-(0.0065*(procInValMap["h_NN"]+procInValMap["h_r"])/288),5.256);
-
-
 
 //Berechnung der Luftdichte und Temp in Rotorhoehe//                    (3,4)
 
@@ -826,9 +792,7 @@ void OWind::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
         double k_e=1+0.2794*pow(ws,-0.8674);
 
-
 /////Berechnung der Leistung///////                                                     (6)
-
 
         const double pi = 3.1415926535;
         double EDot_Ex_El;
@@ -857,13 +821,9 @@ void OWind::actualSimplexInput(const Map<Symbol,double> & pVecU,
         }
 }
 
-
-
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
 // the specific fix costs of engine are  based on power
-
-
 
 void OWind::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
@@ -894,7 +854,6 @@ void OWind::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: OWind2
@@ -905,7 +864,6 @@ void OWind::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 // Development thread: S04
 //
 // Summary: Windpower System, extended model
-
 
 //// OWind2
 // Standard Constructor
@@ -922,7 +880,6 @@ OWind2::OWind2(App* cProcApp, Symbol procId, Symbol cProcType,
 {
   Symbol2 a = Symbol2("El","0");
   Ex.insert(a);
-
 
   if (!procInValMap.element("d_r"))
     procApp->message(55, vertexId.the_string()+ " d_r");
@@ -961,7 +918,6 @@ OWind2::OWind2(App* cProcApp, Symbol procId, Symbol cProcType,
   if (!procInValMap.element("Count"))
     procInValMap["Count"]=1;
 
-
    if (
           procInValMap["d_r"]           <= 0    ||
           procInValMap["h_r"]           <= 0    ||
@@ -994,7 +950,6 @@ OWind2::~OWind2(void)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
@@ -1004,7 +959,6 @@ void OWind2::actualSimplexInput(const Map<Symbol,double> & pVecU,
 {
 
 ////Windgeschwindigkeit in Rotorhoehe berechnen////                     (1)
-
 
         double ws;
 
@@ -1018,8 +972,6 @@ void OWind2::actualSimplexInput(const Map<Symbol,double> & pVecU,
         else
                 procApp->message(62, " W");
 
-
-
 /////Berechnung des Luftdrucks auf Nabenhoehe//////////                 (2)
 
         if (!pVecU.element("T"))                     // Temperatur
@@ -1029,9 +981,6 @@ void OWind2::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
         const double p_0=1013.25;        //Normaldruck in hPa//
         double p=p_0*pow(1-(0.0065*(procInValMap["h_NN"]+procInValMap["h_r"])/288),5.256);
-
-
-
 
 //Berechnung der Luftdichte und Temp. in Rotorhoehe//                   (3,4)
 
@@ -1076,14 +1025,9 @@ void OWind2::actualSimplexInput(const Map<Symbol,double> & pVecU,
         }
 }
 
-
-
-
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
 // the specific fix costs of engine are  based on power
-
-
 
 void OWind2::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
@@ -1114,7 +1058,6 @@ void OWind2::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 /////////////////////////////////////////////////////////////////
 //
 // CLASS: OConPT
@@ -1126,7 +1069,6 @@ void OWind2::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 //
 // Summary: solar-thermal power station with concentrating
 //          parabolic trough collectors
-
 
 ///OConPT
 //Standard Constructor
@@ -1244,8 +1186,6 @@ OConPT::OConPT(App* cProcApp, Symbol procId, Symbol cProcType,
                 procApp->message(55, vertexId.the_string()+ "c_0.09");
         if (!procInValMap.element("c_0.1"))
                 procApp->message(55, vertexId.the_string()+ "c_0.1");
-
-
 
         if (procInValMap["Q_c"] == 0 ||
         procInValMap["Hg_amb"] == 0 ||
@@ -1395,7 +1335,6 @@ void OConPT::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
                         Q_cv =  Fr*procInValMap["A_a"]*procInValMap["n_serie"]*(I_abs-(Kc*(procInValMap["A_abs"]/procInValMap["A_a"])*(procInValMap["T_in"]-Ta)));
 
-
                         if (m < 0.0){ // case that the obtained heat power is negative
 
                                 Q_cf = 0.0;
@@ -1532,7 +1471,6 @@ void OConPT::actualSimplexInput(const Map<Symbol,double> & pVecU,
                         procApp->message(62, "Condensor pressure outside of implemented range");
                 }
 
-
         // Constraint2
         lessConstraintRhs[2] = 30000000;
         lessConstraintCoef[2]["Ex"]["El"]["0"] = 1;
@@ -1608,7 +1546,6 @@ double OConPT::HeatTransferCoeff_i(double &Tabs, double &Tm, double din, double 
         return hi;
 }
 
-
 double Reynolds(double &n, double &d, double &x, double &v, double &m) {
 
         m = (d*v*n)/x;
@@ -1655,7 +1592,6 @@ double Nussel(double &mu, double &muw, double &c, double &x, double &d)
                 d = C*pow(c, m)*pow(x, n)*K;
 
         }
-
 
         return d;
 
@@ -1771,7 +1707,6 @@ double OConPT::I_D_collect(double id, double n, double w, double latitude, doubl
 
         double declin, tita;
 
-
         declin = 0.0;
         declin = 23.45*sin(360*(284+n)/365*3.1416/180);
         // tita = pow(1 - pow(cos(declin*3.1416/180), 2)*pow(sin(w*3.1416/180), 2), 0.5);
@@ -1800,7 +1735,4 @@ double OConPT::solar_hour(double h, double &w)
 
 }
 
-
-
 // end of file
-

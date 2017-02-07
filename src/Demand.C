@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO DEMAND-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Demand.h"
 #include <math.h>
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -54,7 +51,6 @@
 // fabs() -> <math.h>
 
 #define REL_EPS  10e14
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -67,14 +63,12 @@
 //
 // Summary: constant demand for electrical energy
 
-
 //// DConstEl
 // Standard Constructor
 //
 DConstEl::DConstEl(void)
 {
 }
-
 
 //// DConstEl
 // Constructor
@@ -95,7 +89,6 @@ DConstEl::DConstEl(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstEl");
 }
 
-
 //// ~DConstEl
 // Destructor
 //
@@ -108,7 +101,6 @@ DConstEl::~DConstEl(void)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
 // rhs before optimization
@@ -120,7 +112,6 @@ void DConstEl::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["El"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DConstEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -129,7 +120,6 @@ Symbol DConstEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -142,14 +132,12 @@ Symbol DConstEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: constant demand for mechanical energy
 
-
 //// DConstMech
 // Standard Constructor
 //
 DConstMech::DConstMech(void)
 {
 }
-
 
 //// DConstMech
 // Constructor
@@ -170,7 +158,6 @@ DConstMech::DConstMech(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstMech");
 }
 
-
 //// ~DConstMech
 // Destructor
 //
@@ -183,7 +170,6 @@ DConstMech::~DConstMech(void)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
 // rhs before optimization
@@ -195,7 +181,6 @@ void DConstMech::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["Mech"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DConstMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -204,7 +189,6 @@ Symbol DConstMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -217,14 +201,12 @@ Symbol DConstMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: constant demand for enthalpy
 
-
 //// DConstH
 // Standard Constructor
 //
 DConstH::DConstH(void)
 {
 }
-
 
 //// DConstH
 // Constructor
@@ -250,7 +232,6 @@ DConstH::DConstH(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstH");
 }
 
-
 //// ~DConstH
 // Destructor
 //
@@ -263,7 +244,6 @@ DConstH::~DConstH(void)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -274,7 +254,6 @@ void DConstH::actualEnJ(const Map<Symbol,double>& pVecU)
   vecJ["0"]["En"]["Out"]["F"]["T"] = procInValMap["TF_0"] ;
   vecJ["0"]["En"]["Out"]["R"]["T"] = procInValMap["TR_0"] ;
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -287,7 +266,6 @@ void DConstH::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["H"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DConstH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -296,7 +274,6 @@ Symbol DConstH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -310,14 +287,12 @@ Symbol DConstH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: constant demand for heat, the return flow
 //          temperature is not determined in this case!
 
-
 //// DConstQ
 // Standard Constructor
 //
 DConstQ::DConstQ(void)
 {
 }
-
 
 //// DConstQ
 // Constructor
@@ -340,7 +315,6 @@ DConstQ::DConstQ(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstQ");
 }
 
-
 //// ~DConstQ
 // Destructor
 //
@@ -353,7 +327,6 @@ DConstQ::~DConstQ(void)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -364,7 +337,6 @@ void DConstQ::actualEnJ(const Map<Symbol,double>& pVecU)
   vecJ["0"]["En"]["Out"]["F"]["T"] = procInValMap["TF_0"] ;
   vecJ["0"]["En"]["Out"]["R"]["T"] = 0;  // is not determined in this case!
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -377,7 +349,6 @@ void DConstQ::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["H"]["0"]= 1;
 }
 
-
 //// showPower
 //
 Symbol DConstQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -386,7 +357,6 @@ Symbol DConstQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -399,14 +369,12 @@ Symbol DConstQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: constant waste heat production (enthalpy flow)
 
-
 //// DConstWH
 // Standard Constructor
 //
 DConstWH::DConstWH(void)
 {
 }
-
 
 //// DConstWH
 // Constructor
@@ -435,7 +403,6 @@ DConstWH::DConstWH(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstWH");
 }
 
-
 //// ~DConstWH
 // Destructor
 //
@@ -448,7 +415,6 @@ DConstWH::~DConstWH(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -459,7 +425,6 @@ void DConstWH::actualExJ(const Map<Symbol,double>& pVecU)
   vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"] ;
   vecJ["0"]["Ex"]["Out"]["R"]["T"] = procInValMap["TR_0"] ;
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -480,7 +445,6 @@ void DConstWH::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol DConstWH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -489,7 +453,6 @@ showPowerType   = "H";
 showPowerNumber = "0";
 return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -502,14 +465,12 @@ return "Ex";
 //
 // Summary: constant waste heat production (heat flow)
 
-
 //// DConstWQ
 // Standard Constructor
 //
 DConstWQ::DConstWQ(void)
 {
 }
-
 
 //// DConstWQ
 // Constructor
@@ -534,7 +495,6 @@ DConstWQ::DConstWQ(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DConstWQ");
 }
 
-
 //// ~DConstWQ
 // Destructor
 //
@@ -547,7 +507,6 @@ DConstWQ::~DConstWQ(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -558,7 +517,6 @@ void DConstWQ::actualExJ(const Map<Symbol,double>& pVecU)
   vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"] ;
   vecJ["0"]["Ex"]["Out"]["R"]["T"] = 0;  // is not determined in this case!
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -580,7 +538,6 @@ void DConstWQ::actualSimplexInput(const Map<Symbol,double>& pVecU,
 
 }
 
-
 //// showPower
 //
 Symbol DConstWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -589,7 +546,6 @@ Symbol DConstWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -602,14 +558,12 @@ Symbol DConstWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: fluctuating demand for electrical energy
 
-
 //// DFlucEl
 // Standard Constructor
 //
 DFlucEl::DFlucEl(void)
 {
 }
-
 
 //// DFlucEl
 // Constructor
@@ -628,7 +582,6 @@ DFlucEl::DFlucEl(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucEl");
 }
 
-
 //// ~DFlucEl
 // Destructor
 //
@@ -640,7 +593,6 @@ DFlucEl::~DFlucEl(void)
         procApp->message(1002, "DFlucEl");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficient, and
@@ -660,7 +612,6 @@ void DFlucEl::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["El"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DFlucEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -669,7 +620,6 @@ Symbol DFlucEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -682,14 +632,12 @@ Symbol DFlucEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: fluctuating demand for mechanical energy
 
-
 //// DFlucMech
 // Standard Constructor
 //
 DFlucMech::DFlucMech(void)
 {
 }
-
 
 //// DFlucMech
 // Constructor
@@ -708,7 +656,6 @@ DFlucMech::DFlucMech(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucMech");
 }
 
-
 //// ~DFlucMech
 // Destructor
 //
@@ -720,7 +667,6 @@ DFlucMech::~DFlucMech(void)
         procApp->message(1002, "DFlucMech");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -740,7 +686,6 @@ void DFlucMech::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["Mech"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DFlucMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -749,7 +694,6 @@ Symbol DFlucMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -762,14 +706,12 @@ Symbol DFlucMech::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: fluctuating demand for enthalpy
 
-
 //// DFlucH
 // Standard Constructor
 //
 DFlucH::DFlucH(void)
 {
 }
-
 
 //// DFlucH
 // Constructor
@@ -789,7 +731,6 @@ DFlucH::DFlucH(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucH");
 }
 
-
 //// ~DFlucH
 // Destructor
 //
@@ -801,7 +742,6 @@ DFlucH::~DFlucH(void)
         procApp->message(1002, "DFlucH");
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -825,7 +765,6 @@ void DFlucH::actualEnJ(const Map<Symbol,double>& pVecU)
 
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
 // rhs before optimization
@@ -844,7 +783,6 @@ void DFlucH::actualSimplexInput(const Map<Symbol,double>& pVecU,
    equalConstraintCoef[1]["En"]["H"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DFlucH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -853,7 +791,6 @@ Symbol DFlucH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -867,14 +804,12 @@ Symbol DFlucH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Summary: fluctuating demand for heat, the return
 //          temperature is not determined in this case!
 
-
 //// DFlucQ
 // Standard Constructor
 //
 DFlucQ::DFlucQ(void)
 {
 }
-
 
 //// DFlucQ
 // Constructor
@@ -894,7 +829,6 @@ DFlucQ::DFlucQ(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucQ");
 }
 
-
 //// ~DFlucQ
 // Destructor
 //
@@ -906,7 +840,6 @@ DFlucQ::~DFlucQ(void)
         procApp->message(1002, "DFlucQ");
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -922,7 +855,6 @@ void DFlucQ::actualEnJ(const Map<Symbol,double>& pVecU)
 
   vecJ["0"]["En"]["Out"]["R"]["T"] = 0;  // is not determined in this case!
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -942,7 +874,6 @@ void DFlucQ::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["H"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DFlucQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -951,7 +882,6 @@ Symbol DFlucQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -964,14 +894,12 @@ Symbol DFlucQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: fluctuating waste heat production (enthalpy flow)
 
-
 //// DFlucWH
 // Standard Constructor
 //
 DFlucWH::DFlucWH(void)
 {
 }
-
 
 //// DFlucWH
 // Constructor
@@ -992,7 +920,6 @@ DFlucWH::DFlucWH(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucWH");
 }
 
-
 //// ~DFlucWH
 // Destructor
 //
@@ -1004,7 +931,6 @@ DFlucWH::~DFlucWH(void)
         procApp->message(1002, "DFlucWH");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1026,7 +952,6 @@ void DFlucWH::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInTsPack["TF_0"] <= procInTsPack["TR_0"])
     procApp->message(60, vertexId.the_string() + " DotEEx[H][0]");
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1055,7 +980,6 @@ void DFlucWH::actualSimplexInput(const Map<Symbol,double>& pVecU,
     procApp->message(68, vertexId.the_string() + " DotEWH_0");
 }
 
-
 //// showPower
 //
 Symbol DFlucWH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1064,7 +988,6 @@ Symbol DFlucWH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1077,14 +1000,12 @@ Symbol DFlucWH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: fluctuating waste heat production (heat flow)
 
-
 //// DFlucWQ
 // Standard Constructor
 //
 DFlucWQ::DFlucWQ(void)
 {
 }
-
 
 //// DFlucWQ
 // Constructor
@@ -1105,7 +1026,6 @@ DFlucWQ::DFlucWQ(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DFlucWQ");
 }
 
-
 //// ~DFlucWQ
 // Destructor
 //
@@ -1117,7 +1037,6 @@ DFlucWQ::~DFlucWQ(void)
         procApp->message(1002, "DFlucWQ");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1133,7 +1052,6 @@ void DFlucWQ::actualExJ(const Map<Symbol,double>& pVecU)
 
     vecJ["0"]["Ex"]["Out"]["R"]["T"] = 0;   // is not determined in this case!
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1163,7 +1081,6 @@ void DFlucWQ::actualSimplexInput(const Map<Symbol,double>& pVecU,
 
 }
 
-
 //// showPower
 //
 Symbol DFlucWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1172,7 +1089,6 @@ Symbol DFlucWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1185,14 +1101,12 @@ Symbol DFlucWQ::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: room heating demand for enthalpy
 
-
 //// DRoom
 // Standard Constructor
 
 DRoom::DRoom(void)
 {
 }
-
 
 //// DRoom
 // Constructor
@@ -1234,7 +1148,6 @@ DRoom::DRoom(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "DRoom");
 }
 
-
 //// ~DRoom
 // Destructor
 //
@@ -1246,7 +1159,6 @@ DRoom::~DRoom(void)
         procApp->message(1002, "DRoom");
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -1317,7 +1229,6 @@ void DRoom::actualEnJ(const Map<Symbol,double>& pVecU)
     procApp->message(57,"h");
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
 // rhs before optimization
@@ -1333,7 +1244,6 @@ void DRoom::actualSimplexInput(const Map<Symbol,double>& pVecU,
   equalConstraintCoef[1]["En"]["H"]["0"] = 1;
 }
 
-
 //// showPower
 //
 Symbol DRoom::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1342,7 +1252,6 @@ Symbol DRoom::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "En";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1357,7 +1266,6 @@ Symbol DRoom::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //          the return and flow temperatures are determined
 //          by the destrict heating grid
 
-
 //// DNet4Room
 // Standard Constructor
 
@@ -1369,7 +1277,7 @@ DNet4Room::DNet4Room(void)
 // Constructor
 
 DNet4Room::DNet4Room(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
 
   Symbol2 a = Symbol2("H","0");
@@ -1399,9 +1307,9 @@ DNet4Room::DNet4Room(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(55, vertexId.the_string()+ " D");
 
   if(procInValMap["TFnet_0"] < procInValMap["TFnet_min"])
-	procApp->message(61, vertexId.the_string()+ " TFnet_0, TFnet_min");
+        procApp->message(61, vertexId.the_string()+ " TFnet_0, TFnet_min");
   if(procInValMap["TEnvNet_0"] > procInValMap["TEnvNet_min"])
-	procApp->message(61, vertexId.the_string()+ " TEnvNet_0, TEnvNet_min");
+        procApp->message(61, vertexId.the_string()+ " TEnvNet_0, TEnvNet_min");
 
   if (procApp->testFlag)
     procApp->message(1001, "DNet4Room");
@@ -1415,10 +1323,9 @@ DNet4Room::~DNet4Room(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "DNet4Room");
+        procApp->message(1002, "DNet4Room");
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -1438,37 +1345,37 @@ void DNet4Room::actualEnJ(const Map<Symbol,double> & pVecU)
       procApp->message(57,"T");
 // calculate TF,en
   if (TEnv > procInValMap["TEnvNet_min"])
-	vecJ["0"]["En"]["Out"]["F"]["T"] =procInValMap["TFnet_min"];
+        vecJ["0"]["En"]["Out"]["F"]["T"] =procInValMap["TFnet_min"];
   else
   {
-	if (TEnv > procInValMap["TEnvNet_0"])
-	{
-	a=procInValMap["TFnet_0"]-procInValMap["TFnet_min"];
-	a=a/(procInValMap["TEnvNet_0"]-procInValMap["TEnvNet_min"]);
-  	x=a*(TEnv-procInValMap["TEnvNet_0"])+procInValMap["TFnet_0"];
-  	vecJ["0"]["En"]["Out"]["F"]["T"] =x;
-	}
-  	else
-	vecJ["0"]["En"]["Out"]["F"]["T"] =procInValMap["TFnet_0"];
+        if (TEnv > procInValMap["TEnvNet_0"])
+        {
+        a=procInValMap["TFnet_0"]-procInValMap["TFnet_min"];
+        a=a/(procInValMap["TEnvNet_0"]-procInValMap["TEnvNet_min"]);
+        x=a*(TEnv-procInValMap["TEnvNet_0"])+procInValMap["TFnet_0"];
+        vecJ["0"]["En"]["Out"]["F"]["T"] =x;
+        }
+        else
+        vecJ["0"]["En"]["Out"]["F"]["T"] =procInValMap["TFnet_0"];
   }
 // calculate TR,en
   if (TEnv > procInValMap["T_ID"])
-	vecJ["0"]["En"]["Out"]["R"]["T"] =procInValMap["T_FP"];
+        vecJ["0"]["En"]["Out"]["R"]["T"] =procInValMap["T_FP"];
   else
   {
-	if (TEnv > procInValMap["TEnvNet_0"])
-	{
-	x=procInValMap["A"]+procInValMap["B"]*TEnv;
-	x=x+procInValMap["C"]*TEnv*TEnv+procInValMap["D"]*TEnv*TEnv*TEnv;
-  	vecJ["0"]["En"]["Out"]["R"]["T"] =x;
-	}
-  	else
-	{
-	a=procInValMap["TEnvNet_0"];
-	x=procInValMap["A"]+procInValMap["B"]*a;
-	x=x+procInValMap["C"]*a*a+procInValMap["D"]*a*a*a;
-	vecJ["0"]["En"]["Out"]["R"]["T"] =x;
-	}
+        if (TEnv > procInValMap["TEnvNet_0"])
+        {
+        x=procInValMap["A"]+procInValMap["B"]*TEnv;
+        x=x+procInValMap["C"]*TEnv*TEnv+procInValMap["D"]*TEnv*TEnv*TEnv;
+        vecJ["0"]["En"]["Out"]["R"]["T"] =x;
+        }
+        else
+        {
+        a=procInValMap["TEnvNet_0"];
+        x=procInValMap["A"]+procInValMap["B"]*a;
+        x=x+procInValMap["C"]*a*a+procInValMap["D"]*a*a*a;
+        vecJ["0"]["En"]["Out"]["R"]["T"] =x;
+        }
   }
 }
 
@@ -1477,7 +1384,7 @@ void DNet4Room::actualEnJ(const Map<Symbol,double> & pVecU)
 // rhs before optimization
 
 void DNet4Room::actualSimplexInput(const Map<Symbol,double> & pVecU,
-				double actualIntLength)
+                                double actualIntLength)
 {
   if (procInTsPack.element("DotQRH"))
     equalConstraintRhs[1]  = procInTsPack["DotQRH"] * procInValMap["Count"];
@@ -1499,7 +1406,6 @@ showPowerNumber="0";
 return "En";
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: DHeat
@@ -1512,7 +1418,6 @@ return "En";
 // Summary: room heating demand for enthalpy with minimal flow temperature
 //          for drinkwater heating
 
-
 //// DHeat
 // Standard Constructor
 
@@ -1524,7 +1429,7 @@ DHeat::DHeat(void)
 // Constructor
 
 DHeat::DHeat(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   Symbol2 a = Symbol2("H","0");
   En.insert(a);
@@ -1554,9 +1459,6 @@ DHeat::DHeat(App* cProcApp, Symbol procId, Symbol cProcType,
   if (!procInValMap.element("f_MFR"))
     procApp->message(55, vertexId.the_string()+ " f_MFR");
 
-
-
-
   if (procInValMap["n"] <= 1.0/REL_EPS)
       procApp->message(505, vertexId.the_string());
 
@@ -1578,7 +1480,7 @@ DHeat::~DHeat(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "DRoom");
+        procApp->message(1002, "DRoom");
     }
 }
 
@@ -1600,55 +1502,55 @@ if (pVecU.element("h"))       // hour of the day
   {
     if (procInTsPack.element("DotQRH"))
       {
-	if ((pVecU["h"] < (procInValMap["h_N"])) &&
-	    (pVecU["h"] >= procInValMap["h_D"]))
-	  T_I = procInValMap["T_ID"];
-	else
-	  {
-	    if  (((pVecU["h"] < (procInValMap["h_D"])) &&
-		  (pVecU["h"] >= 0)) ||
-		 ((pVecU["h"] >= procInValMap["h_N"]) &&
-		  (pVecU["h"] < 24)))
-	      T_I = procInValMap["T_IN"];
-	    else
-	      procApp->message(62, " h");
-	  }
+        if ((pVecU["h"] < (procInValMap["h_N"])) &&
+            (pVecU["h"] >= procInValMap["h_D"]))
+          T_I = procInValMap["T_ID"];
+        else
+          {
+            if  (((pVecU["h"] < (procInValMap["h_D"])) &&
+                  (pVecU["h"] >= 0)) ||
+                 ((pVecU["h"] >= procInValMap["h_N"]) &&
+                  (pVecU["h"] < 24)))
+              T_I = procInValMap["T_IN"];
+            else
+              procApp->message(62, " h");
+          }
 
-	if ((procInValMap["TR_0"]- T_I) < (T_I/REL_EPS))
-	  procApp->message(61,vertexId.the_string()+" TR_0,T_I");
+        if ((procInValMap["TR_0"]- T_I) < (T_I/REL_EPS))
+          procApp->message(61,vertexId.the_string()+" TR_0,T_I");
 
-	if ((procInValMap["TF_0"]- T_I) < (T_I/REL_EPS))
-	  procApp->message(61,vertexId.the_string()+" TF_0,T_I");
+        if ((procInValMap["TF_0"]- T_I) < (T_I/REL_EPS))
+          procApp->message(61,vertexId.the_string()+" TF_0,T_I");
 
-	x = (procInValMap["TF_0"]- T_I)/(procInValMap["TR_0"]- T_I);
-	x = log(x);     // <math.h>
-	y = (procInTsPack["DotQRH"]*procInValMap["f_RH"]);
-	y = y/procInValMap["DotQRHMax"];
-	z = (procInValMap["n"]-1)/procInValMap["n"];
-	y = pow(y,z);   // <math.h>
-	B = exp(x*y);
-	x = procInValMap["TF_0"]-procInValMap["TR_0"];
-	x = x * procInTsPack["DotQRH"]*procInValMap["f_RH"];
+        x = (procInValMap["TF_0"]- T_I)/(procInValMap["TR_0"]- T_I);
+        x = log(x);     // <math.h>
+        y = (procInTsPack["DotQRH"]*procInValMap["f_RH"]);
+        y = y/procInValMap["DotQRHMax"];
+        z = (procInValMap["n"]-1)/procInValMap["n"];
+        y = pow(y,z);   // <math.h>
+        B = exp(x*y);
+        x = procInValMap["TF_0"]-procInValMap["TR_0"];
+        x = x * procInTsPack["DotQRH"]*procInValMap["f_RH"];
         x = x /procInValMap["DotQRHMax"];
-	y = B *x;
-	y = ((1-B)*T_I)-y;
-	if (fabs(1-B) < (1.0/REL_EPS))
-	  procApp->message(506,vertexId.the_string()+" B");
+        y = B *x;
+        y = ((1-B)*T_I)-y;
+        if (fabs(1-B) < (1.0/REL_EPS))
+          procApp->message(506,vertexId.the_string()+" B");
 
-	TF = y/(1-B);
-	  if (TF < procInValMap["TF_min"]) // indication for summertime
-		{
-		TF = procInValMap["TF_min"];
-		vecJ["0"]["En"]["Out"]["F"]["T"] =TF;
-		y = TF - x/procInValMap["f_MFR"];
-		vecJ["0"]["En"]["Out"]["R"]["T"] =y;
-		}
-	  else
-		{
-	  vecJ["0"]["En"]["Out"]["F"]["T"] =TF;
-	  y = TF - x;
-	  vecJ["0"]["En"]["Out"]["R"]["T"] =y;
-		}
+        TF = y/(1-B);
+          if (TF < procInValMap["TF_min"]) // indication for summertime
+                {
+                TF = procInValMap["TF_min"];
+                vecJ["0"]["En"]["Out"]["F"]["T"] =TF;
+                y = TF - x/procInValMap["f_MFR"];
+                vecJ["0"]["En"]["Out"]["R"]["T"] =y;
+                }
+          else
+                {
+          vecJ["0"]["En"]["Out"]["F"]["T"] =TF;
+          y = TF - x;
+          vecJ["0"]["En"]["Out"]["R"]["T"] =y;
+                }
       }
     else
       procApp->message(58,vertexId.the_string()+" DotQRH");
@@ -1661,13 +1563,12 @@ else
   procApp->message(57,"h");
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void DHeat::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
   if (procInTsPack.element("DotQRH"))
     equalConstraintRhs[1]  = procInTsPack["DotQRH"] * procInValMap["Count"];
@@ -1686,12 +1587,4 @@ showPowerNumber="0";
 return "En";
 }
 
-
-
 // end of file
-
-
-
-
-
-

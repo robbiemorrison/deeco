@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 17:09:51 $
 //  $Author: morrison $
 //  $RCSfile: App.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,23 +45,19 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _APP_H_               // header guard
 #define _APP_H_
 
-
-#include     <String.h>      
+#include     <String.h>
 #include  <Stopwatch.h>       // timing
 #include       <Path.h>       // path management
 #include    <fstream.h>       // file I/O
-
 
 // Robbie: 04.02.03: for port to SCO UnixWare 7.1.1 UDK
 //
 #if NAMESPACED_SC
     using namespace SCO_SC;
 #endif
-
 
 /////////////////////////////////////////////////////////////////
 //
@@ -124,12 +118,7 @@ protected:
 
 };
 
-
 #endif  // _APP_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/App.h,v $
 //  end of file
-
-
-

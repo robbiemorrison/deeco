@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/09/30 18:54:39 $
 //  $Author: deeco $
 //  $RCSfile: Storage.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,10 +45,8 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Storage.h"
 #include <math.h>
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -60,7 +56,6 @@
 // fabs() -> <math.h>
 
 #define REL_EPS  10e14
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -76,14 +71,12 @@
 //          storage-environment temperature, cylindrical form with
 //          diameter = height
 
-
 //// SSenH
 // Standard Constructor
 //
 SSenH::SSenH(void)
 {
 }
-
 
 //// SSenH
 // Constructor
@@ -161,7 +154,6 @@ SSenH::SSenH(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "SSenH");
 }
 
-
 //// ~SSenH
 // Destructor
 //
@@ -173,7 +165,6 @@ SSenH::~SSenH(void)
         procApp->message(1002, "SSenH");
     }
 }
-
 
 ////  updateProcOutTsPack
 // update procOutTsPack after each optimization
@@ -190,7 +181,6 @@ void SSenH::updateProcOutTsPack(double actualIntLength,
     (((E_s[1]/Mc) + procInValMap["T_0"]) * (actualIntLength/intLength));
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -204,7 +194,6 @@ for(int l = 1; l <= procInValMap["l_0"]; l++)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -216,7 +205,6 @@ void SSenH::actualEnJ(const Map<Symbol,double>& pVecU)
       vecJ[symK]["En"]["Out"]["R"]["T"] = (E_s[1]/Mc) + procInValMap["T_0"];
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -250,7 +238,6 @@ void SSenH::actualSimplexInput(const Map<Symbol,double>& pVecU,
 
       if (!vecJ[symK]["En"]["In"]["F"].element("T"))
         procApp->message(54,vertexId.the_string()+symKVecJ);
-
 
       if (((E_s[1]/Mc) + procInValMap["T_0"]) >= vecJ[symK]["En"]["In"]["F"]["T"])
         {
@@ -287,7 +274,6 @@ void SSenH::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// initState
 // set initial state variables
 //
@@ -297,7 +283,6 @@ void SSenH:: initState(void)
 
   E_s[1] = Mc * (procInValMap["T_I"] - procInValMap["T_0"]);
 }
-
 
 //// actualState
 // actualize state variables (1 = change is not too large)
@@ -336,7 +321,6 @@ int SSenH::actualState(double& actualIntLength,
     return 0;        // state variable change is greater than allowed
 }
 
-
 //// showPower
 //
 Symbol SSenH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -348,7 +332,6 @@ Symbol SSenH::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "1";
   return "Ex";
 }
-
 
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
@@ -384,7 +367,6 @@ void SSenH::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: SSupEl
@@ -396,14 +378,12 @@ void SSenH::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
 //
 // Summmary: superconducting magnetic energy storage
 
-
 //// SSupEl
 // Standard Constructor
 //
 SSupEl::SSupEl(void)
 {
 }
-
 
 //// SSupEl
 // Constructor
@@ -501,7 +481,6 @@ SSupEl::SSupEl(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "SSupEl");
 }
 
-
 //// ~SSupEl
 // Destructor
 //
@@ -513,7 +492,6 @@ SSupEl::~SSupEl(void)
         procApp->message(1002, "SSupEl");
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -578,7 +556,6 @@ void SSupEl::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// actualState
 // actualize state variables (1 = change is not too large)
 //
@@ -608,7 +585,6 @@ int SSupEl::actualState(double& actualIntLength,
     return 0;        // state variable change is greater than allowed
 }
 
-
 //// showPower
 //
 Symbol SSupEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -617,7 +593,6 @@ Symbol SSupEl::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "1";
   return "Ex";
 }
-
 
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
@@ -653,7 +628,6 @@ void SSupEl::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: SSenHn
@@ -668,7 +642,6 @@ void SSupEl::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
 //           no heat exchangers, temperature-independent heat capacity,
 //           time-DEpendent storage-environment temperature,
 //           cylindrical form with diameter = height
-
 
 //// SSenHn
 // Standard Constructor
@@ -826,7 +799,6 @@ SSenHn::~SSenHn(void)
     }
 }
 
-
 ////  updateProcOutTsPack
 // update procOutTsPack after each optimization
 
@@ -850,7 +822,6 @@ void SSenHn::updateProcOutTsPack(double  actualIntLength,
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 
@@ -872,7 +843,6 @@ void SSenHn::actualExJ(const Map<Symbol,double> & pVecU)
   }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 
@@ -885,7 +855,6 @@ void SSenHn::actualEnJ(const Map<Symbol,double> & pVecU)
              (stratN * E_s[stratN]/(procInValMap["V"]*procInValMap["Rho"]* procInValMap["c_p"]))+ procInValMap["T_0"];
   }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
@@ -1069,7 +1038,6 @@ void SSenHn::actualSimplexInput(const Map<Symbol,double> & pVecU,
     //    (Fuer die Analysen i.R. von Soleg ist dies auch nicht erforderlich,
     //    da keine Backup-Technik aum BEladen des saisonalen Speichers
     //    betrachtet wird.)
-
 
   // Energiefluss-Richtung
 
@@ -1255,12 +1223,10 @@ Symbol SSenHn::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 //// addFixCosts (same as SSenH)
 // add process-dependent fix costs to the fix costs vector
 // the specific fix costs of storages are not based on power
 // but on storage volume
-
 
 void SSenHn::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
@@ -1291,7 +1257,6 @@ void SSenHn::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: SSenHnHEx
@@ -1306,7 +1271,6 @@ void SSenHn::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 //           temperature-independent heat capacity,
 //           time-independent storage-environment temperature,
 //           cylindrical form with diameter = height
-
 
 //// SSenHnHEx
 // Standard Constructor
@@ -1436,7 +1400,6 @@ SSenHnHEx::~SSenHnHEx(void)
     }
 }
 
-
 ////  updateProcOutTsPack
 // update procOutTsPack after each optimization
 
@@ -1459,7 +1422,6 @@ void SSenHnHEx::updateProcOutTsPack(double  actualIntLength,
       procOutTsPack["T_quer"] += procOutTsPack[outputId] / double(stratN);
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1584,7 +1546,6 @@ void SSenHnHEx::actualSimplexInput(const Map<Symbol,double> & pVecU,
   // Berechne Oberflaechen und Verlustterme (loss) der Schichten (in SSenH "x")
   // (T_s, loss, A als protected Map<int,double> in Storage.h deklariert)
   // (E_s als Map<int,double> in Proc.h deklariert)
-
 
   if (stratN == 1 ){
     GeoF=5.5358104;
@@ -1924,12 +1885,10 @@ Symbol SSenHnHEx::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 //// addFixCosts (same as SSenH)
 // add process-dependent fix costs to the fix costs vector
 // the specific fix costs of storages are not based on power
 // but on storage volume
-
 
 void SSenHnHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
                        Map<Symbol, MapSym1d> & aggInValMap,
@@ -1960,7 +1919,6 @@ void SSenHnHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
     }
 }
 
-
 //  Robbie: 02.09.05: Notes about ISO C++ modifications.
 //
 //  For loops:
@@ -1974,7 +1932,5 @@ void SSenHnHEx::addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
 //    implications really do need to be checked -- and any naming ambiguities
 //    resolved.
 
-
 //  $Source: /home/deeco/source/deeco006/RCS/Storage.C,v $
 // end of file
-

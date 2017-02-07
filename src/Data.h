@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/11/25 13:50:30 $
 //  $Author: morrison $
 //  $RCSfile: Data.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,10 +45,8 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _DATA_H_              // header guard
 #define _DATA_H_
-
 
 #include     <String.h>       // easy string management
 #include     <Symbol.h>       // use Symbol not String for keys
@@ -58,12 +54,9 @@
 #include       <Path.h>       // necessary for right instantiation of <Symbol.h> and <Map.h>
 #include    <fstream.h>       // file management
 
-
 #include        "App.h"
 
-
 //////////// basic data structures ///////////////////////////////
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -95,7 +88,6 @@ public:
     Symbol comp2;
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -148,8 +140,6 @@ protected:
 
 };
 
-
-
 ////////////////////////////////////////////////////////////////
 //
 // typedef
@@ -170,9 +160,7 @@ typedef Map<Symbol, MapSym3d> MapSym4d;
 typedef Map<Symbol, MapSym4d> MapSym5d;
 typedef Map<Symbol, MapSym5d> MapSym6d;
 
-
 ///////////// data structures for input-output management ////////
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -219,7 +207,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioDefValue
@@ -251,7 +238,6 @@ protected:
     virtual void writeData(void);
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -295,7 +281,6 @@ protected:
     virtual void writeData(int scanF, double scanV);
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -344,7 +329,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioTsValue
@@ -374,10 +358,7 @@ protected:
 
 };
 
-
 #endif  // _DATA_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Data.h,v $
 //  end of file
-

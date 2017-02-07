@@ -5,7 +5,6 @@ deeco VERSION INFORMATION
 This file is generated automatically
 following compilation.
 
-
 Details
 -------
 Release    = 006
@@ -13,7 +12,6 @@ Builder    = Robbie Morrison <morrison@iet.tu-berlin.de>
 Target     = deeco006
 Makefile   = udk
 This file  = Fri Sep 30 21:15:10 MET DST 2005
-
 
 Time-of-compile testing (splash screen)
 ---------------------------------------
@@ -37,7 +35,7 @@ RUN-TIME INFORMATION
  Working directory          : /home/deeco/source/deeco006/
  Hostname                   : helgoland.fb10.tu-berlin.de
  Login name                 : deeco
- Operating system version   : SCO UnixWare 7.1.1 
+ Operating system version   : SCO UnixWare 7.1.1
  Operating system type      : UNIX System V Release 5 (SVR5)
  Processor                  : Pentium III
 
@@ -52,7 +50,6 @@ LEGAL INFORMATION
 
 ADDITIONAL INFORMATION
 
-
 Binary comment section
 ----------------------
 
@@ -64,9 +61,7 @@ Binary comment section
  CC      = CC
  PLFLAGS = -DNAMESPACED_SC
  CCFLAGS = -dn -O
- INCL    = 
+ INCL    =
  LIBS    = -lm -l++
 
-
 ===
-

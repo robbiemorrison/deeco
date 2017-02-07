@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/11/25 13:21:32 $
 //  $Author: morrison $
 //  $RCSfile: Connect.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,10 +45,8 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _CONNECT_H_           // header guard
 #define _CONNECT_H_
-
 
 #include     <String.h>
 #include     <Symbol.h>       // use Symbol not String for keys
@@ -58,10 +54,8 @@
 #include       <Path.h>       // necessary for right instantiation of <Symbol.h> and <Map.h>
 #include    <fstream.h>       // file I/O
 
-
 #include        "App.h"
 #include       "Data.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -97,7 +91,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ConnectDef
@@ -127,9 +120,7 @@ protected:
 
 };
 
-
 #endif  // _CONNECT_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Connect.h,v $
 //  end of file

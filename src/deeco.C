@@ -34,19 +34,15 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DYNAMIC ENERGY EMISSION AND COST OPTIMIZATION : deeco
 //
 //////////////////////////////////////////////////////////////////
 
-
 #define MYHAND 1              // 1 = dedicated exception handling, otherwise 0
 
-
 #include     <stdlib.h>       // for use of exit function
-
 
 #ifdef MYHAND
 #  include      <new.h>       // for use of a new handler
@@ -57,16 +53,13 @@
 #  include   <string>         // to interface with std::ostringstream
 #endif
 
-
 #include        "App.h"
 #include   "deecoApp.h"
 #include    "version.h"       // contains user-defined DEECO_VERSION_STRING
 
-
 // Robbie: 10.02.03: Binary name placed in global space -- not good style
 //
 String binary_name;           // 'name' of application binary
-
 
 #ifdef MYHAND
 App* mApp;                    // forward declaration in global scope,
@@ -75,13 +68,11 @@ App* mApp;                    // forward declaration in global scope,
                               //   which are implemented as non-member
                               //   functions
 
-
 //////////////////////////////////////////////////////////////////
 //
 // FUNCTION: main
 //
 //////////////////////////////////////////////////////////////////
-
 
 int main(int argc, char* argv[])   // main including command line arguments
 {
@@ -229,7 +220,6 @@ int main(int argc, char* argv[])   // main including command line arguments
 
 } // main()
 
-
 ///////// helper functions /////////////////////////////////////////////////////////////////
 
 // The use of mApp->message() in these helper functions is
@@ -246,7 +236,6 @@ void myInterruptHandler(int)
   mApp->message(1017, "");
 }
 
-
 //// myFloatHandler
 // do after a floating point exception signal is generated
 //
@@ -254,7 +243,6 @@ void myFloatHandler(int)
 {
   mApp->message(51, "");
 }
-
 
 //// matherr
 // my matherr (see man matherr) function; for detecting errors of
@@ -296,8 +284,6 @@ int matherr(struct exception* x)
   return 1;                        // don't print the default error message;
 }                                  // don't set "errno"
 
-
-
 void myNewHandler(void)
 {
   mApp->message(52, "");
@@ -306,4 +292,3 @@ void myNewHandler(void)
 #endif
 
 // end of file
-

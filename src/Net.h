@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.1 $
 //  $Date: 2005/11/25 13:53:20 $
 //  $Author: morrison $
 //  $RCSfile: Net.h,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,13 +45,10 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _NET_H_               // header guard
 #define _NET_H_
 
-
 #include       <List.h>       // list management
-
 
 #include        "App.h"
 #include     "DGraph.h"
@@ -64,12 +59,10 @@
 #include   "ProcType.h"
 #include    "Simplex.h"
 
-
 typedef DVertex* vertexPtr;   // "DGraph.h"
 typedef Proc*    procPtr;     // "Proc.h"
 typedef Balan*   balanPtr;    // "Balan.h"
 typedef DEdge*   edgePtr;     // "DGraph.h"
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -80,7 +73,6 @@ typedef DEdge*   edgePtr;     // "DGraph.h"
 // Module author: Thomas Bruckner
 //
 // Summary: 'deeco' energy supply network management object
-
 
 class Net
 {
@@ -156,7 +148,6 @@ protected:
                                       //   lessContraint
   App* nApp;
   int errorFlag;
-
 
 ////////// help functions //////////////////////////////
 
@@ -250,10 +241,7 @@ protected:
 
 };
 
-
 #endif  // _NET_H_
-
 
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Net.h,v $
 //  end of file
-

@@ -8,19 +8,16 @@ THIS SOFTWARE IS DISTRIBUTED UNDER THE FOLLOWING TERMS
  B        02-Aug-2005    undated copyright notice
 =============================================
 
-
 'deeco'
 -------
 'deeco' is an acronym for: dynamic energy, emissions, and cost
 optimization.  'deeco' is an energy-services supply systems
 modeling environment.
 
-
 Who should read this notice
 ---------------------------
 Any person who intends to USE and/or MODIFY 'deeco' should read
 this legal notice and the accompanying README.gpl file.
-
 
 Rationale
 ---------
@@ -42,7 +39,6 @@ the energy modeling research community such that:
    on unrestricted websites (see: Request that core code
    not be published on the Internet)
 
-
 Address for notices
 -------------------
 Thomas Bruckner
@@ -55,7 +51,6 @@ GERMANY
 Phone : ++49.30.314 24763
 Fax   : ++49.30.314 21683
 Email : bruckner@iet.tu-berlin.de
-
 
 Definitions
 -----------
@@ -76,7 +71,6 @@ Definitions
 "principal development lineage" refers to the 'deeco' source-code
     repository, overseen by Thomas Bruckner.
 
-
 Request for program modifications
 ---------------------------------
 [1]  'deeco' is distributed with the REQUEST that developers SUBMIT ANY
@@ -85,7 +79,6 @@ archiving purposes and for possible inclusion into the principal
 development lineage.  Thomas Bruckner can be contacted by email at the
 email address given above.
 
-
 Request that core code not be published on the Internet
 -------------------------------------------------------
 [2]  'deeco' is distributed with the REQUEST that developers DO NOT
@@ -93,14 +86,12 @@ PUBLISH CORE CODE on the Internet, and thereby allow unrestricted
 access.  Alternatively, refer all inquiries for core code to Thomas
 Bruckner.
 
-
 GNU General Public License
 --------------------------
 [3]  'deeco' is distributed under the GNU GENERAL PUBLIC LICENSE (GPL).
 Developers may distribute this software and/or modify the code under
 the terms of the GPL and the additional requests given in this legal
 notice.  A full copy of the GNU GPL is included in the README.gpl file.
-
 
 [4]   Each core source file contains the following statement:
 
@@ -139,7 +130,6 @@ notice.  A full copy of the GNU GPL is included in the README.gpl file.
 //
 //    -----------------
 
-
 Additional information
 ----------------------
 The 'deeco' project maintains an email address and a public website.
@@ -147,6 +137,5 @@ At the time of writing, these are located at:
 
     mailto:deeco@iet.tu-berlin.de
     http://www.iet.tu-berlin.de/deeco
-
 
 ===

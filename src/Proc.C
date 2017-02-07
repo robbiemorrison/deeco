@@ -34,19 +34,16 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 17:55:24 $
 //  $Author: morrison $
 //  $RCSfile: Proc.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
 // DEECO PROCESS MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
-
 
 // Robbie: 23.09.05: The following code can suppress 503 errors.
 //
@@ -60,14 +57,11 @@
 //
 #define SILENCE 1
 
-
 #include  <strstream.h>       // string streams
 #include     <stdlib.h>       // exit()
 
-
 #include   "TestFlag.h"
 #include       "Proc.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -90,7 +84,6 @@ ProcDefRec::ProcDefRec(void)
   select   = 0;
 }
 
-
 //// ProcDefRec
 // Constructor
 //
@@ -106,7 +99,6 @@ ProcDefRec::ProcDefRec(App* cmApp)
 #endif
 }
 
-
 //// ~ProcDefRec
 // Destructor
 //
@@ -121,7 +113,6 @@ ProcDefRec::~ProcDefRec(void)
 #endif
 }
 
-
 //// operator<<
 // write process definition record
 //
@@ -133,13 +124,11 @@ operator<<(ostream&           os,
   return os;
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // Class: ProcDef
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ProcDef
 // Standard
@@ -149,7 +138,6 @@ ProcDef::ProcDef(void)
   // no content, call ioDefValue(void)
 }
 
-
 //// ProcDef
 //
 ProcDef::ProcDef(App * cDefApp, String dTN)
@@ -158,14 +146,12 @@ ProcDef::ProcDef(App * cDefApp, String dTN)
   // no contents
 }
 
-
 //// ~ProcDef
 //
 ProcDef::~ProcDef(void)
 {
   // no content, call ~ioDefValue(void)
 }
-
 
 //// writeInput
 // write input data (control)
@@ -191,7 +177,6 @@ ProcDef::writeInput(void)
 #endif
 }
 
-
 //// selected
 // selection check
 //
@@ -209,9 +194,7 @@ ProcDef::selected(Symbol sId)
     return 0;
 }
 
-
 ///////////////// help function ////////////////////
-
 
 //// readRecord
 // read data record from definition file
@@ -235,7 +218,6 @@ ProcDef::readRecord(void)
   ioApp->ignoreRestLine(finData);            // "App.h"
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: Proc
@@ -248,7 +230,6 @@ ProcDef::readRecord(void)
 // according to USL C++ Standards Components, Rel. 3.0, p.9-3
 // the constructor of the class Y is not allowed to require arguments
 
-
 //// Proc
 // Standard Constructor
 //
@@ -257,7 +238,6 @@ Proc::Proc(void)
   procApp  = NULL;
   aggCount = 0;
 }
-
 
 //// Proc
 // Constructor
@@ -279,7 +259,6 @@ Proc::Proc(App*     cProcApp,
     }
 }
 
-
 //// ~Proc
 // Destructor
 //
@@ -293,7 +272,6 @@ Proc::~Proc(void)
         }
     }
 }
-
 
 //// updateMean
 // update a part of the mean values after each optimization
@@ -329,7 +307,6 @@ Proc::updateMean(double actualIntLength)
     }
 }
 
-
 //// updateProcOutTsPack
 // update procOutTsPack after each optimization
 // because  optimization intervals can be shorter than
@@ -350,7 +327,6 @@ Proc::updateProcOutTsPack(double actualIntLength, double intLength)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -366,7 +342,6 @@ Proc::actualExJ(const Map<Symbol,double>& pVecU)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -381,7 +356,6 @@ Proc::actualEnJ(const Map<Symbol,double>& pVecU)
 #endif
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -400,7 +374,6 @@ Proc::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// initState    // !2.8.95->
 // set initial state variables
 //
@@ -415,7 +388,6 @@ Proc::initState(void)
 #endif
     }
 } // !2.8.95<-
-
 
 //// actualState
 // actualize state variables
@@ -436,7 +408,6 @@ Proc::actualState(double&                    actualIntLength,
   return 1;
 }
 
-
 //// showPower
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
@@ -453,7 +424,6 @@ Proc::showPower(Symbol& showPowerType,
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 //// addFixCosts
 // add process-dependent fix costs to the fix costs vector
@@ -510,11 +480,8 @@ Proc::addFixCosts(Map<Symbol, MeanValRec>& scenOutValMap,
     }
 }
 
-
 int
 Proc::count = 0;
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Proc.C,v $
 // end of file
-

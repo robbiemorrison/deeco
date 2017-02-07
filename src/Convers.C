@@ -34,18 +34,15 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO CONVERSION-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Convers.h"
 #include <math.h>
 #include <float.h>       // for numerical infinity (DBL_MAX, DBL_MIN)
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -57,9 +54,7 @@
 #define REL_EPS  10e14
 
 #include "N-R_errormsg.c" // for Newton-Raphson-algorithem in CLASS
-			  // CFCellConst
-
-
+                          // CFCellConst
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -72,7 +67,6 @@
 //
 // Summary: boiler with constant efficiency
 
-
 //// CBoiConst
 // Standard Constructor
 //
@@ -81,7 +75,6 @@ CBoiConst::CBoiConst(void)
   T_FEx = 0;
   T_REx = 0;
 }
-
 
 //// CBoiConst
 // Constructor
@@ -125,7 +118,6 @@ CBoiConst::CBoiConst(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CBoiConst");
 }
 
-
 //// ~CBoiConst
 // Destructor
 //
@@ -137,7 +129,6 @@ CBoiConst::~CBoiConst(void)
         procApp->message(1002, "CBoiConst");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -156,7 +147,6 @@ void CBoiConst::actualExJ(const Map<Symbol,double>& pVecU)
     }
 
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -227,7 +217,6 @@ void CBoiConst::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CBoiConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -236,7 +225,6 @@ Symbol CBoiConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -249,7 +237,6 @@ Symbol CBoiConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: conventional oil or gas boiler (no condensing)
 
-
 //// CBoiConv
 // Standard Constructor
 //
@@ -258,7 +245,6 @@ CBoiConv::CBoiConv(void)
   x = 0;
   y = 0;
 }
-
 
 //// CBoiConv
 // Constructor
@@ -318,7 +304,6 @@ CBoiConv::CBoiConv(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CBoiConv");
 }
 
-
 //// ~CBoiConv
 // Destructor
 //
@@ -331,7 +316,6 @@ CBoiConv::~CBoiConv(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -340,7 +324,6 @@ void CBoiConv::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -433,7 +416,6 @@ void CBoiConv::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CBoiConv::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -442,7 +424,6 @@ Symbol CBoiConv::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -455,14 +436,12 @@ Symbol CBoiConv::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: oil or gas condensing boiler
 
-
 //// CBoiCond
 // Standard Constructor
 //
 CBoiCond::CBoiCond(void)
 {
 }
-
 
 //// CBoiCond
 // Constructor
@@ -516,7 +495,6 @@ CBoiCond::CBoiCond(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CBoiCond");
 }
 
-
 //// ~CBoiCond
 // Destructor
 //
@@ -529,7 +507,6 @@ CBoiCond::~CBoiCond(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -538,7 +515,6 @@ void CBoiCond::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -623,7 +599,6 @@ void CBoiCond::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CBoiCond::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -632,7 +607,6 @@ Symbol CBoiCond::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -645,14 +619,12 @@ Symbol CBoiCond::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: ambient air, soil or water using electrical heat pump
 
-
 //// CEHP
 // Standard Constructor
 //
 CEHP::CEHP(void)
 {
 }
-
 
 //// CEHP
 // Constructor
@@ -708,7 +680,6 @@ CEHP::CEHP(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CEHP");
 }
 
-
 //// ~CEHP
 // Destructor
 //
@@ -721,7 +692,6 @@ CEHP::~CEHP(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -730,7 +700,6 @@ void CEHP::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -817,7 +786,6 @@ void CEHP::actualSimplexInput(const Map<Symbol,double>& pVecU,
 
 }
 
-
 //// showPower
 //
 Symbol CEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -826,7 +794,6 @@ Symbol CEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -839,14 +806,12 @@ Symbol CEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: ambient air, soil or water using gas driven heat pump
 
-
 //// CGHP
 // Standard Constructor
 //
 CGHP::CGHP(void)
 {
 }
-
 
 //// CGHP
 // Constructor
@@ -910,7 +875,6 @@ CGHP::CGHP(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CGHP");
 }
 
-
 //// ~CGHP
 // Destructor
 //
@@ -923,7 +887,6 @@ CGHP::~CGHP(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -932,7 +895,6 @@ void CGHP::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1076,7 +1038,6 @@ void CGHP::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1085,7 +1046,6 @@ Symbol CGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1098,14 +1058,12 @@ Symbol CGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: back-pressure turbine, combined heat and power station
 
-
 //// CBPT
 // Standard Constructor
 //
 CBPT::CBPT(void)
 {
 }
-
 
 //// CBPT
 // Constructor
@@ -1149,7 +1107,6 @@ CBPT::CBPT(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CBPT");
 }
 
-
 //// ~CBPT
 // Destructor
 //
@@ -1162,7 +1119,6 @@ CBPT::~CBPT(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -1171,7 +1127,6 @@ void CBPT::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["1"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1209,7 +1164,6 @@ void CBPT::actualSimplexInput(const Map<Symbol,double>& pVecU,
   T_M = T_FEx + procInValMap["deltaT"];
   T_M = T_M - (T_FEx-T_REx) * double(procInValMap["n"] - 1)/(2 * procInValMap["n"]);
 
-
   // calculate electricity loss
 
   double x = 0;
@@ -1243,7 +1197,6 @@ void CBPT::actualSimplexInput(const Map<Symbol,double>& pVecU,
       lessConstraintCoef[1]["Ex"]["El"]["0"] = 1;
     }
 
-
   if (procInValMap.element("DotEFuel_0"))
     {
       if (procInValMap["DotEFuel_0"] < 0)
@@ -1276,7 +1229,6 @@ void CBPT::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CBPT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1285,7 +1237,6 @@ Symbol CBPT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1298,7 +1249,6 @@ Symbol CBPT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: extraction-condensing turbine, combined heat and power station
 
-
 //// CECT
 // Standard Constructor
 //
@@ -1309,7 +1259,6 @@ CECT::CECT(void)
   TR_Min = 0;
   TR_Max = 0;
 }
-
 
 //// CECT
 // Constructor
@@ -1381,7 +1330,6 @@ CECT::CECT(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "CECT");
 }
 
-
 //// ~CECT
 // Destructor
 //
@@ -1394,7 +1342,6 @@ CECT::~CECT(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -1403,7 +1350,6 @@ void CECT::actualExJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1419,7 +1365,6 @@ void CECT::actualSimplexInput(const Map<Symbol,double>& pVecU,
   double DotEH_0 = 0;
   double TF_0    = 0;
   double TR_0    = 0;
-
 
   // control of input
 
@@ -1444,7 +1389,6 @@ void CECT::actualSimplexInput(const Map<Symbol,double>& pVecU,
                                 // elements of a <Symbol,double> - map are
                                 // initialized with 0
   TR_0 = procInValMap["TR_0"];
-
 
   // calculate temperature-dependent slope of back-pressure line
 
@@ -1541,7 +1485,6 @@ void CECT::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CECT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1550,7 +1493,6 @@ Symbol CECT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1562,7 +1504,6 @@ Symbol CECT::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Development thread: S01
 //
 // Summary: cogeneration unit with constant efficiencies
-
 
 //// CCogConst
 // Standard Constructor
@@ -1576,7 +1517,6 @@ CCogConst::CCogConst(void)
   TR_Min = 0;
   TR_Max = 0;
 }
-
 
 //// CCogConst
 // Constructor
@@ -1637,7 +1577,6 @@ CCogConst::CCogConst(App*     cProcApp,
     procApp->message(1001, "CCogConst");
 }
 
-
 //// ~CCogConst
 // Destructor
 //
@@ -1649,7 +1588,6 @@ CCogConst::~CCogConst(void)
         procApp->message(1002, "CCogConst");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1668,7 +1606,6 @@ void CCogConst::actualExJ(const Map<Symbol,double>& pVecU)
     }
 
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1742,7 +1679,6 @@ void CCogConst::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol CCogConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1751,7 +1687,6 @@ Symbol CCogConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1763,7 +1698,6 @@ Symbol CCogConst::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Development thread: S05
 //
 // Summary: boiler with constant efficiency
-
 
 //// CBoiOfl
 // Standard Constructor
@@ -1778,7 +1712,7 @@ CBoiOfl::CBoiOfl(void)
 // Constructor
 
 CBoiOfl::CBoiOfl(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx =0;
   T_REx =0;
@@ -1828,10 +1762,9 @@ CBoiOfl::~CBoiOfl(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "CBoiOfl");
+        procApp->message(1002, "CBoiOfl");
     }
 }
-
 
 ////  updateProcOutTsPack
 // update procOutTsPack after each optimization
@@ -1845,7 +1778,6 @@ void CBoiOfl::updateProcOutTsPack(double  actualIntLength, double intLength)
   procOutTsPack[outputIdH]= procOutTsPack[outputIdH]+
     ((dotEEx["H"]["0"]) * (actualIntLength/intLength));
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1865,13 +1797,12 @@ void CBoiOfl::actualExJ(const Map<Symbol,double> & pVecU)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void CBoiOfl::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
 if (procInTsPack.element("on_off"))
   {
@@ -1882,49 +1813,45 @@ if (procInTsPack.element("on_off"))
   if (procInValMap["Flag"] == 4)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
     }
 
   if ((procInValMap["Flag"] == 2) || (procInValMap["Flag"] == 4))
     {
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
-	T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
+        T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
     }
-
 
 // technical constraints
 
   if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_0");
 
       lessConstraintRhs[1] = procInValMap["DotEH_0"] * procInValMap["Count"];
       lessConstraintCoef[1]["Ex"]["H"]["0"]= 1;
     }
 
-
   if (procInValMap.element("deltaDotEH"))
     {
       if (procInValMap["deltaDotEH"] <0)
-	procApp->message(67, vertexId.the_string()+ " deltaDotEH");
+        procApp->message(67, vertexId.the_string()+ " deltaDotEH");
 
       lessConstraintRhs[2] = procInValMap["deltaDotEH"] * procInValMap["Count"] + E_s[0];
       lessConstraintCoef[2]["Ex"]["H"]["0"]= 1;
     }
 
-
   if (procInValMap["b"] <0)
-	procApp->message(67, vertexId.the_string()+ " b");
+        procApp->message(67, vertexId.the_string()+ " b");
 
   equalConstraintRhs[3] = procInValMap["b"] * procInValMap["Count"];
   equalConstraintCoef[3]["Ex"]["H"]["0"]= - 1.0 * procInValMap["a"];
   equalConstraintCoef[3]["En"]["Fuel"]["0"]= 1;
-
 
   if (procInValMap.element("lambdaEl_H"))
   {
@@ -1946,7 +1873,6 @@ if (procInTsPack.element("on_off"))
       equalConstraintCoef[5]["Ex"]["H"]["0"]= 1;
     }
 
-
   // emissions
 
   for (Mapiter<Symbol,double> procInValMapIt = procInValMap.first();
@@ -1954,13 +1880,13 @@ if (procInTsPack.element("on_off"))
     {
       String name = procInValMapIt.curr()->key.the_string();
       if (name.length() > 4)
-	{
-	  String part1 = name(0,4);     //<String.h>, the first 4 char
-	  String part2 = name(4);       //<String.h>, the rest
-	  if (part1=="sVar")
-	    objectFuncCoef[part2]["En"]["Fuel"]["0"]=
-	      procInValMapIt.curr()->value;
-	}
+        {
+          String part1 = name(0,4);     //<String.h>, the first 4 char
+          String part2 = name(4);       //<String.h>, the rest
+          if (part1=="sVar")
+            objectFuncCoef[part2]["En"]["Fuel"]["0"]=
+              procInValMapIt.curr()->value;
+        }
     }
 }
 else
@@ -1979,7 +1905,6 @@ else
    procApp->message(58,vertexId.the_string()+" on_off");
 }
 
-
 //// initState
 // set initial state variables
 void CBoiOfl:: initState(void)
@@ -1988,19 +1913,16 @@ void CBoiOfl:: initState(void)
   E_s[0] = procInValMap["DotEH_0"];
 }
 
-
 //// actualState
 // actualize state variables (1 = change is not too large)
 
 int CBoiOfl::actualState(double & actualIntLength,
-	          const Map<Symbol,double> & pVecU)
+                  const Map<Symbol,double> & pVecU)
 {
       E_s[0] = dotEEx["H"]["0"];
 
  return 1;
 }
-
-
 
 //// showPower
 
@@ -2010,7 +1932,6 @@ Symbol CBoiOfl::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   showPowerNumber="0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -2023,7 +1944,6 @@ Symbol CBoiOfl::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 //
 // Summary: back-pressure turbine, combined heat and power station
 
-
 //// CBPTo
 // Standard Constructor
 
@@ -2035,7 +1955,7 @@ CBPTo::CBPTo(void)
 // Constructor
 
 CBPTo::CBPTo(App* cProcApp, Symbol procId, Symbol cProcType,
-	       ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+               ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   if (!procInValMap.element("eta_Con"))
     procApp->message(55, vertexId.the_string()+ " eta_Con");
@@ -2062,15 +1982,12 @@ CBPTo::CBPTo(App* cProcApp, Symbol procId, Symbol cProcType,
   if ((procInValMap["Flag"] != 2) && (procInValMap["Flag"] != 4))
       procApp->message(61, vertexId.the_string() + " Flag");
 
-
   Symbol2 a = Symbol2("El","0");
   Ex.insert(a);
   Symbol2 b = Symbol2("H","1");
   Ex.insert(b);
   Symbol2 c = Symbol2("H","0");
   En.insert(c);
-
-
 
   if (procApp->testFlag)
     procApp->message(1001, "CBPTo");
@@ -2084,10 +2001,9 @@ CBPTo::~CBPTo(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "CBPTo");
+        procApp->message(1002, "CBPTo");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -2097,7 +2013,6 @@ void CBPTo::actualExJ(const Map<Symbol,double> & pVecU)
   if (procInValMap["Flag"] == 2)
     vecJ["1"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -2115,13 +2030,12 @@ void CBPTo::actualEnJ(const Map<Symbol,double> & pVecU)
        vecJ["0"]["En"]["Out"]["F"]["T"] = procInValMap["TF_En"];
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void CBPTo::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
   double T_M   =0;
   double T_REx =0;
@@ -2138,21 +2052,19 @@ void CBPTo::actualSimplexInput(const Map<Symbol,double> & pVecU,
   if (procInValMap["Flag"] !=2)
     {
       if (vecJ["1"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["1"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["1"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[1][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[1][Ex][In][F][T]");
     }
   else
     {
       T_FEx = procInValMap["TF_0"];  //Flag == 2
     }
 
-
   // calculate heat extracting (back pressure) temperature
 
   T_M = T_FEx +  procInValMap["deltaT"];
   T_M = T_M  - (T_FEx-T_REx)*double(procInValMap["n"]-1)/(2*procInValMap["n"]);
-
 
   // calculate electricity loss
 
@@ -2180,27 +2092,24 @@ void CBPTo::actualSimplexInput(const Map<Symbol,double> & pVecU,
   if (procInValMap.element("DotEEl_0"))
     {
       if (procInValMap["DotEEl_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEEl_0");
+        procApp->message(67, vertexId.the_string()+ " DotEEl_0");
 
       lessConstraintRhs[1] = procInValMap["DotEEl_0"] * procInValMap["Count"];
       lessConstraintCoef[1]["Ex"]["El"]["0"]= 1;
     }
 
-
   if (procInValMap.element("DotEH_En_0"))
     {
       if (procInValMap["DotEH_En_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_En_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_En_0");
 
       lessConstraintRhs[2] = procInValMap["DotEH_En_0"]*procInValMap["Count"];
       lessConstraintCoef[2]["En"]["H"]["0"]= 1;
     }
 
-
   equalConstraintRhs[3] = 0;
   equalConstraintCoef[3]["Ex"]["El"]["0"]= - x;
   equalConstraintCoef[3]["En"]["H"]["0"]= 1;
-
 
   equalConstraintRhs[4] = 0;
   equalConstraintCoef[4]["Ex"]["El"]["0"]= - y;
@@ -2211,16 +2120,15 @@ void CBPTo::actualSimplexInput(const Map<Symbol,double> & pVecU,
     {
       String name = procInValMapIt.curr()->key.the_string();
       if (name.length() > 4)
-	{
-	  String part1 = name(0,4);     //<String.h>, the first 4 char
-	  String part2 = name(4);       //<String.h>, the rest
-	  if (part1=="sVar")
-	    objectFuncCoef[part2]["En"]["H"]["0"]=
-	      procInValMapIt.curr()->value;
-	}
+        {
+          String part1 = name(0,4);     //<String.h>, the first 4 char
+          String part2 = name(4);       //<String.h>, the rest
+          if (part1=="sVar")
+            objectFuncCoef[part2]["En"]["H"]["0"]=
+              procInValMapIt.curr()->value;
+        }
     }
 }
-
 
 //// showPower
 
@@ -2230,7 +2138,6 @@ Symbol CBPTo::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   showPowerNumber="0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -2243,7 +2150,6 @@ Symbol CBPTo::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 //
 // Summary: Extraction-condensing turbine, combined heat and power station
 // without boiler (energy flow on entrance side due to steam input)
-
 
 //// CECTo
 // Standard Constructor
@@ -2260,7 +2166,7 @@ TR_Max=0;
 // Constructor
 
 CECTo::CECTo(App* cProcApp, Symbol procId, Symbol cProcType,
-	       ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+               ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   if (!procInValMap.element("a"))
     procApp->message(55, vertexId.the_string()+ " a");
@@ -2339,7 +2245,7 @@ CECTo::~CECTo(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "CECTo");
+        procApp->message(1002, "CECTo");
     }
 }
 
@@ -2387,13 +2293,12 @@ void CECTo::actualEnJ(const Map<Symbol,double> & pVecU)
        vecJ["0"]["En"]["Out"]["F"]["T"] = procInValMap["TF_En"];
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void CECTo::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
 if (procInTsPack.element("on_off"))
   {
@@ -2427,7 +2332,6 @@ if (procInTsPack.element("on_off"))
 
   TF_0 = procInValMap["TF_Ex"];
 
-
   // calculate temperature-dependent slope of back-pressure line
 
   g_H = procInValMap["g_H"];
@@ -2438,13 +2342,12 @@ if (procInTsPack.element("on_off"))
   b = procInValMap["b"];
   b = b + procInValMap["d_FB"]*(T_FEx-TF_0);
 
-
   // technical constraints
 
   if (procInValMap.element("DotEH_En_0"))
     {
       if (procInValMap["DotEH_En_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_En_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_En_0");
 
       lessConstraintRhs[1] = procInValMap["DotEH_En_0"] * procInValMap["Count"];
       lessConstraintCoef[1]["En"]["H"]["0"]= 1;
@@ -2453,7 +2356,7 @@ if (procInTsPack.element("on_off"))
   if (procInValMap.element("DotEEl_0"))
     {
       if (procInValMap["DotEEl_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEEl_0");
+        procApp->message(67, vertexId.the_string()+ " DotEEl_0");
 
       lessConstraintRhs[2] = procInValMap["DotEEl_0"] * procInValMap["Count"];
       lessConstraintCoef[2]["Ex"]["El"]["0"]= 1;
@@ -2462,7 +2365,7 @@ if (procInTsPack.element("on_off"))
   if (procInValMap.element("DotEEl_Min"))
     {
       if (procInValMap["DotEEl_Min"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEEl_Min");
+        procApp->message(67, vertexId.the_string()+ " DotEEl_Min");
 
       greaterConstraintRhs[3] = procInValMap["DotEEl_Min"] * procInValMap["Count"];
       greaterConstraintCoef[3]["Ex"]["El"]["0"]= 1;
@@ -2471,7 +2374,7 @@ if (procInTsPack.element("on_off"))
   if (procInValMap.element("c_LP"))
     {
       if (procInValMap["c_LP"] <0)
-	procApp->message(67, vertexId.the_string()+ " c_LP");
+        procApp->message(67, vertexId.the_string()+ " c_LP");
 
       lessConstraintRhs[4] = procInValMap["c_LP"]*procInValMap["Count"];
       lessConstraintCoef[4]["Ex"]["El"]["0"]= 1;
@@ -2481,7 +2384,7 @@ if (procInTsPack.element("on_off"))
   if (procInValMap.element("n") && procInValMap.element("m"))
     {
       if (procInValMap["n"] <0)
-	procApp->message(67, vertexId.the_string()+ " n");
+        procApp->message(67, vertexId.the_string()+ " n");
 
       lessConstraintRhs[5] = procInValMap["n"]*procInValMap["Count"];
       lessConstraintCoef[5]["Ex"]["El"]["0"]= 1;
@@ -2508,7 +2411,7 @@ if (procInTsPack.element("on_off"))
       DotEH_0 =  DotEH_0 + procInValMap["d_FH"]*(T_FEx-TF_0);
 
       if (DotEH_0 <0)
-	DotEH_0 =0;
+        DotEH_0 =0;
 
       lessConstraintRhs[8] = DotEH_0 * procInValMap["Count"];
       lessConstraintCoef[8]["Ex"]["H"]["0"]= 1;
@@ -2544,13 +2447,12 @@ if (procInTsPack.element("on_off"))
       equalConstraintCoef[11]["Ex"]["H"]["0"]= 1;
     }
 
-
   // cogeneration feed-in law refund
 
   if(procInValMap.element("sVarM_FI"))
             {
              objectFuncCoef["M"]["Ex"]["H"]["0"]= -((procInValMap["h_1"]-procInValMap["h_2"])/
-			     procInValMap["Delta_h_HD"])*procInValMap["eta_m"]*
+                             procInValMap["Delta_h_HD"])*procInValMap["eta_m"]*
                                                      procInValMap["sVarM_FI"];
             }
   if(procInValMap.element("sVarM"))
@@ -2578,7 +2480,6 @@ else
    procApp->message(58,vertexId.the_string()+" on_off");
 }
 
-
 //// showPower
 
 Symbol CECTo::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
@@ -2587,7 +2488,6 @@ Symbol CECTo::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   showPowerNumber="0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -2599,7 +2499,6 @@ Symbol CECTo::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 // Development thread: S05
 //
 // Summary: gasturbine, with HRSG
-
 
 //// CGasTHR
 // Standard Constructor
@@ -2616,7 +2515,7 @@ TR_Max=0;
 // Constructor
 
 CGasTHR::CGasTHR(App* cProcApp, Symbol procId, Symbol cProcType,
-	       ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+               ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   if (!procInValMap.element("DotEEl_N"))
     procApp->message(55, vertexId.the_string()+ " DotEEl_N");
@@ -2735,7 +2634,7 @@ CGasTHR::~CGasTHR(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "CGasTHR");
+        procApp->message(1002, "CGasTHR");
     }
 }
 
@@ -2767,7 +2666,7 @@ void CGasTHR::updateProcOutTsPack(double  actualIntLength, double intLength)
 // rhs before optimization
 
 void CGasTHR::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
 if (procInTsPack.element("on_off"))
   {
@@ -2810,7 +2709,7 @@ if (procInTsPack.element("on_off"))
  // flue gas mass stream
     Dotm_RG = procInValMap["Dotm_RG_N"] * (procInValMap["m_0"] +
                                           (procInValMap["m_1"]*DeltaT) +
-	                          (procInValMap["m_2"]*DeltaT*DeltaT) +
+                                  (procInValMap["m_2"]*DeltaT*DeltaT) +
                                           (procInValMap["m_3"]*DeltaT*DeltaT*DeltaT));
 
  // gas stream temperature after upgrading
@@ -2826,7 +2725,7 @@ if (procInTsPack.element("on_off"))
   if (procInValMap.element("DotEFuel_0"))
     {
      if (procInValMap["DotEFuel_0"] <0)
- 	procApp->message(67, vertexId.the_string()+ " DotEFuel_0");
+        procApp->message(67, vertexId.the_string()+ " DotEFuel_0");
 
      lessConstraintRhs[1] = procInValMap["DotEFuel_0"];
      lessConstraintCoef[1]["En"]["Fuel"]["0"]= 1;
@@ -2857,7 +2756,6 @@ if (procInTsPack.element("on_off"))
   lessConstraintRhs[3] = DotEEl_Max;
   lessConstraintCoef[3]["Ex"]["El"]["0"]= 1;
 
-
 // Maximum Output of Heat Recovery Steam Generator
 
    DotEH_Max = Dotm_RG * procInValMap["cp_RG"] *
@@ -2866,13 +2764,12 @@ if (procInTsPack.element("on_off"))
                 (procInValMap["h_W4"] - procInValMap["h_W1"]);
 
    if (DotEH_Max < 0)
- 	procApp->message(67, vertexId.the_string()+ " DotEH_Max");
+        procApp->message(67, vertexId.the_string()+ " DotEH_Max");
 
  // NB4
    lessConstraintRhs[4] = 0;
    lessConstraintCoef[4]["Ex"]["El"]["0"]= -(DotEH_Max / DotEEl_Max);
    lessConstraintCoef[4]["Ex"]["H"]["1"]= 1;
-
 
 //second additional heating
  //NB 5
@@ -2887,28 +2784,27 @@ if (procInTsPack.element("on_off"))
 
  //NB 7
    if (procInValMap["b_N"] <0)
-	procApp->message(67, vertexId.the_string()+ " b_N");
+        procApp->message(67, vertexId.the_string()+ " b_N");
 
    Fuel_El = procInValMap["b_N"]*(procInValMap["b_0"]+
                                  (procInValMap["b_1"] *DeltaT)+
-	                 (procInValMap["b_2"] *DeltaT*DeltaT)+
-                	 (procInValMap["b_3"] *DeltaT*DeltaT*DeltaT));
+                         (procInValMap["b_2"] *DeltaT*DeltaT)+
+                         (procInValMap["b_3"] *DeltaT*DeltaT*DeltaT));
    if(Fuel_El < 0)
      procApp->message(67, vertexId.the_string()+ " Fuel_El");
 
    equalConstraintRhs[7] = procInValMap["b_N"]*(procInValMap["b_0"] +
                                                (procInValMap["b_1"] *DeltaT) +
-	                               (procInValMap["b_2"] *DeltaT*DeltaT) +
-                	               (procInValMap["b_3"] *DeltaT*DeltaT*DeltaT))+
+                                       (procInValMap["b_2"] *DeltaT*DeltaT) +
+                                       (procInValMap["b_3"] *DeltaT*DeltaT*DeltaT))+
                            (Dotm_RG * procInValMap["cp_RG"] * deltaT_ZF / procInValMap["eta_ZF"]);
    equalConstraintCoef[7]["Ex"]["H"]["2"] = - 1.0 / procInValMap["eta_ZF"];
    equalConstraintCoef[7]["Ex"]["El"]["0"] = - 1.0 * procInValMap["a_N"] *
-			    (procInValMap["a_0"] +
+                            (procInValMap["a_0"] +
                                                     (procInValMap["a_1"] *DeltaT) +
-	                                    (procInValMap["a_2"] *DeltaT*DeltaT) +
-                	                    (procInValMap["a_3"] *DeltaT*DeltaT*DeltaT));
+                                            (procInValMap["a_2"] *DeltaT*DeltaT) +
+                                            (procInValMap["a_3"] *DeltaT*DeltaT*DeltaT));
    equalConstraintCoef[7]["En"]["Fuel"]["0"] = 1;
-
 
   // abnormal situations
 
@@ -2968,7 +2864,6 @@ Symbol CGasTHR::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: CFCellConst
@@ -2979,7 +2874,6 @@ Symbol CGasTHR::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 // Development thread: S07
 //
 // Summary: fuelcell unit with constant efficiencies
-
 
 //// CFCellConst
 // Standard Constructor
@@ -2999,7 +2893,7 @@ CFCellConst::CFCellConst(void)
 // Constructor
 
 CFCellConst::CFCellConst(App* cProcApp, Symbol procId, Symbol cProcType,
-	         ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+                 ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx =0.0;
   T_REx =0.0;
@@ -3039,10 +2933,10 @@ CFCellConst::CFCellConst(App* cProcApp, Symbol procId, Symbol cProcType,
   if ((procInValMap["Flag"] == 4) && (!procInValMap.element("TF_Max")))
     procApp->message(55, vertexId.the_string()+ " TF_Max");
   if (!procInValMap.element("powerleadFlag"))
-	procApp->message(55, vertexId.the_string()+ " powerleadFlag");
+        procApp->message(55, vertexId.the_string()+ " powerleadFlag");
   if ((procInValMap["powerleadFlag"] != 0) &&
-	  (procInValMap["powerleadFlag"] != 1))
-  	procApp->message(61, vertexId.the_string() + " powerleadFlag");
+          (procInValMap["powerleadFlag"] != 1))
+        procApp->message(61, vertexId.the_string() + " powerleadFlag");
   if (!procInValMap.element("Count"))
     procInValMap["Count"]=1;
   if (procInValMap["DotEEl_0"] <0)
@@ -3054,7 +2948,6 @@ CFCellConst::CFCellConst(App* cProcApp, Symbol procId, Symbol cProcType,
 
   if (procInValMap["eta_ElN"] == 0)
     procApp->message(505, vertexId.the_string());
-
 
   TF_Min = DBL_MIN;
   if (procInValMap.element("TF_Min"))
@@ -3088,10 +2981,9 @@ CFCellConst::~CFCellConst(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "CFCellConst");
+        procApp->message(1002, "CFCellConst");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -3107,13 +2999,12 @@ void CFCellConst::actualExJ(const Map<Symbol,double> & pVecU)
       vecJ["0"]["Ex"]["Out"]["R"]["T"] = T_REx;
     }
 
-
   if (procInValMap["Flag"] == 2)
     {
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
-	T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
+        T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
 
       T_FEx  = procInValMap["TF_0"];
       vecJ["0"]["Ex"]["Out"]["F"]["T"] = T_FEx;
@@ -3121,13 +3012,12 @@ void CFCellConst::actualExJ(const Map<Symbol,double> & pVecU)
 
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void CFCellConst::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
   // variables
 
@@ -3144,35 +3034,30 @@ void CFCellConst::actualSimplexInput(const Map<Symbol,double> & pVecU,
   if (procInValMap["Flag"] == 4)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
     }
 
   if ((procInValMap["Flag"] == 2) || (procInValMap["Flag"] == 4))
     {
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
-	T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
+        T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
     }
-
 
   // technical constraints
 
-
   lessConstraintRhs[1] = procInValMap["DotEEl_0"] * procInValMap["Count"];
   lessConstraintCoef[1]["Ex"]["El"]["0"]= 1;
-
 
   equalConstraintRhs[2] = 0;
   equalConstraintCoef[2]["Ex"]["El"]["0"]= - 1.0/procInValMap["eta_ElN"];
   equalConstraintCoef[2]["En"]["Fuel"]["0"]= 1;
 
-
   greaterConstraintRhs[3] = procInValMap["DotEEl_min"] * procInValMap["Count"];
   greaterConstraintCoef[3]["Ex"]["El"]["0"]= 1;
-
 
   // abnormal situations
 
@@ -3185,7 +3070,7 @@ void CFCellConst::actualSimplexInput(const Map<Symbol,double> & pVecU,
     }
   else // normal situation
     {
-	 // calculat temprature TR_sec needed in fourth constraint
+         // calculat temprature TR_sec needed in fourth constraint
 
     if (procInValMap["Flag"] == 1)
       TR_sec = procInValMap["TRsec_0"];
@@ -3193,47 +3078,47 @@ void CFCellConst::actualSimplexInput(const Map<Symbol,double> & pVecU,
     if ((procInValMap["Flag"] == 2) || (procInValMap["Flag"] == 4))
       {
         epsilon_hc = (T_FEx - T_REx)/(procInValMap["TFsec_0"] - T_REx);
-		  if ((epsilon_hc < 0) || (epsilon_hc>=1))
-			procApp->message(70, vertexId.the_string()+ " epsilon_hc");
+                  if ((epsilon_hc < 0) || (epsilon_hc>=1))
+                        procApp->message(70, vertexId.the_string()+ " epsilon_hc");
 
-	    epsilon_sec = rtsafe(hxfunc, lowerBound, upperBound, Acc);
+            epsilon_sec = rtsafe(hxfunc, lowerBound, upperBound, Acc);
         TR_sec  = procInValMap["TFsec_0"] - epsilon_sec *
-							(procInValMap["TFsec_0"] - T_REx);
+                                                        (procInValMap["TFsec_0"] - T_REx);
     if (TR_sec < 303.15)
-	  TR_sec = 303.15; // Begrenzung des Negativen WHD im Kondensators
+          TR_sec = 303.15; // Begrenzung des Negativen WHD im Kondensators
       }
 
     if ((TR_sec <= T_REx) || (TR_sec <= 0))
-    	procApp->message(70, vertexId.the_string()+ " TR_sec");
+        procApp->message(70, vertexId.the_string()+ " TR_sec");
 
   // calculation of coefficient from dotEEl in fourth constraint
 
-  	coef = (1 - procInValMap["a"])/procInValMap["eta_ElN"];
-  	if (coef <= 0)
-    	procApp->message(65,vertexId.the_string()+" actualSimplexInput, coef");
-  	help = procInValMap["TFsec_0"] - procInValMap["TRsec_0"];
-  	help = (TR_sec - procInValMap["TRsec_0"])/help;
-  	help = help/procInValMap["sigma_id"] + 1;
-  	if (help <= 0)
-    	procApp->message(65,vertexId.the_string()+" actualSimplexInput, help");
-  	coef = coef - help;
-  	if (coef <= 0)
-    	procApp->message(65,vertexId.the_string()+" actualSimplexInput, coef or help");
+        coef = (1 - procInValMap["a"])/procInValMap["eta_ElN"];
+        if (coef <= 0)
+        procApp->message(65,vertexId.the_string()+" actualSimplexInput, coef");
+        help = procInValMap["TFsec_0"] - procInValMap["TRsec_0"];
+        help = (TR_sec - procInValMap["TRsec_0"])/help;
+        help = help/procInValMap["sigma_id"] + 1;
+        if (help <= 0)
+        procApp->message(65,vertexId.the_string()+" actualSimplexInput, help");
+        coef = coef - help;
+        if (coef <= 0)
+        procApp->message(65,vertexId.the_string()+" actualSimplexInput, coef or help");
 
   // fourth constraint normal situation
 
-	if (procInValMap["powerleadFlag"] == 0)
-      	{
-		equalConstraintRhs[4] = procInValMap["b"] * procInValMap["Count"];
-      	equalConstraintCoef[4]["Ex"]["El"]["0"]= coef;
-      	equalConstraintCoef[4]["Ex"]["H"]["0"]= -1;
-		}
-	else // heat dumping when only power is needed
-		{
-		greaterConstraintRhs[4] = procInValMap["b"] * procInValMap["Count"];
-      	greaterConstraintCoef[4]["Ex"]["El"]["0"]= coef;
-      	greaterConstraintCoef[4]["Ex"]["H"]["0"]= -1;
-		}
+        if (procInValMap["powerleadFlag"] == 0)
+        {
+                equalConstraintRhs[4] = procInValMap["b"] * procInValMap["Count"];
+        equalConstraintCoef[4]["Ex"]["El"]["0"]= coef;
+        equalConstraintCoef[4]["Ex"]["H"]["0"]= -1;
+                }
+        else // heat dumping when only power is needed
+                {
+                greaterConstraintRhs[4] = procInValMap["b"] * procInValMap["Count"];
+        greaterConstraintCoef[4]["Ex"]["El"]["0"]= coef;
+        greaterConstraintCoef[4]["Ex"]["H"]["0"]= -1;
+                }
     }
 
   // emissions
@@ -3243,13 +3128,13 @@ void CFCellConst::actualSimplexInput(const Map<Symbol,double> & pVecU,
     {
       String name = procInValMapIt.curr()->key.the_string();
       if (name.length() > 4)
-	{
-	  String part1 = name(0,4);     //<String.h>, the first 4 char
-	  String part2 = name(4);       //<String.h>, the rest
-	  if (part1=="sVar")
-	    objectFuncCoef[part2]["En"]["Fuel"]["0"]=
-	      procInValMapIt.curr()->value;
-	}
+        {
+          String part1 = name(0,4);     //<String.h>, the first 4 char
+          String part2 = name(4);       //<String.h>, the rest
+          if (part1=="sVar")
+            objectFuncCoef[part2]["En"]["Fuel"]["0"]=
+              procInValMapIt.curr()->value;
+        }
     }
 }
 
@@ -3262,7 +3147,6 @@ Symbol CFCellConst::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
   // function describes the heatexchanging unit, gives back function value
   // and the first derivative,
   // needed for call 'rtsafe'(Newton-Raphson-algorithem) to calculate TR_sec
@@ -3270,19 +3154,19 @@ Symbol CFCellConst::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 void CFCellConst::hxfunc(double x, double *f, double *df)
 {
   *f  = (x-epsilon_hc)/(log((1-epsilon_hc)/(1-x))) - (procInValMap["DeltaT_m"]/
-								(procInValMap["TFsec_0"]-CFCellConst::T_REx));
+                                                                (procInValMap["TFsec_0"]-CFCellConst::T_REx));
   *df = (log((1-epsilon_hc)/(1-x)) - (x-epsilon_hc)/(1-x))/
-											pow(log((1-epsilon_hc)/(1-x)),2.0);
+                                                                                        pow(log((1-epsilon_hc)/(1-x)),2.0);
 }
   // the Newton-Raphson-algorithm is used to calculate epsilon_sec in
   // 'CFCellConst::actualSimplexInput'
   // It is based on Press et al., Numerical Recipes in C,
   // Cambridge University Press, Cambridge (1988)
   // changes: float -> double; funcd -> CFCellConst::*hxfunc (declaration);
-  // 		 *funcd -> CFCellConst::hxfunc (call)
+  //             *funcd -> CFCellConst::hxfunc (call)
 
 double CFCellConst::rtsafe(void (CFCellConst::*hxfunc)(double, double *,
-								double *), double x1, double x2, double xacc)
+                                                                double *), double x1, double x2, double xacc)
 // Using a combination of Newton-Raphson and bisection, find
 // the root of a function bracketed between x1 and x2. The
 // root, returned as the function value rtsafe, will be
@@ -3290,63 +3174,61 @@ double CFCellConst::rtsafe(void (CFCellConst::*hxfunc)(double, double *,
 // is a user-supplied routine that returns both the function
 // value and the first derivative of the function.
 {
-	#define MAXIT 100 //Maximum allowed number of iterations.
-	int j;
-	double df,dx,dxold,f,fh,fl;
-	double temp,xh,xl,rts;
-	CFCellConst::hxfunc(x1,&fl,&df);
-	CFCellConst::hxfunc(x2,&fh,&df);
-	if ((fl > 0.0 && fh > 0.0) || (fl < 0.0 && fh < 0.0))
-		nrerror2("Root must be bracketed in rtsafe"); //see N-R_errormsg.c
-	if (fl == 0.0) return x1;
-	if (fh == 0.0) return x2;
-	if (fl < 0.0) //					Orient the search so that f(xl) < 0.
-		{
-		xl=x1;
-		xh=x2;
-		}
-	else
-		{
-		xh=x1;
-		xl=x2;
-		}
-	rts=0.5*(x1+x2);//				Initialize the guess for root,
-	dxold=fabs(x2-x1);//			the stepsize before last,
-	dx=dxold; //							and the last step.
-	CFCellConst::hxfunc(rts,&f,&df);
-	for (j=1;j<=MAXIT;j++) // Loop over allowed iterations.
-		{
-		if ((((rts-xh)*df-f)*((rts-xl)*df-f) > 0.0)//Bisect if Newton
-												   //out of range,
-				|| (fabs(2.0*f) > fabs(dxold*df))) //or not decreasing
-												   //fast enough.
-			{
-			dxold=dx;
-			dx=0.5*(xh-xl);
-			rts=xl+dx;
-			if (xl == rts) return rts; // Change in root is negligible.
-			}
-		else // Newton step acceptable. Take it.
-			{
-			dxold=dx;
-			dx=f/df;
-			temp=rts;
-			rts -= dx;
-			if (temp == rts) return rts;
-			}
-		if (fabs(dx) < xacc) return rts;//  Convergence criterion.
-		CFCellConst::hxfunc(rts,&f,&df);// The one new function
-									    // valuation per iteration.
-		if (f < 0.0) // Maintain the bracket on the root.
-			xl=rts;
-		else
-			xh=rts;
-		}
-	nrerror2("Maximum number of iterations exceeded in rtsafe");
-	return 0.0; // Never get here.
-	#undef MAXIT
+        #define MAXIT 100 //Maximum allowed number of iterations.
+        int j;
+        double df,dx,dxold,f,fh,fl;
+        double temp,xh,xl,rts;
+        CFCellConst::hxfunc(x1,&fl,&df);
+        CFCellConst::hxfunc(x2,&fh,&df);
+        if ((fl > 0.0 && fh > 0.0) || (fl < 0.0 && fh < 0.0))
+                nrerror2("Root must be bracketed in rtsafe"); //see N-R_errormsg.c
+        if (fl == 0.0) return x1;
+        if (fh == 0.0) return x2;
+        if (fl < 0.0) //                                        Orient the search so that f(xl) < 0.
+                {
+                xl=x1;
+                xh=x2;
+                }
+        else
+                {
+                xh=x1;
+                xl=x2;
+                }
+        rts=0.5*(x1+x2);//                              Initialize the guess for root,
+        dxold=fabs(x2-x1);//                    the stepsize before last,
+        dx=dxold; //                                                    and the last step.
+        CFCellConst::hxfunc(rts,&f,&df);
+        for (j=1;j<=MAXIT;j++) // Loop over allowed iterations.
+                {
+                if ((((rts-xh)*df-f)*((rts-xl)*df-f) > 0.0)//Bisect if Newton
+                                                                                                   //out of range,
+                                || (fabs(2.0*f) > fabs(dxold*df))) //or not decreasing
+                                                                                                   //fast enough.
+                        {
+                        dxold=dx;
+                        dx=0.5*(xh-xl);
+                        rts=xl+dx;
+                        if (xl == rts) return rts; // Change in root is negligible.
+                        }
+                else // Newton step acceptable. Take it.
+                        {
+                        dxold=dx;
+                        dx=f/df;
+                        temp=rts;
+                        rts -= dx;
+                        if (temp == rts) return rts;
+                        }
+                if (fabs(dx) < xacc) return rts;//  Convergence criterion.
+                CFCellConst::hxfunc(rts,&f,&df);// The one new function
+                                                                            // valuation per iteration.
+                if (f < 0.0) // Maintain the bracket on the root.
+                        xl=rts;
+                else
+                        xh=rts;
+                }
+        nrerror2("Maximum number of iterations exceeded in rtsafe");
+        return 0.0; // Never get here.
+        #undef MAXIT
 }
 
-
 // end of file
-

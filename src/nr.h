@@ -888,10 +888,3 @@ void zroots();
 #endif /* ANSI */
 
 #endif /* _NR_H_ */
-
-
-
-
-
-
-

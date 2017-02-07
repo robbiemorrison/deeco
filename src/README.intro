@@ -8,13 +8,11 @@ INTRODUCTION
 optimization.  'deeco' is an energy-services supply systems
 modeling environment.
 
-
 Program type
 ------------
 'deeco' is a non-interactive command-line program.  Data-sets are
 structured using comma-separated (csv) ASCII and can be pre- and
 post-processed using Perl scripts.
-
 
 Tested platforms
 ----------------
@@ -30,14 +28,12 @@ will run on any SCO UnixWare and SCO OpenServer platform and any
 Intel-based iBCS2-compliant (Intel binary compatibility standard 2)
 Linux platform.
 
-
 Tutorial
 --------
 This suite contains a tutorial called modcity.  This problem is fully
 described on the public website:
 
     http://www.iet.tu-berlin.de/deeco/tutorial.html
-
 
 Websites
 --------
@@ -46,9 +42,6 @@ The 'deeco' project maintains a public website and a semi-public website:
     http://www.iet.tu-berlin.de/deeco
     http://www.iet.tu-berlin.de/helgoland
 
-
 Users should consult these two websites for further information.
 
-
 ===
-

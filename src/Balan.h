@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO ENERGY BALANCE MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _BAL_H_               // header guard
 #define _BAL_H_
-
 
 #include     <String.h>
 #include     <Symbol.h>       // use Symbol not String for keys
@@ -52,11 +49,9 @@
 #include       <Path.h>       // for right instantiation of <Symbol.h> and <Map.h>
 #include    <fstream.h>       // file I/O
 
-
 #include        "App.h"
 #include       "Data.h"
 #include     "DGraph.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -78,7 +73,7 @@ public:
     virtual ~BalanDefRec(void);
  // write balance definition record
     friend ostream& operator<<(ostream& os, const BalanDefRec& dr);
-    
+
     Symbol energyFlowType;
     Symbol linkType;
     int select;
@@ -88,7 +83,6 @@ protected:
     App* mApp;
 
 };
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -119,7 +113,6 @@ protected:
 
 };
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: Balan
@@ -149,6 +142,4 @@ protected:
 
 };
 
-
 #endif  // _BAL_
-

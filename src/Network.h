@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO NETWORK-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _NETW_                // header guard
 #define _NETW_
-
 
 #include "App.h"
 #include "Data.h"
@@ -53,7 +50,6 @@
 #include <String.h>           // easy string management
 #include <Symbol.h>           // use Symbol instead of String for keys
 #include <Map.h>              // associative array
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -103,7 +99,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAConst
@@ -136,7 +131,6 @@ protected:
     virtual void noLeavingHeat(void);
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -174,7 +168,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWACond
@@ -207,7 +200,6 @@ protected:
     virtual void noLeavingHeat(void);
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -253,7 +245,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NQTrans
@@ -295,7 +286,6 @@ protected:
     double T_FEx, T_FEn;
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -340,7 +330,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NEHP
@@ -380,7 +369,6 @@ public:
 protected:
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -477,7 +465,7 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
   virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				  double actualIntLength);
+                                  double actualIntLength);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -487,7 +475,6 @@ public:
 
 protected:
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -525,7 +512,6 @@ double TR_Max;
   virtual void replace_calcAddHeat(void);
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAAHP
@@ -555,7 +541,6 @@ protected:
 // constraints for no heating cases
   virtual void noLeavingHeat(void);
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -587,7 +572,6 @@ protected:
   virtual void noLeavingHeat(void);
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAGHP
@@ -618,7 +602,6 @@ protected:
   virtual void noLeavingHeat(void);
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NHTransSol
@@ -646,7 +629,7 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
   virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				  double actualIntLength);
+                                  double actualIntLength);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -659,7 +642,6 @@ double T_FEx, T_FEn, T_REx, T_REn, T_Env;
 double AkOverMc;
 
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -705,7 +687,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NStMan
@@ -735,7 +716,7 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
   virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				  double actualIntLength);
+                                  double actualIntLength);
 // show (=return value) the type ("Ex" or "En")
 // of the energy flow which is used to calculate
 // the fixed costs (necessary for process aggregate constraints);
@@ -745,7 +726,4 @@ public:
 protected:
 };
 
-
 #endif  // _NETW_
-
-

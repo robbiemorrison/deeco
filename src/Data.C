@@ -34,19 +34,16 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.2 $
 //  $Date: 2005/11/25 17:53:35 $
 //  $Author: morrison $
 //  $RCSfile: Data.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
 // DEECO DATA MANAGEMENT OBJECT
 //
 //////////////////////////////////////////////////////////////////
-
 
 #include    <fstream.h>       // file I/O
 #include  <strstream.h>       // string streams
@@ -58,10 +55,8 @@
 //
 // #include  <ieeefp.h>       // not used on HP-UX, common in SVR4
 
-
 #include   "TestFlag.h"
 #include      "Data.h"
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -71,7 +66,6 @@
 // fabs() -> <math.h>
 
 #define REL_EPS  10e14
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -84,14 +78,12 @@
 // Rel. 3.0, p.9-3, the constructor of the class Y is not allowed
 // to require arguments
 
-
 //// Symbol2
 // Standard Constructor
 //
 Symbol2::Symbol2(void)
 {
 }
-
 
 //// Symbol2
 // Constructor
@@ -103,7 +95,6 @@ Symbol2::Symbol2(Symbol cComp1,
   comp2 = cComp2;
 }
 
-
 //// ~Symbol2
 // Destructor
 //
@@ -111,7 +102,6 @@ Symbol2::~Symbol2(void)
 {
   // no content
 }
-
 
 //// operator==
 // equality operator, necessary for use of Symbol2 as a part of Sets
@@ -122,7 +112,6 @@ operator==(const Symbol2& s1,
 {
   return (s1.comp1 == s2.comp1 && s1.comp2 == s2.comp2);
 }
-
 
 //// operator<<
 // write Symbol2
@@ -135,7 +124,6 @@ operator<<(ostream&        os,
   return os;
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: MeanValRec
@@ -145,7 +133,6 @@ operator<<(ostream&        os,
 // Summary: MeanValRec will be used as a type in templates like
 // Map<class X,class Y>; according to USL C++ Standards Components,
 // Rel. 3.0, p.9-3
-
 
 //// MeanValRec
 // Standard Constructor
@@ -162,7 +149,6 @@ MeanValRec::MeanValRec(void)
   count        = 0;
   norm         = 0;
 }
-
 
 //// MeanValRec
 // Constructor
@@ -185,7 +171,6 @@ MeanValRec::MeanValRec(App* cmApp)
 #endif
 }
 
-
 ////~MeanValRec
 // Destructor
 //
@@ -200,7 +185,6 @@ MeanValRec::~MeanValRec(void)
     }
 #endif
 }
-
 
 // Robbie: Added for SDK port.
 //
@@ -218,7 +202,6 @@ double make_Inf()
   return r;
 }
 
-
 // Robbie: Added for SDK port.
 //
 static
@@ -234,7 +217,6 @@ double make_NaN()
 #endif
   return r;
 }
-
 
 //// updateMeanValRec
 // update Mean
@@ -274,7 +256,6 @@ MeanValRec::updateMeanValRec(double val)
       dev = make_NaN();
     }
 }
-
 
 //// updateMeanValRec
 // update mean (variable weights)
@@ -347,7 +328,6 @@ MeanValRec::clearMeanValRec(void)
   norm         = 0;
 }
 
-
 //// expand
 // expand a double to a MeanValRec
 //
@@ -361,7 +341,6 @@ MeanValRec::expand(double val)
   min  = indiff;
 }
 
-
 //// cutoff
 // cutoff a MeanValRec
 //
@@ -370,7 +349,6 @@ MeanValRec::cutoff(void)
 {
   return mean;
 }
-
 
 //// maximum
 // show maximum
@@ -381,7 +359,6 @@ MeanValRec::maximum(void)
   return max;
 }
 
-
 //// minimum
 // show minimum
 //
@@ -390,7 +367,6 @@ MeanValRec::minimum(void)
 {
   return min;
 }
-
 
 //// operator<<
 // write mean record
@@ -407,7 +383,6 @@ operator<<(ostream&           os,
   return os;
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioData
@@ -415,7 +390,6 @@ operator<<(ostream&           os,
 //////////////////////////////////////////////////////////////////
 
 // Summary: abstract input-output data class
-
 
 //// ioData
 // Standard Constructor
@@ -430,7 +404,6 @@ ioData::ioData(void)
   Id         = "";
   errorFlag  = 0;
 }
-
 
 //// ioData
 // Constructor
@@ -452,7 +425,6 @@ ioData::ioData(App*    cioApp,
     }
 }
 
-
 //// ~ioData
 // Destructor
 //
@@ -464,7 +436,6 @@ ioData::~ioData(void)
         ioApp->message(1002,ioDataName);
     }
 }
-
 
 //// read
 // read table from file
@@ -500,7 +471,6 @@ ioData::read(String ioFN)
     }
 }
 
-
 //// write
 // write file
 //
@@ -532,7 +502,6 @@ ioData::write(String ioFN)
     }
 }
 
-
 //// existFile
 // test existing of files
 //
@@ -551,7 +520,6 @@ ioData::existFile(String ioFN)
     }
 }
 
-
 //// error
 // error Management
 //
@@ -567,7 +535,6 @@ ioData::error(void)
     }
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioDefValue
@@ -576,7 +543,6 @@ ioData::error(void)
 
 // Summary: for reading definition table files
 
-
 //// ioDefValue
 // Standard Constructor
 //
@@ -584,7 +550,6 @@ ioDefValue::ioDefValue(void)
 {
   // no content, call ioData(void)
 }
-
 
 //// ioDefValue
 // Constructor
@@ -596,7 +561,6 @@ ioDefValue::ioDefValue(App*    cDefApp,
   // no content
 }
 
-
 //// ~ioDefValue
 // Destructor
 //
@@ -604,7 +568,6 @@ ioDefValue::~ioDefValue(void)
 {
   // no content, call ~ioData(void)
 }
-
 
 //// writeInput
 // write input data (control)
@@ -629,7 +592,6 @@ void ioDefValue::writeInput(void)
 #endif
 }
 
-
 //// selected
 // selection check
 //
@@ -653,9 +615,7 @@ ioDefValue::selected(Symbol sId)
     }
 }
 
-
 ///////// help routines //////////////////////////////////////////
-
 
 //// readRecord
 // read record from file
@@ -678,7 +638,6 @@ ioDefValue::readRecord(void)
   ioApp->ignoreRestLine(finData);          // "App.h"
 }
 
-
 //// writeData;
 //
 void
@@ -686,7 +645,6 @@ ioDefValue::writeData(void)
 {
   // no content, no result data to write
 }
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -697,7 +655,6 @@ ioDefValue::writeData(void)
 // Summary: for reading parameter table files and writing
 // result data files (mean values)
 
-
 //// ioValue
 // standard Constructor
 //
@@ -705,7 +662,6 @@ ioValue::ioValue(void)
 {
   // no content, call ioData(void)
 }
-
 
 //// ioValue
 // constructor
@@ -717,7 +673,6 @@ ioValue::ioValue(App*    cValApp,
   // no content
 }
 
-
 //// ~ioValue
 // Destructor
 //
@@ -725,7 +680,6 @@ ioValue::~ioValue(void)
 {
   // no content, call ~ioData(void)
 }
-
 
 //// writeInput
 // write input data (control)
@@ -751,7 +705,6 @@ ioValue::writeInput(void)
 #endif
 }
 
-
 //// clearFile
 // normally, output files are opened in deeco with ...ios::trunc, for
 // example, they are deleted before "write" is used; to avoid problems,
@@ -771,7 +724,6 @@ ioValue::clearFile(String ioFN)
       errorFlag++;
     }
 }
-
 
 //// write
 // append to result file, overloading of ioData::write(String)
@@ -815,7 +767,6 @@ ioValue::write(String  ioFN,
     }
 }
 
-
 //// clear
 // clear result mean values after finishing one scenario scanning parameter
 //
@@ -833,9 +784,7 @@ ioValue::clearResults(void)
     }
 }
 
-
 ///////// help routines //////////////////////////////////////////
-
 
 //// readRecord
 // read record from file
@@ -860,7 +809,6 @@ ioValue::readRecord(void)
   ioApp->ignoreRestLine(finData);          // "App.h"
 }
 
-
 //// write
 // overwrite pure virtual function of ioData
 //
@@ -869,7 +817,6 @@ ioValue::writeData(void)
 {
   ioApp->message(1, "Usage of pure virtual function ioValue::writeData(void)");
 }
-
 
 //// writeData
 // write in file
@@ -909,7 +856,6 @@ ioValue::writeData(int     scanF,
     }
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioTsPack
@@ -920,7 +866,6 @@ ioValue::writeData(int     scanF,
 // certain interval; in general there is more than one row in the
 // ts-file including such data!
 // help class of ioTsValue, no descendant of ioData !
-
 
 //// ioTsPack
 // Standard Constructor
@@ -935,7 +880,6 @@ ioTsPack::ioTsPack(void)
   intName   = "";
   errorFlag = 0;
 }
-
 
 //// ioTsPack
 // Constructor
@@ -960,7 +904,6 @@ ioTsPack::ioTsPack(App*    ctsPackApp,
 #endif
 }
 
-
 //// ~ioTsPack
 // Destructor
 //
@@ -974,7 +917,6 @@ ioTsPack::~ioTsPack(void)
     }
 #endif
 }
-
 
 //// readPack
 // read pack from file
@@ -1016,7 +958,6 @@ ioTsPack::readPack(String     tsFN,
       while (!finTsData.eof() && i <= tsIntCount && !finTsData.fail());
     }                                      // !1.8.95
 
-
   if (finTsData.fail())
     {
       errorFlag++;
@@ -1030,7 +971,6 @@ ioTsPack::readPack(String     tsFN,
 //       errorFlag++;
 //     }   // make this for each input data separately
 
-
   if (!finTsData.eof() && !finTsData.fail())
     {
       // the number of the next interval is already read;
@@ -1043,7 +983,6 @@ ioTsPack::readPack(String     tsFN,
                                   // a character
     }
 }
-
 
 //// writePack
 // write pack to file
@@ -1077,7 +1016,6 @@ ioTsPack::writePack(String     tsFN,
       }
 }
 
-
 //// error
 // error Management
 //
@@ -1094,9 +1032,7 @@ ioTsPack::error(void)
     }
 }
 
-
 //// help functions ////////////////////////////
-
 
 //// readRecord
 // read a single data record from file
@@ -1117,14 +1053,11 @@ ioTsPack::readRecord(ifstream& finTsData)
     }                                   // raise errorflags of finData
 }                                       // <fstream.h> -> <iostream.h>
 
-
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ioTsValue
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ioTsValue
 // Standard Constructor
@@ -1133,7 +1066,6 @@ ioTsValue::ioTsValue(void)
 {
   // no content, call ioData(void)
 }
-
 
 //// ioTsValue
 // Constructor
@@ -1170,7 +1102,6 @@ ioTsValue::ioTsValue(App*    cTsApp,
     // in ioTsValue::~ioTsValue(void)
 }
 
-
 //// ~ioTsValue
 // Destructor
 //
@@ -1186,9 +1117,7 @@ ioTsValue::~ioTsValue(void)
     }
 }
 
-
 ///////////// help functions ////////////////
-
 
 //// readRecord
 // overwrite pure virtual function of ioData; should not be used;
@@ -1200,7 +1129,6 @@ ioTsValue::readRecord(void)
   ioApp->message(1, "Usage of pure virtual function ioTsValue::readRecord(void)");
 }
 
-
 //// writeData;
 // overwrite pure virtual function of ioData; should not be used;
 // use writePack instead
@@ -1211,7 +1139,5 @@ ioTsValue::writeData(void)
   ioApp->message(1, "Usage of pure virtual function ioTsValue::writeData(void)");
 }
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Data.C,v $
 //  end of file
-

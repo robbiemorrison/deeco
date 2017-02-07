@@ -34,17 +34,14 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO COLLECTOR-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #ifndef _COLL_                // header guard
 #define _COLL_
-
 
 #include "App.h"
 #include "Data.h"
@@ -53,7 +50,6 @@
 #include <String.h>           // easy string management
 #include <Symbol.h>           // use Symbol instead of String for keys
 #include <Map.h>              // associative array
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -94,7 +90,6 @@ protected:
 
 };
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: OSolHEx
@@ -122,15 +117,14 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
    virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				   double actualIntLength);
+                                   double actualIntLength);
 // add process-dependent fix costs to the fix costs vector
   virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 protected:
 double x1,x2;    //help variables
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -155,13 +149,12 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
    virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				   double actualIntLength);
+                                   double actualIntLength);
 // add process-dependent fix costs to the fix costs vector
    virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -186,13 +179,12 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
    virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				   double actualIntLength);
+                                   double actualIntLength);
 // add process-dependent fix costs to the fix costs vector
    virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -217,13 +209,12 @@ public:
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
    virtual void actualSimplexInput(const Map<Symbol,double> & pVecU,
-				   double actualIntLength);
+                                   double actualIntLength);
 // add process-dependent fix costs to the fix costs vector
    virtual void addFixCosts(Map<Symbol, MeanValRec> & scenOutValMap,
-			   Map<Symbol, MapSym1d> & aggInValMap,
-			   Map<Symbol, MapSym1M> & aggOutValMap);
+                           Map<Symbol, MapSym1d> & aggInValMap,
+                           Map<Symbol, MapSym1M> & aggOutValMap);
 };
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -271,8 +262,4 @@ protected:
 
 };
 
-
 #endif  // _COLL_
-
-
-

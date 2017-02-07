@@ -34,18 +34,15 @@
 //
 //    -----------------
 
-
 //////////////////////////////////////////////////////////////////
 //
 // DEECO NETWORK-PROCESS MODULES
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include "Network.h"
 #include <math.h>
 #include <float.h>       // for numerical infinity (DBL_MAX, DBL_MIN)
-
 
 // for comparison of (x-x == 0) a value REL_EPS should be used
 // according to the HP-UX Floating Point Guide
@@ -55,7 +52,6 @@
 // fabs() -> <math.h>
 
 #define REL_EPS  10e14
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -69,7 +65,6 @@
 // Summary: enthalpy adaptation by mixing valves and
 // (waste-) heat dumping
 
-
 //// NBW
 // Standard Constructor
 //
@@ -80,7 +75,6 @@ NBW::NBW(void)
   T_FEn = 0;
   T_REn = 0;
 }
-
 
 //// NBW
 // Constructor
@@ -111,7 +105,6 @@ NBW::NBW(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NBW");
 }
 
-
 //// ~NBW
 // Destructor
 //
@@ -123,7 +116,6 @@ NBW::~NBW(void)
         procApp->message(1002, "NBW");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -143,14 +135,12 @@ void NBW::actualExJ(const Map<Symbol,double>& pVecU)
         procApp->message(54,vertexId.the_string() + " vecJ[0][En][In][R][T]");
     }
 
-
   if (procInValMap["Flag"] == 12)
     {
       T_FEx = T_FEn;
       vecJ["0"]["Ex"]["Out"]["F"]["T"] = T_FEx;
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -176,7 +166,6 @@ void NBW::actualEnJ(const Map<Symbol,double>& pVecU)
       vecJ["0"]["En"]["Out"]["R"]["T"] = T_REn;
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -262,7 +251,6 @@ else
   }
 }
 
-
 //// showPower
 //
 Symbol NBW::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -287,7 +275,6 @@ void NBW::calcAddHeat(double T_1, double T_2)
   equalConstraintCoef[2]["Ex"]["H"]["0"] = 1;
 }
 
-
 //// noLeavingHeat
 // constraints for no heating cases
 //
@@ -296,7 +283,6 @@ void NBW::noLeavingHeat(void)
   equalConstraintRhs[2] = 0;
   equalConstraintCoef[2]["Ex"]["H"]["0"] = 1;
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -311,7 +297,6 @@ void NBW::noLeavingHeat(void)
 // (waste-) heat dumping and additional heating
 // (similar to CBoiConst)
 
-
 //// NBWAConst
 // Standard Constructor
 //
@@ -322,7 +307,6 @@ NBWAConst::NBWAConst(void)
   T_FEn = 0;
   T_REn = 0;
 }
-
 
 //// NBWAConst
 // Constructor
@@ -367,7 +351,6 @@ NBWAConst::NBWAConst(App* cProcApp, Symbol procId, Symbol cProcType,
 
 }
 
-
 //// ~NBWAConst
 // Destructor
 //
@@ -379,7 +362,6 @@ NBWAConst::~NBWAConst(void)
         procApp->message(1002, "NBWAConst");
     }
 }
-
 
 //// calcAddHeat
 // calculate additional heat
@@ -427,7 +409,6 @@ void NBWAConst::calcAddHeat(double T_1, double T_2)
     }
 }
 
-
 //// noLeavingHeat
 // constraints for no heating cases
 //
@@ -445,7 +426,6 @@ void NBWAConst::noLeavingHeat(void)
   equalConstraintCoef[5]["En"]["El"]["0"] = 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAConv
@@ -458,7 +438,6 @@ void NBWAConst::noLeavingHeat(void)
 // Summary: enthalpy adaptation by mixing valves and
 // (waste-) heat dumping and additional heating
 // (similar to CBoiConv)
-
 
 //// NBWAConv
 // Standard Constructor
@@ -473,7 +452,6 @@ NBWAConv::NBWAConv(void)
   x     = 0;
   y     = 0;
 }
-
 
 //// NBWAConv
 // Constructor
@@ -543,7 +521,6 @@ NBWAConv::NBWAConv(App* cProcApp, Symbol procId, Symbol cProcType,
 
 }
 
-
 //// ~NBWAConv
 // Destructor
 //
@@ -555,7 +532,6 @@ NBWAConv::~NBWAConv(void)
         procApp->message(1002, "NBWAConv");
     }
 }
-
 
 //// calcAddHeat
 // calculate additional heat
@@ -628,7 +604,6 @@ void NBWAConv::calcAddHeat(double T_1, double T_2)
     }
 }
 
-
 //// noLeavingHeat
 // constraints for no heating cases
 //
@@ -646,7 +621,6 @@ void NBWAConv::noLeavingHeat(void)
   equalConstraintCoef[5]["En"]["El"]["0"] = 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWACond
@@ -660,7 +634,6 @@ void NBWAConv::noLeavingHeat(void)
 // (waste-) heat dumping and additional heating
 // (similar to CBoiCond)
 
-
 //// NBWACond
 // Standard Constructor
 //
@@ -671,7 +644,6 @@ NBWACond::NBWACond(void)
   T_FEn = 0;
   T_REn = 0;
 }
-
 
 //// NBWACond
 // Constructor
@@ -733,7 +705,6 @@ NBWACond::NBWACond(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NBWACond");
 }
 
-
 //// ~NBWACond
 // Destructor
 //
@@ -745,7 +716,6 @@ NBWACond::~NBWACond(void)
         procApp->message(1002, "NBWACond");
     }
 }
-
 
 //// calcAddHeat
 // calculate additional heat
@@ -799,7 +769,6 @@ void NBWACond::calcAddHeat(double T_1, double T_2)
     ((T_FEx-T_2)/(T_FEx-T_REx)) * (-1.0/eta);
   equalConstraintCoef[4]["En"]["Fuel"]["0"] = 1;
 
-
   equalConstraintRhs[5] = 0;
   equalConstraintCoef[5]["Ex"]["H"]["0"] = -procInValMap["lambdaEl_H"] *
     ((T_FEx-T_2)/(T_FEx-T_REx));
@@ -820,8 +789,6 @@ void NBWACond::calcAddHeat(double T_1, double T_2)
         }
 }
 
-
-
 //// noLeavingHeat
 // constraints for no heating cases
 //
@@ -839,7 +806,6 @@ void NBWACond::noLeavingHeat(void)
   equalConstraintCoef[5]["En"]["El"]["0"] = 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NHEx
@@ -853,7 +819,6 @@ void NBWACond::noLeavingHeat(void)
 // temperature difference, no pressure loss, and
 // maximal exergy efficiency
 
-
 //// NHEx
 // Standard Constructor
 //
@@ -864,7 +829,6 @@ NHEx::NHEx(void)
   T_FEn = 0;
   T_REn = 0;
 }
-
 
 //// NHEx
 // Constructor
@@ -899,7 +863,6 @@ NHEx::NHEx(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NHEx");
 }
 
-
 //// ~NHEx
 // Destructor
 //
@@ -911,7 +874,6 @@ NHEx::~NHEx(void)
         procApp->message(1002, "NHEx");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -960,7 +922,6 @@ void NHEx::actualExJ(const Map<Symbol,double>& pVecU)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -1008,7 +969,6 @@ void NHEx::actualEnJ(const Map<Symbol,double>& pVecU)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef and
 // rhs before optimization
@@ -1040,7 +1000,6 @@ void NHEx::actualSimplexInput(const Map<Symbol,double>& pVecU,
    }
 }
 
-
 //// showPower
 //
 Symbol NHEx::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1049,7 +1008,6 @@ Symbol NHEx::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1062,7 +1020,6 @@ Symbol NHEx::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: transport of heat and comparison of quality
 
-
 //// NQTrans
 // Standard Constructor
 
@@ -1071,7 +1028,6 @@ NQTrans::NQTrans(void)
   T_FEn = 0;
   T_FEx = 0;
 }
-
 
 //// NQTrans
 // Constructor
@@ -1111,7 +1067,6 @@ NQTrans::NQTrans(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NQTrans");
 }
 
-
 //// ~NQTrans
 // Destructor
 //
@@ -1123,7 +1078,6 @@ NQTrans::~NQTrans(void)
         procApp->message(1002, "NQTrans");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1143,7 +1097,6 @@ void NQTrans::actualExJ(const Map<Symbol,double>& pVecU)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -1161,7 +1114,6 @@ void NQTrans::actualEnJ(const Map<Symbol,double>& pVecU)
       vecJ["0"]["En"]["Out"]["R"]["T"] = 0;  // is not determined in this case!
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1220,7 +1172,6 @@ void NQTrans::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol NQTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1229,7 +1180,6 @@ Symbol NQTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1241,7 +1191,6 @@ Symbol NQTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 // Development thread: S01
 //
 // Summary: transportation of enthalpy
-
 
 //// NHTrans
 // Standard Constructor
@@ -1255,7 +1204,6 @@ NHTrans::NHTrans(void)
   T_Env    = 0;
   AkOverMc = 0;
 }
-
 
 //// NHTrans
 // Constructor
@@ -1316,7 +1264,6 @@ NHTrans::NHTrans(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NHTrans");
 }
 
-
 //// ~NHTrans
 // Destructor
 //
@@ -1328,7 +1275,6 @@ NHTrans::~NHTrans(void)
         procApp->message(1002, "NHTrans");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -1373,7 +1319,6 @@ void NHTrans::actualExJ(const Map<Symbol,double>& pVecU)
     }
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -1405,7 +1350,6 @@ void NHTrans::actualEnJ(const Map<Symbol,double>& pVecU)
       vecJ["0"]["En"]["Out"]["R"]["T"] = T_REn;
     }
 
-
  if (procInValMap["Flag"] == 33)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
@@ -1416,7 +1360,6 @@ void NHTrans::actualEnJ(const Map<Symbol,double>& pVecU)
       vecJ["0"]["En"]["Out"]["F"]["T"] = T_FEn;
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1457,7 +1400,6 @@ void NHTrans::actualSimplexInput(const Map<Symbol,double>& pVecU,
       double x;
       x = (T_FEn - T_REn)/(T_FEx - T_REx);
 
-
       equalConstraintRhs[2] = 0;
       equalConstraintCoef[2]["Ex"]["H"]["0"]= -x;
       equalConstraintCoef[2]["En"]["H"]["0"]= 1;
@@ -1472,7 +1414,6 @@ void NHTrans::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol NHTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1481,7 +1422,6 @@ Symbol NHTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1494,14 +1434,12 @@ Symbol NHTrans::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: waste heat or solar energy using electrical heat pump
 
-
 //// NEHP
 // Standard Constructor
 //
 NEHP::NEHP(void)
 {
 }
-
 
 //// NEHP
 // Constructor
@@ -1555,7 +1493,6 @@ NEHP::NEHP(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NEHP");
 }
 
-
 //// ~NEHP
 // Destructor
 //
@@ -1568,7 +1505,6 @@ NEHP::~NEHP(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -1578,7 +1514,6 @@ void NEHP::actualExJ(const Map<Symbol,double>& pVecU)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -1587,7 +1522,6 @@ void NEHP::actualEnJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 22 || procInValMap["Flag"] == 24 )
     vecJ["0"]["En"]["Out"]["R"]["T"] = procInValMap["TR_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1657,7 +1591,6 @@ void NEHP::actualSimplexInput(const Map<Symbol,double>& pVecU,
   x = (x - T_HS + procInValMap["deltaT_Vap"])/x;
   x = x/procInValMap["eta_G"];
 
-
   if ((T_FEx < 0) || (T_REx < 0) || (T_FEx <= T_REx) ||
       (T_FEn < 0) || (T_REn < 0) || (T_FEn <= T_REn) ||
       (T_FCon + procInValMap["deltaT_Con"] < T_HS-procInValMap["deltaT_Vap"]) ||
@@ -1693,7 +1626,6 @@ void NEHP::actualSimplexInput(const Map<Symbol,double>& pVecU,
 
 }
 
-
 //// showPower
 //
 Symbol NEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1702,7 +1634,6 @@ Symbol NEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -1715,14 +1646,12 @@ Symbol NEHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //
 // Summary: waste heat or solar energy using gas driven heat pump
 
-
 //// NGHP
 // Standard Constructor
 //
 NGHP::NGHP(void)
 {
 }
-
 
 //// NGHP
 // Constructor
@@ -1783,7 +1712,6 @@ NGHP::NGHP(App* cProcApp, Symbol procId, Symbol cProcType,
     procApp->message(1001, "NGHP");
 }
 
-
 //// ~NGHP
 // Destructor
 //
@@ -1796,7 +1724,6 @@ NGHP::~NGHP(void)
     }
 }
 
-
 //// actualExJ
 // actualize attributes of exit side
 //
@@ -1806,7 +1733,6 @@ void NGHP::actualExJ(const Map<Symbol,double>& pVecU)
     vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
 
-
 //// actualEnJ
 // actualize attributes of entrance side
 //
@@ -1815,7 +1741,6 @@ void NGHP::actualEnJ(const Map<Symbol,double>& pVecU)
   if (procInValMap["Flag"] == 22 || procInValMap["Flag"] == 24 )
     vecJ["0"]["En"]["Out"]["R"]["T"] = procInValMap["TR_0"];
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coefficients, and
@@ -1976,7 +1901,6 @@ void NGHP::actualSimplexInput(const Map<Symbol,double>& pVecU,
     }
 }
 
-
 //// showPower
 //
 Symbol NGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
@@ -1985,7 +1909,6 @@ Symbol NGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
   showPowerNumber = "0";
   return "Ex";
 }
-
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -2026,7 +1949,6 @@ Symbol NGHP::showPower(Symbol& showPowerType, Symbol& showPowerNumber)
 //       (vgl. Thomas' Dis, S. 23),
 //       (info about flow and return temperature delivered by drive)
 
-
 //// NAHP
 // Standard Constructor
 
@@ -2038,7 +1960,7 @@ NAHP::NAHP(void)
 // Constructor
 
 NAHP::NAHP(App* cProcApp, Symbol procId, Symbol cProcType,
-	       ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+               ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   if (!procInValMap.element("alpha"))
     procApp->message(55, vertexId.the_string()+ " alpha");
@@ -2095,7 +2017,7 @@ NAHP::~NAHP(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NAHP");
+        procApp->message(1002, "NAHP");
     }
 }
 
@@ -2116,13 +2038,12 @@ void NAHP::actualEnJ(const Map<Symbol,double> & pVecU)
   // Entrance side(s) is (are both, in case of Flag = 12 || Flag = 14) Typ 1
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
   double T_FEn0=0; //drive
   double T_REn0=0;
@@ -2159,9 +2080,9 @@ void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
   if (procInValMap["Flag"] ==04 || procInValMap["Flag"] ==14)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
     }
   else
     {
@@ -2178,9 +2099,9 @@ void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
          procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][F][T]");
 
       if (vecJ["1"]["En"]["In"]["R"].element("T"))
-	T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
+        T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
     }
   else      //Flag == 02 or == 04
     {
@@ -2195,7 +2116,6 @@ void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
        else
          procApp->message(57,"T");
     }
-
 
   // calculate inverse efficiency `x'
 
@@ -2223,7 +2143,6 @@ void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
     x       = 1/COP;
 
-
  if  (     (T_FEx  <0 )       || (T_REx  <0 ) || (T_FEx  <=  T_REx )
       ||   (T_FEn0 <0 )       || (T_REn0 <0 ) || (T_FEn0 <=  T_REn0)
       ||   (T_FEn1 <0 )       || (T_REn1 <0 ) || (T_FEn1 <=  T_REn1)
@@ -2243,7 +2162,7 @@ void NAHP::actualSimplexInput(const Map<Symbol,double> & pVecU,
  if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_0");
 
       lessConstraintRhs[1] = procInValMap["DotEH_0"] * procInValMap["Count"]
           *(ddT  -(1-1/(1+G)/alpha * ddT_min))
@@ -2277,7 +2196,6 @@ Symbol NAHP::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWACog
@@ -2289,7 +2207,6 @@ Symbol NAHP::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 //
 // Summary: Enthalpy adaptation by mixing valves, (waste-) heat dumping
 //          and additional heating (similar to CCogConst)
-
 
 //// NBWACog
 // Standard Constructor
@@ -2310,7 +2227,7 @@ NBWACog::NBWACog(void)
 // Constructor
 
 NBWACog::NBWACog(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx=0;
   T_REx=0;
@@ -2369,10 +2286,9 @@ NBWACog::~NBWACog(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NBWACog");
+        procApp->message(1002, "NBWACog");
     }
 }
-
 
 // calculate additional heat
 void NBWACog::calcAddHeat(double T_1, double T_2)
@@ -2381,11 +2297,10 @@ void NBWACog::calcAddHeat(double T_1, double T_2)
   equalConstraintCoef[1]["Ex"]["H"]["0"]= (T_FEn-T_1)/(T_FEx-T_REx);
   equalConstraintCoef[1]["En"]["H"]["0"]= - 1;
 
-
   if (procInValMap.element("DotEEl_0"))
     {
       if (procInValMap["DotEEl_0"] <0)
-	procApp->message(67, vertexId.the_string()+" DotEEl_0");
+        procApp->message(67, vertexId.the_string()+" DotEEl_0");
 
       lessConstraintRhs[3] = procInValMap["DotEEl_0"] * procInValMap["Count"];
       lessConstraintCoef[3]["Ex"]["El"]["0"]= 1;
@@ -2403,7 +2318,7 @@ void NBWACog::calcAddHeat(double T_1, double T_2)
 
   if (   (T_FEx < 0 )       || (T_2 < 0 )      ||(T_FEx <= T_2)
       || (T_FEx <= T_2) // here T_2 (T_FEn or T_REx)
-	                // plays the role of T_REx in CCogConst
+                        // plays the role of T_REx in CCogConst
       || (T_FEx < TF_Min)   || (T_FEx > TF_Max)
       || (T_2   < TR_Min)   || (T_2   > TR_Max))
     {
@@ -2415,18 +2330,18 @@ void NBWACog::calcAddHeat(double T_1, double T_2)
     }
 
   for (Mapiter<Symbol,double> procInValMapIt = procInValMap.first();
-	   procInValMapIt;  procInValMapIt.next())
-	{
-	  String name = procInValMapIt.curr()->key.the_string();
-	  if (name.length() > 4)
-	    {
-	      String part1 = name(0,4);     //<String.h>, the first 4 char
-	      String part2 = name(4);       //<String.h>, the rest
-	      if (part1=="sVar")
-		objectFuncCoef[part2]["En"]["Fuel"]["0"]=
-		  procInValMapIt.curr()->value;
-	    }
-	}
+           procInValMapIt;  procInValMapIt.next())
+        {
+          String name = procInValMapIt.curr()->key.the_string();
+          if (name.length() > 4)
+            {
+              String part1 = name(0,4);     //<String.h>, the first 4 char
+              String part2 = name(4);       //<String.h>, the rest
+              if (part1=="sVar")
+                objectFuncCoef[part2]["En"]["Fuel"]["0"]=
+                  procInValMapIt.curr()->value;
+            }
+        }
 }
 
 // constraints for no heating cases
@@ -2451,7 +2366,6 @@ void NBWACog::replace_calcAddHeat(void)
   equalConstraintCoef[7]["Ex"]["El"]["0"]= 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAAHP
@@ -2464,7 +2378,6 @@ void NBWACog::replace_calcAddHeat(void)
 // Summary: Enthalpy adaptation by mixing valves, (waste-) heat dumping
 //          and additional heating (similar to CCogConst)
 
-
 //// NBWAAHP
 // Standard Constructor
 
@@ -2476,12 +2389,11 @@ NBWAAHP::NBWAAHP(void)
   T_REn=0;
 }
 
-
 //// NBWAAHP
 // Constructor
 
 NBWAAHP::NBWAAHP(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx=0;
   T_REx=0;
@@ -2509,7 +2421,6 @@ NBWAAHP::NBWAAHP(App* cProcApp, Symbol procId, Symbol cProcType,
       && ( procInValMap["Flag"] != 12))
     procApp->message(61, vertexId.the_string() + " Flag");
 
-
   Symbol2 a = Symbol2("H","1");
   En.insert(a);                  //heat source (from storage) (type 1 - flow)
   Symbol2 b = Symbol2("H","0");
@@ -2531,7 +2442,7 @@ NBWAAHP::~NBWAAHP(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NBWAAHP");
+        procApp->message(1002, "NBWAAHP");
     }
 }
 
@@ -2560,10 +2471,9 @@ void NBWAAHP::calcAddHeat(double T_1, double T_2)
          procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][F][T]");
 
       if (vecJ["1"]["En"]["In"]["R"].element("T"))
-	T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
+        T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
-
+        procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
 
     // drive (type 1 energy flow)
 
@@ -2607,13 +2517,13 @@ void NBWAAHP::calcAddHeat(double T_1, double T_2)
   if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+" DotEH_0");
+        procApp->message(67, vertexId.the_string()+" DotEH_0");
 
       lessConstraintRhs[3] = procInValMap["DotEH_0"] * procInValMap["Count"]
           *(ddT  -(1-1/(1+G)/alpha * ddT_min))
           /(ddT_0-(1-1/(1+G)/alpha * ddT_min));
       lessConstraintCoef[3]["Ex"]["H"]["0"]=
-	(T_FEx-T_2)/(T_FEx-T_REx);
+        (T_FEx-T_2)/(T_FEx-T_REx);
     }
 
   equalConstraintRhs[4] = 0;
@@ -2656,7 +2566,6 @@ void NBWAAHP::noLeavingHeat(void)
 
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAEHP
@@ -2668,7 +2577,6 @@ void NBWAAHP::noLeavingHeat(void)
 //
 // Summary: Enthalpy adaptation by mixing valves, (waste-) heat dumping
 //          and additional heating (similar to NEHP)
-
 
 //// NBWAEHP
 // Standard Constructor
@@ -2685,7 +2593,7 @@ NBWAEHP::NBWAEHP(void)
 // Constructor
 
 NBWAEHP::NBWAEHP(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx=0;
   T_REx=0;
@@ -2726,7 +2634,6 @@ NBWAEHP::NBWAEHP(App* cProcApp, Symbol procId, Symbol cProcType,
       && ( procInValMap["Flag"] != 12))
     procApp->message(61, vertexId.the_string() + " Flag");
 
-
   Symbol2 a = Symbol2("H","1");
   En.insert(a);                  //heat source (from storage) (type 1 - flow)
   Symbol2 b = Symbol2("El","0");
@@ -2748,10 +2655,9 @@ NBWAEHP::~NBWAEHP(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NBWAEHP");
+        procApp->message(1002, "NBWAEHP");
     }
 }
-
 
 // calculate additional heat
 void NBWAEHP::calcAddHeat(double T_1, double T_2)
@@ -2764,12 +2670,12 @@ void NBWAEHP::calcAddHeat(double T_1, double T_2)
   if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+" DotEH_0");
+        procApp->message(67, vertexId.the_string()+" DotEH_0");
 
       lessConstraintRhs[3] =
-	procInValMap["DotEH_0"] * procInValMap["Count"];
+        procInValMap["DotEH_0"] * procInValMap["Count"];
       lessConstraintCoef[3]["Ex"]["H"]["0"]=
-	(T_FEx-T_2)/(T_FEx-T_REx);
+        (T_FEx-T_2)/(T_FEx-T_REx);
     }
 
   double T_FCon=0;
@@ -2788,9 +2694,9 @@ void NBWAEHP::calcAddHeat(double T_1, double T_2)
          procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][F][T]");
 
 //      if (vecJ["1"]["En"]["In"]["R"].element("T")) // not really necessary
-//	T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];  // since not used
+//      T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];  // since not used
 //      else
-//	procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
+//      procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
 
   T_HS = T_FEn1;
 
@@ -2850,7 +2756,6 @@ void NBWAEHP::noLeavingHeat(void)
   equalConstraintCoef[6]["En"]["H"]["1"]= 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NBWAGHP
@@ -2862,7 +2767,6 @@ void NBWAEHP::noLeavingHeat(void)
 //
 // Summary: Enthalpy adaptation by mixing valves, (waste-) heat dumping
 //          and additional heating (similar to NGHP)
-
 
 //// NBWAGHP
 // Standard Constructor
@@ -2879,7 +2783,7 @@ NBWAGHP::NBWAGHP(void)
 // Constructor
 
 NBWAGHP::NBWAGHP(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :NBW(cProcApp,procId,cProcType,cProcVal)
 {
 //  double T_REx=0;
 //  double T_FEx=0;
@@ -2945,10 +2849,9 @@ NBWAGHP::~NBWAGHP(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NBWAGHP");
+        procApp->message(1002, "NBWAGHP");
     }
 }
-
 
 // calculate additional heat
 void NBWAGHP::calcAddHeat(double T_1, double T_2)
@@ -2973,9 +2876,9 @@ void NBWAGHP::calcAddHeat(double T_1, double T_2)
          procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][F][T]");
 
       if (vecJ["1"]["En"]["In"]["R"].element("T"))
-	T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
+        T_REn1 = vecJ["1"]["En"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[1][En][In][R][T]");
 
   // calculate heat source temperature
   if (procInValMap["Flag"] ==12 || procInValMap["Flag"] ==14)
@@ -3001,26 +2904,26 @@ void NBWAGHP::calcAddHeat(double T_1, double T_2)
     {
       T_FCon = (-B + sqrt(y))/(2*(1+gamma));
       if (T_FCon > T_FEx || T_FCon < T_REx)
-	{
-	  T_FCon =  (-B - sqrt(y))/(2*(1+gamma));
-	  if (T_FCon > T_FEx || T_FCon < T_REx)
-	    procApp->message(70, vertexId.the_string()+
-			     " T_FCon in  actualSimplexInput of NGHP-Module");
-	}
+        {
+          T_FCon =  (-B - sqrt(y))/(2*(1+gamma));
+          if (T_FCon > T_FEx || T_FCon < T_REx)
+            procApp->message(70, vertexId.the_string()+
+                             " T_FCon in  actualSimplexInput of NGHP-Module");
+        }
     }
   else
     procApp->message(65, vertexId.the_string()+
-		     " y in  actualSimplexInput of NBWAGHP-Module");
+                     " y in  actualSimplexInput of NBWAGHP-Module");
 
   if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+" DotEH_0");
+        procApp->message(67, vertexId.the_string()+" DotEH_0");
 
       lessConstraintRhs[3] =
-	procInValMap["DotEH_0"] * procInValMap["Count"];
+        procInValMap["DotEH_0"] * procInValMap["Count"];
       lessConstraintCoef[3]["Ex"]["H"]["0"]=
-	(T_FEx-T_2)/(T_FEx-T_REx);
+        (T_FEx-T_2)/(T_FEx-T_REx);
     }
 
   // calculate inverse efficiency
@@ -3048,15 +2951,14 @@ void NBWAGHP::calcAddHeat(double T_1, double T_2)
     {
       z = (procInValMap["eta_Mech"]/x) + procInValMap["a"];
       if (z < double(1)/REL_EPS)
-	{
-	  equalConstraintRhs[2] = 0;
-	  equalConstraintCoef[2]["Ex"]["H"]["0"]= 1;
-	  z = 2; // arbitrary value != 1
-	}
+        {
+          equalConstraintRhs[2] = 0;
+          equalConstraintCoef[2]["Ex"]["H"]["0"]= 1;
+          z = 2; // arbitrary value != 1
+        }
       else
-	z = 1/z;
+        z = 1/z;
     }
-
 
   equalConstraintRhs[4] = 0;
   equalConstraintCoef[4]["Ex"]["H"]["0"]= - z * ((T_FEx-T_2)/(T_FEx-T_REx));
@@ -3077,13 +2979,13 @@ void NBWAGHP::calcAddHeat(double T_1, double T_2)
     {
       String name = procInValMapIt.curr()->key.the_string();
       if (name.length() > 4)
-	{
-	  String part1 = name(0,4);     //<String.h>, the first 4 char
-	  String part2 = name(4);       //<String.h>, the rest
-	  if (part1=="sVar")
-	    objectFuncCoef[part2]["En"]["Fuel"]["0"]=
-	      procInValMapIt.curr()->value;
-	}
+        {
+          String part1 = name(0,4);     //<String.h>, the first 4 char
+          String part2 = name(4);       //<String.h>, the rest
+          if (part1=="sVar")
+            objectFuncCoef[part2]["En"]["Fuel"]["0"]=
+              procInValMapIt.curr()->value;
+        }
     }
 }
 
@@ -3110,7 +3012,6 @@ void NBWAGHP::noLeavingHeat(void)
   equalConstraintCoef[7]["En"]["H"]["1"]= 1;
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NHTransSol
@@ -3129,7 +3030,6 @@ void NBWAGHP::noLeavingHeat(void)
 //  NOT be set to zero, because in OSol a positive energy flow
 //  may have been generated.)
 
-
 //// NHTransSol
 // Standard Constructor
 
@@ -3147,7 +3047,7 @@ NHTransSol::NHTransSol(void)
 // Constructor
 
 NHTransSol::NHTransSol(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEn=0;
   T_REn=0;
@@ -3211,11 +3111,9 @@ NHTransSol::~NHTransSol(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NHTransSol");
+        procApp->message(1002, "NHTransSol");
     }
 }
-
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -3225,13 +3123,13 @@ void NHTransSol::actualExJ(const Map<Symbol,double> & pVecU)
   if (procInValMap["Flag"] == 11)
     {
       if (vecJ["0"]["En"]["In"]["F"].element("T"))
-	T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
+        T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
       if (vecJ["0"]["En"]["In"]["R"].element("T"))
-	T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
+        T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
       T_FEx = T_Env + (T_FEn - T_Env) * (1-  AkOverMc);
       T_REx = T_Env + (T_REn - T_Env) * (1+  AkOverMc);
       vecJ["0"]["Ex"]["Out"]["F"]["T"] = T_FEx;
@@ -3241,9 +3139,9 @@ void NHTransSol::actualExJ(const Map<Symbol,double> & pVecU)
  if (procInValMap["Flag"] == 22)
     {
       if (vecJ["0"]["En"]["In"]["F"].element("T"))
-	T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
+        T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
 
       T_FEx = T_Env + (T_FEn - T_Env) * (1-  AkOverMc);
       vecJ["0"]["Ex"]["Out"]["F"]["T"] = T_FEx;
@@ -3252,14 +3150,13 @@ void NHTransSol::actualExJ(const Map<Symbol,double> & pVecU)
   if (procInValMap["Flag"] == 33)
     {
       if (vecJ["0"]["En"]["In"]["R"].element("T"))
-	T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
+        T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
       T_REx = T_Env + (T_REn - T_Env) * (1+  AkOverMc);
       vecJ["0"]["Ex"]["Out"]["R"]["T"] = T_REx;
     }
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -3269,13 +3166,13 @@ void NHTransSol::actualEnJ(const Map<Symbol,double> & pVecU)
   if (procInValMap["Flag"] == 44)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
-	T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
+        T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
       T_FEn = T_Env + (T_FEx - T_Env) * (1+  AkOverMc);
       T_REn = T_Env + (T_REx - T_Env) * (1-  AkOverMc);
       vecJ["0"]["En"]["Out"]["F"]["T"] = T_FEn;
@@ -3285,37 +3182,35 @@ void NHTransSol::actualEnJ(const Map<Symbol,double> & pVecU)
  if (procInValMap["Flag"] == 22)
     {
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
-	T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
+        T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][R][T]");
       T_REn = T_Env + (T_REx - T_Env) * (1-  AkOverMc);
       vecJ["0"]["En"]["Out"]["R"]["T"] = T_REn;
     }
 
-
  if (procInValMap["Flag"] == 33)
     {
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
       T_FEn = T_Env + (T_FEx - T_Env) * (1+  AkOverMc);
       vecJ["0"]["En"]["Out"]["F"]["T"] = T_FEn;
     }
 }
-
 
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void NHTransSol::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
   if (procInValMap.element("DotEH_0"))
     {
       if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_0");
 
       lessConstraintRhs[1] = procInValMap["DotEH_0"];
       lessConstraintCoef[1]["Ex"]["H"]["0"]= 1;
@@ -3342,7 +3237,6 @@ void NHTransSol::actualSimplexInput(const Map<Symbol,double> & pVecU,
 
       double x;
       x = (T_FEn - T_REn) / (T_FEx - T_REx);
-
 
       equalConstraintRhs[2] = 0;
       equalConstraintCoef[2]["Ex"]["H"]["0"]= - x;
@@ -3378,7 +3272,6 @@ Symbol NHTransSol::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 // Summary: heat exchanger with time constant temperature difference,
 //          no pressure loss and maximal exergy efficiency
 
-
 //// NHEx24
 // Standard Constructor
 
@@ -3394,7 +3287,7 @@ NHEx24::NHEx24(void)
 // Constructor
 
 NHEx24::NHEx24(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   T_FEx=0;
   T_REx=0;
@@ -3433,10 +3326,9 @@ NHEx24::~NHEx24(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NHEx24");
+        procApp->message(1002, "NHEx24");
     }
 }
-
 
 //// actualExJ
 // actualize attributes of exit side
@@ -3446,9 +3338,9 @@ void NHEx24::actualExJ(const Map<Symbol,double> & pVecU)
   if ((procInValMap["Flag"] == 11) || (procInValMap["Flag"] == 22)) //control of input
     {
       if (vecJ["0"]["En"]["In"]["F"].element("T"))
-	T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
+        T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
 
       T_FEx = T_FEn - procInValMap["deltaT"] ;
       vecJ["0"]["Ex"]["Out"]["F"]["T"] = T_FEx;
@@ -3457,9 +3349,9 @@ void NHEx24::actualExJ(const Map<Symbol,double> & pVecU)
   if ((procInValMap["Flag"] == 11) || (procInValMap["Flag"] == 33))
     {
        if (vecJ["0"]["En"]["In"]["R"].element("T"))
-	 T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
+         T_REn = vecJ["0"]["En"]["In"]["R"]["T"];
        else
-	 procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
+         procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][R][T]");
 
        T_REx = T_REn - procInValMap["deltaT"] ;
        vecJ["0"]["Ex"]["Out"]["R"]["T"] = T_REx;
@@ -3472,7 +3364,7 @@ void NHEx24::actualExJ(const Map<Symbol,double> & pVecU)
 void NHEx24::actualEnJ(const Map<Symbol,double> & pVecU)
 {
   if ((procInValMap["Flag"] == 44) || (procInValMap["Flag"] == 22)
-		          || (procInValMap["Flag"] == 24))
+                          || (procInValMap["Flag"] == 24))
     {
       if (vecJ["0"]["Ex"]["In"]["R"].element("T"))
           T_REx = vecJ["0"]["Ex"]["In"]["R"]["T"];
@@ -3495,27 +3387,26 @@ void NHEx24::actualEnJ(const Map<Symbol,double> & pVecU)
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void NHEx24::actualSimplexInput(const Map<Symbol,double> & pVecU,
-	                            double actualIntLength)
+                                    double actualIntLength)
 {
 // control of input
 
  if (procInValMap["Flag"] == 24)
     {
       if (vecJ["0"]["En"]["In"]["F"].element("T"))
-	T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
+        T_FEn = vecJ["0"]["En"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][En][In][F][T]");
 
       if (vecJ["0"]["Ex"]["In"]["F"].element("T"))
-	T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
+        T_FEx = vecJ["0"]["Ex"]["In"]["F"]["T"];
       else
-	procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
+        procApp->message(54,vertexId.the_string()+" vecJ[0][Ex][In][F][T]");
     }
 
 // technical constraints
@@ -3528,7 +3419,6 @@ void NHEx24::actualSimplexInput(const Map<Symbol,double> & pVecU,
       lessConstraintRhs[1] = procInValMap["DotEH_0"] * procInValMap["Count"];
       lessConstraintCoef[1]["Ex"]["H"]["0"]= 1;
     }
-
 
   equalConstraintRhs[2] = 0;
   equalConstraintCoef[2]["Ex"]["H"]["0"]= 1;
@@ -3568,7 +3458,6 @@ Symbol NHEx24::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: NStMan
@@ -3579,7 +3468,6 @@ Symbol NHEx24::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
 // Development thread: S05
 //
 // Summary: Waermeschiene
-
 
 //// NStMan
 // Standard Constructor
@@ -3592,7 +3480,7 @@ NStMan::NStMan(void)
 // Constructor
 
 NStMan::NStMan(App* cProcApp, Symbol procId, Symbol cProcType,
-	     ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
+             ioValue* cProcVal) :Proc(cProcApp,procId,cProcType,cProcVal)
 {
   if (!procInValMap.element("TF_0"))
     procApp->message(55, vertexId.the_string()+ " TF_0");
@@ -3638,7 +3526,6 @@ NStMan::NStMan(App* cProcApp, Symbol procId, Symbol cProcType,
      Ex.insert(b);
    }
 
-
   if (procApp->testFlag)
     procApp->message(1001, "NStMan");
 }
@@ -3651,10 +3538,9 @@ NStMan::~NStMan(void)
   if (procApp !=0)
     {
       if (procApp->testFlag)
-	procApp->message(1002, "NStMan");
+        procApp->message(1002, "NStMan");
     }
 }
-
 
 //void NStMan::updateProcOutTsPack(double  actualIntLength, double intLength)
 //{
@@ -3681,7 +3567,6 @@ NStMan::~NStMan(void)
 // }
 //}
 
-
 //// actualExJ
 // actualize attributes of exit side
 
@@ -3690,7 +3575,6 @@ void NStMan::actualExJ(const Map<Symbol,double> & pVecU)
  if (procInValMap["Flag"] == 42)
    vecJ["0"]["Ex"]["Out"]["F"]["T"] = procInValMap["TF_0"];
 }
-
 
 //// actualEnJ
 // actualize attributes of entrance side
@@ -3713,7 +3597,6 @@ int TR_0=0;
      }
    }
        TR_0 = SumTR / procInValMap["l_0"];
-
 
    for(int l=1 ; l <=  procInValMap["l_0"] ; l++ )
      {
@@ -3747,13 +3630,12 @@ int TR_0=0;
     }
 }
 
-
 //// actualSimplexInput
 // actualize objective function coefficients, constraint coef. and
 // rhs before optimization
 
 void NStMan::actualSimplexInput(const Map<Symbol,double> & pVecU,
-			       double actualIntLength)
+                               double actualIntLength)
 {
 int delta1=0;
 int delta2=0;
@@ -3798,7 +3680,7 @@ int delta2=0;
  if (procInValMap.element("DotEH_0"))
  {
     if (procInValMap["DotEH_0"] <0)
-	procApp->message(67, vertexId.the_string()+ " DotEH_0");
+        procApp->message(67, vertexId.the_string()+ " DotEH_0");
 
     lessConstraintRhs[2] = procInValMap["DotEH_0"];
     for(int l=1; l <=  procInValMap["l_0"]; l++)
@@ -3807,7 +3689,6 @@ int delta2=0;
        lessConstraintCoef[2]["Ex"]["H"][symL] = 1;
       }
  }
-
 
 //cogeneration feed-in law refund
  if(procInValMap.element("sVarM_FI"))
@@ -3847,6 +3728,4 @@ Symbol NStMan::showPower(Symbol & showPowerType, Symbol & showPowerNumber)
   return "Ex";
 }
 
-
 // end of file
-

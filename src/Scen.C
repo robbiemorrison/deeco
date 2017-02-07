@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.4 $
 //  $Date: 2005/11/25 17:55:08 $
 //  $Author: morrison $
 //  $RCSfile: Scen.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,23 +45,19 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include  <strstream.h>       // string streams
 #include     <stdlib.h>       // exit()
 #include    <iomanip.h>       // formatting of ostreams
 #include    <sstream>
 
-
 #include   "TestFlag.h"
 #include       "Scen.h"
-
 
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ScenTsPack
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ScenTsPack
 // Standard constructor
@@ -72,7 +66,6 @@ ScenTsPack::ScenTsPack(void)
 {
   // no content, call ioTsPack(void)
 }
-
 
 //// ScenTsPack
 // Constructor
@@ -83,7 +76,6 @@ ScenTsPack::ScenTsPack(App* ctsPackApp, String tsDN, int tsIC)
   // no contents
 }
 
-
 //// ~ScenTsPack
 // Destructor
 //
@@ -91,7 +83,6 @@ ScenTsPack::~ScenTsPack(void)
 {
   // no content, call ~ioTsPack(void)
 }
-
 
 //// writePack
 // write pack to file
@@ -118,9 +109,7 @@ void ScenTsPack::writePack(String tsFN, ofstream& foutTsData,
     }
 }
 
-
 ////////// help functions /////////////
-
 
 //// readRecord
 // read a single data record from file
@@ -138,13 +127,11 @@ void ScenTsPack::readRecord(ifstream& finTsData)
                                             // <fstream.h> -> <iostream.h>
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ScenTs
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ScenTs
 // Standard Constructor
@@ -153,7 +140,6 @@ ScenTs::ScenTs(void)
 {
   // no content, call ioTsValue(void)
 }
-
 
 //// ScenTs
 // Constructor
@@ -165,7 +151,6 @@ ScenTs::ScenTs(App* cScenTsApp, String scenTsDN, String scenInTsFN,
   // no content
 }
 
-
 //// ~ScenTs
 // Destructor
 //
@@ -174,13 +159,11 @@ ScenTs::~ScenTs(void)
   // no content, call ~ioTsValue(void)
 }
 
-
 //////////////////////////////////////////////////////////////////
 //
 // CLASS: ScenVal
 //
 //////////////////////////////////////////////////////////////////
-
 
 //// ScenVal
 // Standard Constructor
@@ -206,7 +189,6 @@ ScenVal::ScenVal(void)
   intLength          = 3600;        // nominal time interval length = 1 hour
   intNumber          = 8760;        // time horizon length = 1 year
 }
-
 
 //// ScenVal
 // Constructor
@@ -236,7 +218,6 @@ ScenVal::ScenVal(App * cValApp, String vN, double init)
   intNumber          = 8760;         // time horizon length = 1 year
 }
 
-
 //// ~ScenVal
 // Destructor
 //
@@ -244,7 +225,6 @@ ScenVal::~ScenVal(void)
 {
   // no content, call ~ioValue(void)
 }
-
 
 //// readRecord
 // read scenario input value file
@@ -332,13 +312,12 @@ void ScenVal::readRecord(void)
   ioApp->ignoreRestLine(finData); // ignore the rest of the line
 }
 
-
 //// writeScenInVal
 // write actual scenario input values
 //
 void  ScenVal::writeInput(void)
 {
-#ifdef _TEST_XXX  // TOFIX: 25.11.05: disabled with XXX because 
+#ifdef _TEST_XXX  // TOFIX: 25.11.05: disabled with XXX because
                   // seg-faults, see below too
   if (ioApp->testFlag)
     {
@@ -377,7 +356,7 @@ void  ScenVal::writeInput(void)
                << "PR , " << resPath                       << "\n"
                << "PS , " << scenPath                      << "\n"
                << "TS , " << scenInTsFileName              << "\n"
-               << "TP , " << procInTsFileName              << "\n"      
+               << "TP , " << procInTsFileName              << "\n"
                << "S  , " << scanParaProcName.the_string() << " , " // Symbol to String
                           << scanParaName.the_string()     << " , " // Symbol to String
                           << scanParaBegin                 << " , "
@@ -389,8 +368,8 @@ void  ScenVal::writeInput(void)
                << "I  , " << intLength                     << " , "
                           << intNumber                     << "\n"
       //       << "G  , " << goalWeight                    << "\n"  // see note 1
-               << "G  , " << "** goalWeight not supported in this code: " 
-                          << __FILE__ 
+               << "G  , " << "** goalWeight not supported in this code: "
+                          << __FILE__
                           << " L"
                           << __LINE__
                           << " **\n"
@@ -405,7 +384,6 @@ void  ScenVal::writeInput(void)
 #endif
 }
 
-
 //// update
 // update result mean values after each time interval
 //
@@ -415,7 +393,6 @@ void ScenVal::update(const Map<Symbol, double>& vecU)
        vecUIt; vecUIt.next())
     scenOutValMap[vecUIt.curr()->key].updateMeanValRec(vecUIt.curr()->value);
 }
-
 
 //// clearResults
 // clear result mean values after finishing one sceniario scanning parameter
@@ -427,9 +404,7 @@ void ScenVal::clearResults(void)
     scenOutValMapIt.curr()->value.clearMeanValRec();
 }
 
-
 ////// help function ////////////////////////////
-
 
 //// writeData
 // should not be used
@@ -438,7 +413,6 @@ void ScenVal::writeData(void)
 {
   ioApp->message(1, "Usage of ScenVal::writeData(void)");
 }
-
 
 //// writeData
 //
@@ -472,7 +446,5 @@ void ScenVal::writeData(int scanF, double scanV)
     }
 }
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Scen.C,v $
 //  end of file
-

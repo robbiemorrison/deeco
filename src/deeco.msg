@@ -83,4 +83,3 @@
 1016 Sorted process list          :
 1017 You interrupted the program. If you think the program is hanging in an endless loop, see the user manual.
 1018 Interval number:
-

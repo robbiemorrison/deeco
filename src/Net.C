@@ -34,12 +34,10 @@
 //
 //    -----------------
 
-
 //  $Revision: 1.3 $
 //  $Date: 2005/11/25 17:55:40 $
 //  $Author: morrison $
 //  $RCSfile: Net.C,v $
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -47,16 +45,13 @@
 //
 //////////////////////////////////////////////////////////////////
 
-
 #include        <Map.h>       // associative array
 #include     <stdlib.h>       // exit()
 #include  <strstream.h>       // string streams
 #include      <float.h>       // for use of "infinity" = DBL_MAX
 
-
 #include   "ProcType.h"       // management of the different process modules
 #include        "Net.h"
-
 
 // Important: for a comprehensive tutorial covering the graph containers
 // and graph algorithms used here, see: Weitzen, TC. 1992. "The C++ graph
@@ -65,13 +60,11 @@
 // pp 7.1-7.30.  AT&T and UNIX System Laboratories.  See also the relevant
 // man pages and related systems documentation.
 
-
 ///////////////////////////////////////////////////////////////////
 //
 // CLASS: Net
 //
 ///////////////////////////////////////////////////////////////////
-
 
 //// Net
 // Standard Constructor
@@ -93,7 +86,6 @@ Net::Net(void)
   actualProcType                = NULL;
   errorFlag                     = 0;
 }
-
 
 //// Net
 // Constructor
@@ -126,7 +118,6 @@ Net::Net(App* cnApp)
     }
 }
 
-
 //// ~Net
 // Destructor
 //
@@ -144,7 +135,6 @@ Net::~Net(void)
       delete actualProcType;
     }
 }
-
 
 //// prepareNet
 // prepare the energy supply network structure
@@ -224,7 +214,6 @@ Net::finishNet(void)
     }
 }
 
-
 //// transferInTsPack
 // transfer inTsPacks from nProcTsPack->inTsPackMap
 // (used for reading the ... .pit file, for all processes)
@@ -250,7 +239,6 @@ Net::transferInTsPack(ioTsPack* nProcTsPack)
     }
 }
 
-
 //// transferOutTsPack
 // transfer outTsPacks from procOutTsPack (of each process) to
 // actualProcTsPack->outTsPackMap (for writing the file ... .pot)
@@ -273,7 +261,6 @@ Net::transferOutTsPack(ioTsPack* nProcTsPack)
         }
     }
 }
-
 
 //// prepareOpt
 // calculate the attributes and establish the matrix "aMatrix"
@@ -322,7 +309,6 @@ Net::prepareOpt(ScenVal*     nScenVal,
     }
 }
 
-
 //// finishOpt
 // get the results and calculate the state variable transformation;
 // return value is the length of the time interval
@@ -361,7 +347,6 @@ Net::finishOpt(ScenVal*     nScenVal,
   return actualIntLength;
 }
 
-
 //// error
 // error management
 //
@@ -378,9 +363,7 @@ Net::error(void)
     }
 }
 
-
 ////////// help functions for prepareNet //////////////////////////////
-
 
 //// establishNet
 // establish the energy supply network
@@ -397,7 +380,6 @@ Net::establishNet(ProcDef*     nProcDef,
   insertBalances(nBalanDef);
   insertConnections(nConnectDef);
 }
-
 
 //// insertProcesses
 // insert processes in the net as vertices
@@ -488,7 +470,6 @@ Net::insertProcesses(ProcDef*     nProcDef,
     }
 }
 
-
 //// insertBalances
 // insert balances in the net as vertices
 //
@@ -549,7 +530,6 @@ Net::insertBalances(BalanDef* nBalanDef)
     + nonProcGreaterConstraintCount
     + nonProcEqualConstraintCount;
 }
-
 
 //// insertConnections
 // insert energy flows in the net as edges and make first tests
@@ -641,7 +621,6 @@ Net::insertConnections(ConnectDef* nConnectDef)
         }
     }
 }
-
 
 //// testNet
 // test the graph, looking for cycles
@@ -910,7 +889,6 @@ Net::testNet(void)
     }
 }
 
-
 //// orderNet
 // ordering the graph
 //
@@ -1015,9 +993,7 @@ Net::orderNet(void)
     }
 }
 
-
 ////////////// help functions for prepareOpt /////////////////
-
 
 //// calcAttributes
 // calculate attributes
@@ -1205,7 +1181,6 @@ Net::calcAttributes(const Map<Symbol,double>&  nVecU,
     }
 }
 
-
 ////  prepareSimplTab
 // prepare simplex tableau
 //
@@ -1242,7 +1217,6 @@ Net::prepareSimplTab(void)
         }
     }
 }
-
 
 //// calcBalanceConstCoef
 // calculate energy balance constraints simplex coefficients
@@ -1303,7 +1277,6 @@ Net::calcBalanceConstCoef(int& actualM3)
         }
     }
 }
-
 
 //// calcAggConstCoef
 // calculate process aggregation constraint simplex coefficients
@@ -1380,7 +1353,6 @@ Net::calcAggConstCoef(int&         actualM1,
     }
 }
 
-
 //// calcProcConstCoef
 // calculate process constraint simplex coefficients
 //
@@ -1398,7 +1370,6 @@ Net::calcProcConstCoef(ScenVal*  nScenVal,
                            actualM1,actualM2,actualM3);
     }
 }
-
 
 //// establishAMatrixProc
 // establish the parts of the simplex tableau matrix "aMatrix"
@@ -1541,7 +1512,6 @@ Net::establishAMatrixProc(procPtr   nProc,
 
 }
 
-
 //// setConstCoef
 // set the constraint coefficients for the different restriction types
 //
@@ -1604,9 +1574,7 @@ Net::setConstCoef(procPtr             nProc,
     }
 }
 
-
 //////////// help functions for finishOpt ////////////////////
-
 
 //// getProcessResults1
 // getting results for each process (part1)
@@ -1680,7 +1648,6 @@ Net::getProcessResults1(double&                    actualIntLength,
         }
     }
 }
-
 
 //// getProcessResults2
 // getting results for each process (part 2)
@@ -2015,7 +1982,6 @@ Net::getProcessResults2(ScenVal*     nScenVal,
     }
 }
 
-
 //// getAggResults
 // getting results for process aggregates
 //
@@ -2129,7 +2095,6 @@ Net::getAggResults(ioDefValue*  nAggDef,
     }
 }
 
-
 //// clearConstraints       // !2.8.95->
 // clear constraints of processes and aggregates
 //
@@ -2156,7 +2121,6 @@ Net::clearConstraints(void)
   aggConstAssign.make_empty();
 
 }  // !2.8.95<-
-
 
 //// updateCoef
 //
@@ -2199,7 +2163,6 @@ Net::updateCoef(double              dotE,
     }
 }
 
-
 //  Robbie: 02.09.05: Notes about ISO C++ modifications.
 //
 //  Set (the variant for holding pointers) iterator:
@@ -2211,7 +2174,5 @@ Net::updateCoef(double              dotE,
 //       Set_of_p <DEdge> temp01 = procMapIt.curr()->value->in_edges();
 //       Set_of_piter <DEdge> inEdgeIt( temp01 );
 
-
 //  $Source: /home/morrison/milp-mid-2005/deeco.006.2/RCS/Net.C,v $
 //  end of file
-
