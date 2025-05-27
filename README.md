@@ -86,7 +86,7 @@ The various thermal processes within a *deeco* model negotiate amongst themselve
 
 The original code was developed on an HP workstation and later ported to SCO UnixWare versions&nbsp;2 and&nbsp;7 running on a personal computer.  Details of the last development environment can be found in the [README.version](src/README.version) text file.
 
-The codebase became stranded when Hewlett-Packard discontinued support for a key programming library and the UnixWare operating system was abandoned by The SCO Group.  The library was the AT&T Unix System Laboratories (USL) [Standard Components](http://osr600doc.xinuos.com/en/SDK_c++/CONTENTS.html) library (which predates the C++ Standard Template Library)
+The codebase became stranded when Hewlett-Packard discontinued support for a key programming library and the UnixWare operating system was abandoned by The SCO Group.  The library was the AT&T Unix System Laboratories (USL) [Standard Components](http://osr600doc.xinuos.com/en/SDK_c++/CONTENTS.html) library (which predates the C++ Standard Template Library).  Note that the System Library Exception of the GPLv2 allows a proprietary development environment to be used.
 
 *deeco* was one of first energy system models to use hourly time steps.  By 2016, a decade later, the practice had become commonplace.
 
