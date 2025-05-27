@@ -31,9 +31,9 @@ The source code is licensed under GNU&nbsp;GPLv2.
 
 Web
 
-* [Project website](http://www.iet.tu-berlin.de/deeco/) (official TU-Berlin version)
-* [Project website](http://www.webcitation.org/query?url=http://www.iet.tu-berlin.de/deeco/&date=2016-12-20) (WebCite archive)
-<!-- alternative URL: http://www.webcitation.org/6mtrnndbF -->
+* [Project website](http://www.iet.tu-berlin.de/deeco/) (official TU-Berlin version now **link&#8209;rotted**)
+* [Project website](https://web.archive.org/web/20030901000000*/http://www.iet.tu-berlin.de/deeco/) (Wayback Machine archive)
+* [Project website](http://www.webcitation.org/query?url=http://www.iet.tu-berlin.de/deeco/&date=2016-12-20) (WebCite archive) <!-- alternative URL: http://www.webcitation.org/6mtrnndbF -->
 
 Technical manual
 
