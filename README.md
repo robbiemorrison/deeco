@@ -98,9 +98,9 @@ Thomas Bruckner (now University of Leipzig) wrote the original release.  Robbie 
 
 ### Printed documentation
 
-* Bruckner, Thomas (19 December 1997). [*deeco — Benutzerhandbuch* [*deeco — user guide*](docs/deeco-handbuch-1997.pdf) (in German). Würzburg, Germany: Institut für Theoretische Physik der Universität Würzburg.
+* Bruckner, Thomas (19&nbsp;December 1997). [*deeco — Benutzerhandbuch* [*deeco — user guide*](docs/deeco-handbuch-1997.pdf) (in German). Würzburg, Germany: Institut für Theoretische Physik der Universität Würzburg.
 
-* Bruckner, Thomas (19 December 1997). [*deeco — Programmer's manual*](docs/deeco-programmers-manual-1997.pdf). Würzburg, Germany: Institute for Theoretical Physics, Würzburg University.
+* Bruckner, Thomas (19&nbsp;December 1997). [*deeco — Programmer's manual*](docs/deeco-programmers-manual-1997.pdf). Würzburg, Germany: Institute for Theoretical Physics, Würzburg University.
 
 * Bruckner, Thomas (2001). [*Benutzerhandbuch deeco — Version&nbsp;1.0* [*User guide deeco — Version&nbsp;1.0*]](docs/deeco-handbuch-10.pdf) (in German). Berlin, Germany: Institut für Energietechnik, Technishe Universität Berlin.
 
@@ -110,25 +110,25 @@ For background, a good place to start is Groscurth *et&nbsp;al* (1995) which des
 
 * Bruckner, Thomas (1997). [*Dynamische Energie- und Emissionsoptimierung regionaler Energiesysteme* [*Dynamic energy and emissions optimization for regional energy systems*]](docs/1997-bruckner-dynamische-energie-und-emissionsoptimierung-regionaler-energiesysteme-phd.pdf) (PhD). Würzburg, Germany: Institut für Theoretische Physik, Universität Würzburg.
 
-* Groscurth, Helmuth-M, Thomas Bruckner, and Reiner Kümmel (September 1995). ["Modeling of energy-services supply systems"]( http://www.iet.tu-berlin.de/deeco/downloads/groscurth_etal_1995.pdf). *Energy*. **20** (9): 941–958. doi:[10.1016/0360-5442(95)00067-Q](https://dx.doi.org/10.1016/0360-5442(95)00067-Q). ISSN 0360-5442.
+* Groscurth, Helmuth-M, Thomas Bruckner, and Reiner Kümmel (September 1995). "Modeling of energy-services supply systems". *Energy*. **20**&nbsp;(9):&nbsp;941–958. doi:[10.1016/0360-5442(95)00067-Q](https://dx.doi.org/10.1016/0360-5442(95)00067-Q). ISSN&nbsp;0360-5442.
 
-* Bruckner, Thomas, Helmuth-M Groscurth, and Reiner Kümmel (1997). ["Competition and synergy between energy technologies in municipal energy systems"](http://www.iet.tu-berlin.de/deeco/downloads/bruckner_etal_1997.pdf). *Energy*. **22** (10): 1005–1014. doi:[10.1016/S0360-5442(97)00037-6](https://dx.doi.org/10.1016/S0360-5442(97)00037-6). ISSN 0360-5442.
+* Bruckner, Thomas, Helmuth-M Groscurth, and Reiner Kümmel (1997). "Competition and synergy between energy technologies in municipal energy systems". *Energy*. **22**&nbsp;(10):&nbsp;1005–1014. doi:[10.1016/S0360-5442(97)00037-6](https://dx.doi.org/10.1016/S0360-5442(97)00037-6). ISSN&nbsp;0360-5442.
 
 * Morrison, Robbie (2000). *[Optimizing exergy-services supply networks for sustainability](docs/2000-morrison-msc-bound.pdf)* (MSc). Dunedin, New Zealand: Physics Department, University of Otago.
 
-* Lindenberger, Dietmar, Thomas Bruckner, Helmuth-M Groscurth, and Reiner Kümmel (2000). "Optimization of solar district heating systems: seasonal storage, heat pumps, and cogeneration". *Energy*. **25** (7): 591–608. doi:[10.1016/S0360-5442(99)00082-1](https://dx.doi.org/10.1016/S0360-5442(99)00082-1). ISSN 0360-5442.
+* Lindenberger, Dietmar, Thomas Bruckner, Helmuth-M Groscurth, and Reiner Kümmel (2000). "Optimization of solar district heating systems: seasonal storage, heat pumps, and cogeneration". *Energy*. **25**&nbsp;(7):&nbsp;591–608. doi:[10.1016/S0360-5442(99)00082-1](https://dx.doi.org/10.1016/S0360-5442(99)00082-1). ISSN&nbsp;0360-5442.
 
-* Morrison, Robbie and Thomas Bruckner (24–28 September 2002). Presented at Porto Venere, Italy. Ulgiati, Sergio, Mark T Brown, Mario Giampietro, Robert A Herendeen, and Kozo Mayumi (eds). ["High-resolution modeling of distributed energy resources using *deeco*: adverse interactions and potential policy conflicts"](http://www.wifa.uni-leipzig.de/fileadmin/user_upload/iirm-tm/energiemanagement/publikationen/Conference_Proceedings/2002_HighResModelDeeco.pdf). 3rd International Workshop: Advances in Energy Studies: Reconsidering the Importance of Energy. Padova, Italy: Servizi Grafici Editoriali. pp. 97–107.
+* Morrison, Robbie and Thomas Bruckner (24–28 September 2002). Presented at Porto Venere, Italy. Ulgiati, Sergio, Mark T Brown, Mario Giampietro, Robert A Herendeen, and Kozo Mayumi (eds). "High-resolution modeling of distributed energy resources using *deeco*: adverse interactions and potential policy conflicts". 3rd International Workshop: Advances in Energy Studies: Reconsidering the Importance of Energy. Padova, Italy: Servizi Grafici Editoriali. pp.&nbsp;97–107.
 
-* Bruckner, Thomas, Robbie Morrison, Chris Handley, and Murray Patterson (2003). ["High-resolution modeling of energy-services supply systems using *deeco*: overview and application to policy development"](http://www.wifa.uni-leipzig.de/fileadmin/user_upload/iirm-tm/energiemanagement/publikationen/reviewed_journals/2003_HighResolModelingEnergySystemsDeeco.pdf). *Annals of Operations Research* **121** (1–4): 151–180. doi:[10.1023/A:1023359303704](https://dx.doi.org/10.1023/A:1023359303704).
+* Bruckner, Thomas, Robbie Morrison, Chris Handley, and Murray Patterson (2003). "High-resolution modeling of energy-services supply systems using *deeco*: overview and application to policy development". *Annals of Operations Research* **121**&nbsp;(1–4):&nbsp;151–180. doi:[10.1023/A:1023359303704](https://dx.doi.org/10.1023/A:1023359303704).
 
-* Lindenberger, Dietmar, Thomas Bruckner, Robbie Morrison, Helmuth-M Groscurth, and Reiner Kümmel (2004). "Modernization of local energy systems". *Energy* **29** (2) 245–256. doi:[10.1016/S0360-5442(03)00063-X](https://dx.doi.org/10.1016/S0360-5442(03)00063-X). ISSN 0360-5442.
+* Lindenberger, Dietmar, Thomas Bruckner, Robbie Morrison, Helmuth-M Groscurth, and Reiner Kümmel (2004). "Modernization of local energy systems". *Energy* **29**&nbsp;(2)&nbsp;245–256. doi:[10.1016/S0360-5442(03)00063-X](https://dx.doi.org/10.1016/S0360-5442(03)00063-X). ISSN&nbsp;0360-5442.
 
-* Bruckner, Thomas, Robbie Morrison, and Tobias Wittmann (2005). ["Public policy modeling of distributed energy technologies: strategies, attributes, and challenges"](https://www.researchgate.net/profile/Thomas_Bruckner2/publication/222424177_Public_policy_modeling_of_distributed_energy_technologies_strategies_attributes_and_challenges/links/02bfe50e715d29e8e5000000.pdf). *Ecological Economics*. **54** (2–3): 328–245. doi:[10.1016/j.ecolecon.2004.12.032](https://dx.doi.org/10.1016/j.ecolecon.2004.12.032). ISSN 0921-8009.
+* Bruckner, Thomas, Robbie Morrison, and Tobias Wittmann (2005). "Public policy modeling of distributed energy technologies: strategies, attributes, and challenges". *Ecological Economics*. **54** (2–3): 328–245. doi:[10.1016/j.ecolecon.2004.12.032](https://dx.doi.org/10.1016/j.ecolecon.2004.12.032). ISSN&nbsp;0921-8009.
 
 ### Contact
 
-Robbie Morrison / Last modified: 27&nbsp;May 2025
+Robbie Morrison /  Last modified: 27&nbsp;May 2025
 
 <img src="img/emad.png" height="14" alt="." style="display: inline-block">
 
