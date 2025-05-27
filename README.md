@@ -5,8 +5,8 @@
             Attribution-ShareAlike 3.0 International License
 -->
 
-**This project is no longer active**  
-The source code and documentation are provided for historical reasons.  
+**This project is no longer active**
+The source code and documentation are provided for historical reasons.
 The software was last compiled on 30&nbsp;September 2005.
 
 <img src="img/gecko.png" width="200" style="float: right">
