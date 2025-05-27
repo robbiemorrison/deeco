@@ -98,7 +98,7 @@ Thomas Bruckner (now University of Leipzig) wrote the original release.  Robbie 
 
 ### Printed documentation
 
-* Bruckner, Thomas (19&nbsp;December 1997). [*deeco — Benutzerhandbuch* [*deeco — user guide*](docs/deeco-handbuch-1997.pdf) (in German). Würzburg, Germany: Institut für Theoretische Physik der Universität Würzburg.
+* Bruckner, Thomas (19&nbsp;December 1997). [*deeco — Benutzerhandbuch* [*deeco — user guide*]](docs/deeco-handbuch-1997.pdf) (in German). Würzburg, Germany: Institut für Theoretische Physik der Universität Würzburg.
 
 * Bruckner, Thomas (19&nbsp;December 1997). [*deeco — Programmer's manual*](docs/deeco-programmers-manual-1997.pdf). Würzburg, Germany: Institute for Theoretical Physics, Würzburg University.
 
