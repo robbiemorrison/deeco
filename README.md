@@ -23,7 +23,9 @@ Development became stranded when vendor support for a key programming library ce
 
 The source code and documentation are provided on GitHub because they may be of interest to the energy modeling community.  In particular, some of the technology modules contain innovative designs.  Their class definitions can be inspected and their underlying theory is documented in a technical manual and elsewhere.
 
-The source code is licensed under GNU&nbsp;GPLv2.
+The source code is licensed under GNU&nbsp;GPLv2.  Except for the files named <code>simp*.c</code> which derive from *Numerical Recipes in&nbsp;C* (pages 439–443):
+
+- Press, William&nbsp;H, Brian P Flannery, Saul&nbsp;A Teukolsky, and William&nbsp;T Vetterling (30&nbsp;October 1992).  *Numerical recipes in&nbsp;C: the art of scientific computing* (2nd&nbsp;ed).  Cambridge, United Kingdom: Cambridge University Press.  ISBN 978-052143108-8.  All code is copyright of the publisher.
 
 *deeco* is the subject of around 10&nbsp;refereed papers, 10&nbsp;conference presentations, and 10&nbsp;university theses.  A&nbsp;selection of this literature is given below.  Bibliographic information files in BibTeX, EndNote, and Wikipedia (WCF) formats can be found in the [refs](refs/) directory.
 
