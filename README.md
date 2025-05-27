@@ -90,6 +90,8 @@ The codebase became stranded when Hewlett-Packard discontinued support for a key
 
 *deeco* was one of first energy system models to use hourly time steps.  By 2016, a decade later, the practice had become commonplace.
 
+The associated project website was first indexed by the [Wayback Machine](https://en.wikipedia.org/wiki/Wayback_Machine) on 1&nbsp;July 2002.
+
 ### Contributers
 
 Thomas Bruckner (now University of Leipzig) wrote the original release.  Robbie Morrison ported *deeco* to SCO UnixWare, maintained the codebase, and wrote data processing scripts.  Dietmar Lindenberger, Johannes Bruhn, Kathrin Ramsel, Jan Heise, and Susanna Medel developed new technology modules and ran models.
